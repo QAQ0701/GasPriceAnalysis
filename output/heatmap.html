@@ -1,0 +1,3005 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2f4647d6cb1bb63e2f14e9e03806332a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2f4647d6cb1bb63e2f14e9e03806332a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2f4647d6cb1bb63e2f14e9e03806332a = L.map(
+                "map_2f4647d6cb1bb63e2f14e9e03806332a",
+                {
+                    center: [49.21864555862422, -123.11422169882525],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_00b0eedb04bcbf07a2673177b819674d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_00b0eedb04bcbf07a2673177b819674d.addTo(map_2f4647d6cb1bb63e2f14e9e03806332a);
+        
+    
+            var feature_group_6777ec37e64baea428b0b135a74b8c9c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_9c38788fd559ad4c0ed2c463544fb7d4 = L.circleMarker(
+                [49.279145231489, -123.12982365489],
+                {"bubblingMouseEvents": true, "color": "#98cc00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#98cc00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_0c2a1bf9f7441d0935b7b386dd3ae3fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e37e0d706c50783ed55ca31de5802de7 = $(`<div id="html_e37e0d706c50783ed55ca31de5802de7" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 156.10</div>`)[0];
+                popup_0c2a1bf9f7441d0935b7b386dd3ae3fb.setContent(html_e37e0d706c50783ed55ca31de5802de7);
+            
+        
+
+        circle_marker_9c38788fd559ad4c0ed2c463544fb7d4.bindPopup(popup_0c2a1bf9f7441d0935b7b386dd3ae3fb)
+        ;
+
+        
+    
+    
+            var circle_marker_f0e146fd6aef0e6857161d6d7e4177cc = L.circleMarker(
+                [49.259878978744, -123.078074455261],
+                {"bubblingMouseEvents": true, "color": "#0e8700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0e8700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_87fe22937bb3a6054cd61d399e3fe988 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4535490fcfe17f700b11795a6288d9a = $(`<div id="html_a4535490fcfe17f700b11795a6288d9a" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 148.15</div>`)[0];
+                popup_87fe22937bb3a6054cd61d399e3fe988.setContent(html_a4535490fcfe17f700b11795a6288d9a);
+            
+        
+
+        circle_marker_f0e146fd6aef0e6857161d6d7e4177cc.bindPopup(popup_87fe22937bb3a6054cd61d399e3fe988)
+        ;
+
+        
+    
+    
+            var circle_marker_e9be06f1ef587fb308cb17b1a547c50e = L.circleMarker(
+                [49.226226639452, -123.128687739372],
+                {"bubblingMouseEvents": true, "color": "#7fbf00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7fbf00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_eb863d625eb775b87887d66e02d772de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed6375040b425199cd6d2554a5e4aa56 = $(`<div id="html_ed6375040b425199cd6d2554a5e4aa56" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 154.65</div>`)[0];
+                popup_eb863d625eb775b87887d66e02d772de.setContent(html_ed6375040b425199cd6d2554a5e4aa56);
+            
+        
+
+        circle_marker_e9be06f1ef587fb308cb17b1a547c50e.bindPopup(popup_eb863d625eb775b87887d66e02d772de)
+        ;
+
+        
+    
+    
+            var circle_marker_164d17f873461704964c25408ac3480c = L.circleMarker(
+                [49.24894071957, -123.127040863037],
+                {"bubblingMouseEvents": true, "color": "#59ad00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59ad00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_45d7224e4a13118525664ae025676dd8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2357d5f9c283f8de6e4b70d77ea456b7 = $(`<div id="html_2357d5f9c283f8de6e4b70d77ea456b7" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 152.50</div>`)[0];
+                popup_45d7224e4a13118525664ae025676dd8.setContent(html_2357d5f9c283f8de6e4b70d77ea456b7);
+            
+        
+
+        circle_marker_164d17f873461704964c25408ac3480c.bindPopup(popup_45d7224e4a13118525664ae025676dd8)
+        ;
+
+        
+    
+    
+            var circle_marker_b7df892df358bcefb03c78a16ed61b06 = L.circleMarker(
+                [49.234634576953, -123.139971792698],
+                {"bubblingMouseEvents": true, "color": "#83c100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#83c100ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_4d05bea2c4d57f602fc886e1744349d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_23c31d6f585a7eb052a89d90c8809358 = $(`<div id="html_23c31d6f585a7eb052a89d90c8809358" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 154.90</div>`)[0];
+                popup_4d05bea2c4d57f602fc886e1744349d3.setContent(html_23c31d6f585a7eb052a89d90c8809358);
+            
+        
+
+        circle_marker_b7df892df358bcefb03c78a16ed61b06.bindPopup(popup_4d05bea2c4d57f602fc886e1744349d3)
+        ;
+
+        
+    
+    
+            var circle_marker_82cdb7c40dc61ddd18afbd44f8103203 = L.circleMarker(
+                [49.2325708, -123.1010069],
+                {"bubblingMouseEvents": true, "color": "#72b900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72b900ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_10993c8fa5033d1fdaf87ebe423c627b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_858ca1f51d987860e6e6a9f89f3e00ad = $(`<div id="html_858ca1f51d987860e6e6a9f89f3e00ad" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 153.90</div>`)[0];
+                popup_10993c8fa5033d1fdaf87ebe423c627b.setContent(html_858ca1f51d987860e6e6a9f89f3e00ad);
+            
+        
+
+        circle_marker_82cdb7c40dc61ddd18afbd44f8103203.bindPopup(popup_10993c8fa5033d1fdaf87ebe423c627b)
+        ;
+
+        
+    
+    
+            var circle_marker_9cf26029c0744e01f796b8a1d40bc249 = L.circleMarker(
+                [49.1923857, -123.0911072],
+                {"bubblingMouseEvents": true, "color": "#b7db00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7db00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_1f60bdf61cb5027f188bea6f5d7ba511 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1c6aff39f9adc9eba9e0089ea7cb62b = $(`<div id="html_a1c6aff39f9adc9eba9e0089ea7cb62b" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 157.90</div>`)[0];
+                popup_1f60bdf61cb5027f188bea6f5d7ba511.setContent(html_a1c6aff39f9adc9eba9e0089ea7cb62b);
+            
+        
+
+        circle_marker_9cf26029c0744e01f796b8a1d40bc249.bindPopup(popup_1f60bdf61cb5027f188bea6f5d7ba511)
+        ;
+
+        
+    
+    
+            var circle_marker_bb3391766c2995e92361cb06abe6641a = L.circleMarker(
+                [49.1328393, -123.0926312],
+                {"bubblingMouseEvents": true, "color": "#229100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#229100ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_b96128dca63d0c43b72511a3952f3f44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da3d967b8e3a81ed9d82a3a00d6436dd = $(`<div id="html_da3d967b8e3a81ed9d82a3a00d6436dd" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 149.30</div>`)[0];
+                popup_b96128dca63d0c43b72511a3952f3f44.setContent(html_da3d967b8e3a81ed9d82a3a00d6436dd);
+            
+        
+
+        circle_marker_bb3391766c2995e92361cb06abe6641a.bindPopup(popup_b96128dca63d0c43b72511a3952f3f44)
+        ;
+
+        
+    
+    
+            var circle_marker_0bce5d5b52eeb8bf8ded8441552821e9 = L.circleMarker(
+                [49.140582914547, -123.137168884277],
+                {"bubblingMouseEvents": true, "color": "#359b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#359b00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_6792ace55c8119acb34a8f3c7c426d71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b051fb16fe057a282a4cee4b588f635 = $(`<div id="html_2b051fb16fe057a282a4cee4b588f635" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 150.40</div>`)[0];
+                popup_6792ace55c8119acb34a8f3c7c426d71.setContent(html_2b051fb16fe057a282a4cee4b588f635);
+            
+        
+
+        circle_marker_0bce5d5b52eeb8bf8ded8441552821e9.bindPopup(popup_6792ace55c8119acb34a8f3c7c426d71)
+        ;
+
+        
+    
+    
+            var circle_marker_22c395adc21a7a6e2ac3fe897b57b6da = L.circleMarker(
+                [49.14867500071, -123.180856704712],
+                {"bubblingMouseEvents": true, "color": "#138900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#138900ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_46f7b01c1f809fd54f86ecdaa9169450 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d7143f3670cc71f70072a39433ffd18 = $(`<div id="html_1d7143f3670cc71f70072a39433ffd18" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 148.40</div>`)[0];
+                popup_46f7b01c1f809fd54f86ecdaa9169450.setContent(html_1d7143f3670cc71f70072a39433ffd18);
+            
+        
+
+        circle_marker_22c395adc21a7a6e2ac3fe897b57b6da.bindPopup(popup_46f7b01c1f809fd54f86ecdaa9169450)
+        ;
+
+        
+    
+    
+            var circle_marker_468e6799cb544a2c1a7ed15cd337809a = L.circleMarker(
+                [49.2449719, -123.1540385],
+                {"bubblingMouseEvents": true, "color": "#cfe700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cfe700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_b002523919384b891a241706948f37c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f3608b1b88ea3e1284d9f7e5fea40fb = $(`<div id="html_3f3608b1b88ea3e1284d9f7e5fea40fb" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 159.30</div>`)[0];
+                popup_b002523919384b891a241706948f37c8.setContent(html_3f3608b1b88ea3e1284d9f7e5fea40fb);
+            
+        
+
+        circle_marker_468e6799cb544a2c1a7ed15cd337809a.bindPopup(popup_b002523919384b891a241706948f37c8)
+        ;
+
+        
+    
+    
+            var circle_marker_7afbed369c185f396233ba9c8248aa7f = L.circleMarker(
+                [49.2251291, -123.0545048],
+                {"bubblingMouseEvents": true, "color": "#cce600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cce600ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_934efaa6ec5ac049ab2ef7446f965cad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05fa20628e4bd258e7d0da2e0a258b5e = $(`<div id="html_05fa20628e4bd258e7d0da2e0a258b5e" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 159.15</div>`)[0];
+                popup_934efaa6ec5ac049ab2ef7446f965cad.setContent(html_05fa20628e4bd258e7d0da2e0a258b5e);
+            
+        
+
+        circle_marker_7afbed369c185f396233ba9c8248aa7f.bindPopup(popup_934efaa6ec5ac049ab2ef7446f965cad)
+        ;
+
+        
+    
+    
+            var circle_marker_6cd6b18782ae877cd4f9e6d57512fa12 = L.circleMarker(
+                [49.2177761, -123.0775405],
+                {"bubblingMouseEvents": true, "color": "#d9ed00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d9ed00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_7934d750bbb6d3a821e243fd99792211 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd979a6542ff621a179218d84d4bfd9e = $(`<div id="html_bd979a6542ff621a179218d84d4bfd9e" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 159.90</div>`)[0];
+                popup_7934d750bbb6d3a821e243fd99792211.setContent(html_bd979a6542ff621a179218d84d4bfd9e);
+            
+        
+
+        circle_marker_6cd6b18782ae877cd4f9e6d57512fa12.bindPopup(popup_7934d750bbb6d3a821e243fd99792211)
+        ;
+
+        
+    
+    
+            var circle_marker_89f996fc58da0ccaaafde50b583666ff = L.circleMarker(
+                [49.23608, -123.0454858],
+                {"bubblingMouseEvents": true, "color": "#c4e200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c4e200ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_a90803a42e557b823fe3f84d5b63d7be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85289d0a1f3ce26bf7515d97803b467d = $(`<div id="html_85289d0a1f3ce26bf7515d97803b467d" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 158.65</div>`)[0];
+                popup_a90803a42e557b823fe3f84d5b63d7be.setContent(html_85289d0a1f3ce26bf7515d97803b467d);
+            
+        
+
+        circle_marker_89f996fc58da0ccaaafde50b583666ff.bindPopup(popup_a90803a42e557b823fe3f84d5b63d7be)
+        ;
+
+        
+    
+    
+            var circle_marker_cd488d43bbc7b0b78640fa085ebfa0c8 = L.circleMarker(
+                [49.2372145, -123.0650857],
+                {"bubblingMouseEvents": true, "color": "#c8e400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c8e400ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_5999be28fe1794500ac0c294bbb38cbe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b64b0bb533f244bfa6e07f07fc34ba25 = $(`<div id="html_b64b0bb533f244bfa6e07f07fc34ba25" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 158.90</div>`)[0];
+                popup_5999be28fe1794500ac0c294bbb38cbe.setContent(html_b64b0bb533f244bfa6e07f07fc34ba25);
+            
+        
+
+        circle_marker_cd488d43bbc7b0b78640fa085ebfa0c8.bindPopup(popup_5999be28fe1794500ac0c294bbb38cbe)
+        ;
+
+        
+    
+    
+            var circle_marker_e685a35c79d6cd6cc68fcb18be835771 = L.circleMarker(
+                [49.2579053, -123.0438464],
+                {"bubblingMouseEvents": true, "color": "#65b200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65b200ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_f11f7b2348f1ddcba992cd3e76daf054 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27e7a465823e1d915017bcc789bd1bb8 = $(`<div id="html_27e7a465823e1d915017bcc789bd1bb8" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 153.15</div>`)[0];
+                popup_f11f7b2348f1ddcba992cd3e76daf054.setContent(html_27e7a465823e1d915017bcc789bd1bb8);
+            
+        
+
+        circle_marker_e685a35c79d6cd6cc68fcb18be835771.bindPopup(popup_f11f7b2348f1ddcba992cd3e76daf054)
+        ;
+
+        
+    
+    
+            var circle_marker_2f1dc643501f527acf3b4b078a917e5a = L.circleMarker(
+                [49.2106867, -123.1027436],
+                {"bubblingMouseEvents": true, "color": "#3e9f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3e9f00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_7164327331ab2c66ba2d0b82e5e56f69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf7c059b38f1fdfcc7b140586779e97f = $(`<div id="html_bf7c059b38f1fdfcc7b140586779e97f" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 150.90</div>`)[0];
+                popup_7164327331ab2c66ba2d0b82e5e56f69.setContent(html_bf7c059b38f1fdfcc7b140586779e97f);
+            
+        
+
+        circle_marker_2f1dc643501f527acf3b4b078a917e5a.bindPopup(popup_7164327331ab2c66ba2d0b82e5e56f69)
+        ;
+
+        
+    
+    
+            var circle_marker_e6878dfe6142e78327206cbf1840b2ea = L.circleMarker(
+                [49.2573819, -123.1680407],
+                {"bubblingMouseEvents": true, "color": "#c8e400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c8e400ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_8218a2ab9f26eae8629a1e979d38a250 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76d11dd962edd21d351c79a963881110 = $(`<div id="html_76d11dd962edd21d351c79a963881110" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 158.90</div>`)[0];
+                popup_8218a2ab9f26eae8629a1e979d38a250.setContent(html_76d11dd962edd21d351c79a963881110);
+            
+        
+
+        circle_marker_e6878dfe6142e78327206cbf1840b2ea.bindPopup(popup_8218a2ab9f26eae8629a1e979d38a250)
+        ;
+
+        
+    
+    
+            var circle_marker_c3d6fb318b0650278e9f4fd498e0f983 = L.circleMarker(
+                [49.2685375, -123.1453067],
+                {"bubblingMouseEvents": true, "color": "#f1f800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1f800ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_d6b48e49cc0b5299afbb80017e3ae1da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a31f2b221750ab040a9ab23dd59397b = $(`<div id="html_0a31f2b221750ab040a9ab23dd59397b" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 161.23</div>`)[0];
+                popup_d6b48e49cc0b5299afbb80017e3ae1da.setContent(html_0a31f2b221750ab040a9ab23dd59397b);
+            
+        
+
+        circle_marker_c3d6fb318b0650278e9f4fd498e0f983.bindPopup(popup_d6b48e49cc0b5299afbb80017e3ae1da)
+        ;
+
+        
+    
+    
+            var circle_marker_ec6488e1f8384993712a3ee577b5a2ab = L.circleMarker(
+                [49.210798928329, -123.09152841568],
+                {"bubblingMouseEvents": true, "color": "#75bb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#75bb00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_1c326defedbf74674e87aaf6c007e336 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d32ab90873dc8fbe8f2663d087726dd8 = $(`<div id="html_d32ab90873dc8fbe8f2663d087726dd8" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 154.10</div>`)[0];
+                popup_1c326defedbf74674e87aaf6c007e336.setContent(html_d32ab90873dc8fbe8f2663d087726dd8);
+            
+        
+
+        circle_marker_ec6488e1f8384993712a3ee577b5a2ab.bindPopup(popup_1c326defedbf74674e87aaf6c007e336)
+        ;
+
+        
+    
+    
+            var circle_marker_53bddc514aca43cfd1b426edf884e361 = L.circleMarker(
+                [49.264037962303, -123.145408630371],
+                {"bubblingMouseEvents": true, "color": "#d3e900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d3e900ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_955dca64f2653751818e64560fc28bd8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc1d26fdc54c8a64384a2679dcce7e03 = $(`<div id="html_bc1d26fdc54c8a64384a2679dcce7e03" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 159.50</div>`)[0];
+                popup_955dca64f2653751818e64560fc28bd8.setContent(html_bc1d26fdc54c8a64384a2679dcce7e03);
+            
+        
+
+        circle_marker_53bddc514aca43cfd1b426edf884e361.bindPopup(popup_955dca64f2653751818e64560fc28bd8)
+        ;
+
+        
+    
+    
+            var circle_marker_c0b7da653b3f0bc15034fbf0046e19ec = L.circleMarker(
+                [49.20806537721, -123.123285770416],
+                {"bubblingMouseEvents": true, "color": "#6eb700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6eb700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_7121f1de1399e26cc97af99ac9a691bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2639c10023ba5f79da4dd9192b79af38 = $(`<div id="html_2639c10023ba5f79da4dd9192b79af38" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 153.70</div>`)[0];
+                popup_7121f1de1399e26cc97af99ac9a691bb.setContent(html_2639c10023ba5f79da4dd9192b79af38);
+            
+        
+
+        circle_marker_c0b7da653b3f0bc15034fbf0046e19ec.bindPopup(popup_7121f1de1399e26cc97af99ac9a691bb)
+        ;
+
+        
+    
+    
+            var circle_marker_e3942570a58bb51f41907f8c1989ae1c = L.circleMarker(
+                [49.2591601, -123.0617495],
+                {"bubblingMouseEvents": true, "color": "#83c100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#83c100ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_8d74a49770a631ffb0e825e76f74e0e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c176082dd4a1f0912bac6d8dc5600e3c = $(`<div id="html_c176082dd4a1f0912bac6d8dc5600e3c" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 154.90</div>`)[0];
+                popup_8d74a49770a631ffb0e825e76f74e0e0.setContent(html_c176082dd4a1f0912bac6d8dc5600e3c);
+            
+        
+
+        circle_marker_e3942570a58bb51f41907f8c1989ae1c.bindPopup(popup_8d74a49770a631ffb0e825e76f74e0e0)
+        ;
+
+        
+    
+    
+            var circle_marker_f179ed162385267635d4572e825a7c91 = L.circleMarker(
+                [49.240045470021, -123.076765537262],
+                {"bubblingMouseEvents": true, "color": "#b3d900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b3d900ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_c89dde0bb0b58994c852fc47e4604e94 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1091889709ad9d2c9f0c92b7d9df382f = $(`<div id="html_1091889709ad9d2c9f0c92b7d9df382f" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 157.65</div>`)[0];
+                popup_c89dde0bb0b58994c852fc47e4604e94.setContent(html_1091889709ad9d2c9f0c92b7d9df382f);
+            
+        
+
+        circle_marker_f179ed162385267635d4572e825a7c91.bindPopup(popup_c89dde0bb0b58994c852fc47e4604e94)
+        ;
+
+        
+    
+    
+            var circle_marker_9716304f8041ec1bdf6313a596539dd9 = L.circleMarker(
+                [49.224996944057, -123.065521717072],
+                {"bubblingMouseEvents": true, "color": "#bfe000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bfe000ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_8caf045326e699a93a44f68090089eb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d4e487f3bb79e6f462dc92d1e813b72 = $(`<div id="html_0d4e487f3bb79e6f462dc92d1e813b72" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 158.40</div>`)[0];
+                popup_8caf045326e699a93a44f68090089eb0.setContent(html_0d4e487f3bb79e6f462dc92d1e813b72);
+            
+        
+
+        circle_marker_9716304f8041ec1bdf6313a596539dd9.bindPopup(popup_8caf045326e699a93a44f68090089eb0)
+        ;
+
+        
+    
+    
+            var circle_marker_bdc741911ce0ac18dcebf08099a4842a = L.circleMarker(
+                [49.262693682723, -123.078117370605],
+                {"bubblingMouseEvents": true, "color": "#5cae00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5cae00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_ef0d7205dad987ecf10dac97f09300e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f97c282dad2d2863c57913a080434145 = $(`<div id="html_f97c282dad2d2863c57913a080434145" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 152.65</div>`)[0];
+                popup_ef0d7205dad987ecf10dac97f09300e7.setContent(html_f97c282dad2d2863c57913a080434145);
+            
+        
+
+        circle_marker_bdc741911ce0ac18dcebf08099a4842a.bindPopup(popup_ef0d7205dad987ecf10dac97f09300e7)
+        ;
+
+        
+    
+    
+            var circle_marker_010ab982f30940d9b8bbb99a6d742c64 = L.circleMarker(
+                [49.263883932125, -123.168604373932],
+                {"bubblingMouseEvents": true, "color": "#b3da00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b3da00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_e2e7fb662a1f5e3fe4f63fff5c0d8c51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3d9149fadbc5c1ea8611fdcb33a39bc = $(`<div id="html_d3d9149fadbc5c1ea8611fdcb33a39bc" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 157.70</div>`)[0];
+                popup_e2e7fb662a1f5e3fe4f63fff5c0d8c51.setContent(html_d3d9149fadbc5c1ea8611fdcb33a39bc);
+            
+        
+
+        circle_marker_010ab982f30940d9b8bbb99a6d742c64.bindPopup(popup_e2e7fb662a1f5e3fe4f63fff5c0d8c51)
+        ;
+
+        
+    
+    
+            var circle_marker_ef12e0c747b51d59131dd4685cf367d1 = L.circleMarker(
+                [49.270429790667, -123.145886063576],
+                {"bubblingMouseEvents": true, "color": "#ff4100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4100ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_49ba5b0fa63cdab25fc214907927cbb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3d382c01341489403395191a5642373 = $(`<div id="html_a3d382c01341489403395191a5642373" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 173.10</div>`)[0];
+                popup_49ba5b0fa63cdab25fc214907927cbb8.setContent(html_a3d382c01341489403395191a5642373);
+            
+        
+
+        circle_marker_ef12e0c747b51d59131dd4685cf367d1.bindPopup(popup_49ba5b0fa63cdab25fc214907927cbb8)
+        ;
+
+        
+    
+    
+            var circle_marker_7c947ef6fc6c493bbf084881efa773c0 = L.circleMarker(
+                [49.234217162181, -123.127684593201],
+                {"bubblingMouseEvents": true, "color": "#339a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#339a00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_3f544b5fb15fd5632e2a096334fc99d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5306125025b7791e02f303428f31cc8d = $(`<div id="html_5306125025b7791e02f303428f31cc8d" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 150.30</div>`)[0];
+                popup_3f544b5fb15fd5632e2a096334fc99d2.setContent(html_5306125025b7791e02f303428f31cc8d);
+            
+        
+
+        circle_marker_7c947ef6fc6c493bbf084881efa773c0.bindPopup(popup_3f544b5fb15fd5632e2a096334fc99d2)
+        ;
+
+        
+    
+    
+            var circle_marker_438b166215578852d0623951af95c1de = L.circleMarker(
+                [49.267881559667, -123.14772605896],
+                {"bubblingMouseEvents": true, "color": "#a6d300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a6d300ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_113188f5a75338f1e60e8c3e3b96a034 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f98989606a1e708d2fbafabbce4e3ba = $(`<div id="html_7f98989606a1e708d2fbafabbce4e3ba" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 156.90</div>`)[0];
+                popup_113188f5a75338f1e60e8c3e3b96a034.setContent(html_7f98989606a1e708d2fbafabbce4e3ba);
+            
+        
+
+        circle_marker_438b166215578852d0623951af95c1de.bindPopup(popup_113188f5a75338f1e60e8c3e3b96a034)
+        ;
+
+        
+    
+    
+            var circle_marker_39beac8857a3f85494b646385e440ae6 = L.circleMarker(
+                [49.212495055855, -123.14013004303],
+                {"bubblingMouseEvents": true, "color": "#d9ed00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d9ed00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_90d3ffc1e3f598dfd7150836a2f9d6aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e0d9fa762e023ab0b9c536f6cb353ab = $(`<div id="html_2e0d9fa762e023ab0b9c536f6cb353ab" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 159.90</div>`)[0];
+                popup_90d3ffc1e3f598dfd7150836a2f9d6aa.setContent(html_2e0d9fa762e023ab0b9c536f6cb353ab);
+            
+        
+
+        circle_marker_39beac8857a3f85494b646385e440ae6.bindPopup(popup_90d3ffc1e3f598dfd7150836a2f9d6aa)
+        ;
+
+        
+    
+    
+            var circle_marker_86c913f7726af49e6ef31c4af0a5cb49 = L.circleMarker(
+                [49.264135981257, -123.153326511383],
+                {"bubblingMouseEvents": true, "color": "#ffcf00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffcf00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_08a6ffdaf1684f32b56547337b0ea7e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89899497830a54b1dfb58695b218db50 = $(`<div id="html_89899497830a54b1dfb58695b218db50" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 164.90</div>`)[0];
+                popup_08a6ffdaf1684f32b56547337b0ea7e5.setContent(html_89899497830a54b1dfb58695b218db50);
+            
+        
+
+        circle_marker_86c913f7726af49e6ef31c4af0a5cb49.bindPopup(popup_08a6ffdaf1684f32b56547337b0ea7e5)
+        ;
+
+        
+    
+    
+            var circle_marker_0da0a22f8c28eb97c764cf6624327f46 = L.circleMarker(
+                [49.263533861752, -123.203430175781],
+                {"bubblingMouseEvents": true, "color": "#ffeb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffeb00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_bd2d90c2619eb4b38b359e1c846eacba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cce1b15c9d0b4d95e40e8d8b8528c10 = $(`<div id="html_1cce1b15c9d0b4d95e40e8d8b8528c10" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 163.30</div>`)[0];
+                popup_bd2d90c2619eb4b38b359e1c846eacba.setContent(html_1cce1b15c9d0b4d95e40e8d8b8528c10);
+            
+        
+
+        circle_marker_0da0a22f8c28eb97c764cf6624327f46.bindPopup(popup_bd2d90c2619eb4b38b359e1c846eacba)
+        ;
+
+        
+    
+    
+            var circle_marker_ef16fb036b7097164b22d7305e186e44 = L.circleMarker(
+                [49.207280329467, -123.140280246735],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_25f01b0f390b600f17047666374dc113 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b5f5ef28917fcef89da9155b0604597 = $(`<div id="html_0b5f5ef28917fcef89da9155b0604597" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 176.90</div>`)[0];
+                popup_25f01b0f390b600f17047666374dc113.setContent(html_0b5f5ef28917fcef89da9155b0604597);
+            
+        
+
+        circle_marker_ef16fb036b7097164b22d7305e186e44.bindPopup(popup_25f01b0f390b600f17047666374dc113)
+        ;
+
+        
+    
+    
+            var circle_marker_f34d4a3441be6d107e46023256ed3a91 = L.circleMarker(
+                [49.232593005895, -123.07728856802],
+                {"bubblingMouseEvents": true, "color": "#a6d300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a6d300ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_f161bc10096a4f9f9c0e411264a60809 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eade0e1a90137f83f2f809ed8fb79f71 = $(`<div id="html_eade0e1a90137f83f2f809ed8fb79f71" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 156.90</div>`)[0];
+                popup_f161bc10096a4f9f9c0e411264a60809.setContent(html_eade0e1a90137f83f2f809ed8fb79f71);
+            
+        
+
+        circle_marker_f34d4a3441be6d107e46023256ed3a91.bindPopup(popup_f161bc10096a4f9f9c0e411264a60809)
+        ;
+
+        
+    
+    
+            var circle_marker_cfbd1ff3d8cb5eb3cf8ebfbf59233efd = L.circleMarker(
+                [49.192919, -123.166797],
+                {"bubblingMouseEvents": true, "color": "#fcfe00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcfe00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_734930d496f5a26f071575b37fcb6ef8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_039a93f1de2f9b1d963827bf1231fc3b = $(`<div id="html_039a93f1de2f9b1d963827bf1231fc3b" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 161.90</div>`)[0];
+                popup_734930d496f5a26f071575b37fcb6ef8.setContent(html_039a93f1de2f9b1d963827bf1231fc3b);
+            
+        
+
+        circle_marker_cfbd1ff3d8cb5eb3cf8ebfbf59233efd.bindPopup(popup_734930d496f5a26f071575b37fcb6ef8)
+        ;
+
+        
+    
+    
+            var circle_marker_6f6093ba32b32a2ebe6f8e1ff5e1811f = L.circleMarker(
+                [49.2604441, -123.1005869],
+                {"bubblingMouseEvents": true, "color": "#7abd00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7abd00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_0d2853b402755fc78a3159818a97b151 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f7d984ee3d4aaf12f2bc893ff4d0c1f = $(`<div id="html_2f7d984ee3d4aaf12f2bc893ff4d0c1f" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 154.40</div>`)[0];
+                popup_0d2853b402755fc78a3159818a97b151.setContent(html_2f7d984ee3d4aaf12f2bc893ff4d0c1f);
+            
+        
+
+        circle_marker_6f6093ba32b32a2ebe6f8e1ff5e1811f.bindPopup(popup_0d2853b402755fc78a3159818a97b151)
+        ;
+
+        
+    
+    
+            var circle_marker_33a1cab19ab98250b0a0684008af813b = L.circleMarker(
+                [49.249188, -123.127767],
+                {"bubblingMouseEvents": true, "color": "#7cbe00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7cbe00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_0d3501e6879513ee8f53464620aecaa4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a67be40bda2e59a811174497ccccbe0 = $(`<div id="html_8a67be40bda2e59a811174497ccccbe0" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 154.50</div>`)[0];
+                popup_0d3501e6879513ee8f53464620aecaa4.setContent(html_8a67be40bda2e59a811174497ccccbe0);
+            
+        
+
+        circle_marker_33a1cab19ab98250b0a0684008af813b.bindPopup(popup_0d3501e6879513ee8f53464620aecaa4)
+        ;
+
+        
+    
+    
+            var circle_marker_757814c99ac6771623424863ae31ae87 = L.circleMarker(
+                [49.169873456637, -123.091178619746],
+                {"bubblingMouseEvents": true, "color": "#0d8700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0d8700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_828330874ca631ad5d3c2fc31c7d3a30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f150c70da3d8df2b16caa8fc4906d348 = $(`<div id="html_f150c70da3d8df2b16caa8fc4906d348" style="width: 100.0%; height: 100.0%;">Station: Super Save Gas<br>Regular Price: 148.10</div>`)[0];
+                popup_828330874ca631ad5d3c2fc31c7d3a30.setContent(html_f150c70da3d8df2b16caa8fc4906d348);
+            
+        
+
+        circle_marker_757814c99ac6771623424863ae31ae87.bindPopup(popup_828330874ca631ad5d3c2fc31c7d3a30)
+        ;
+
+        
+    
+    
+            var circle_marker_92833e23dd483c4acd07c183dd630d2e = L.circleMarker(
+                [49.162989071149, -123.134229183197],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_c8ebcb259b9d8b00697b7132d1e526e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_755fcb7266a2e837a99d9f16770aa1b6 = $(`<div id="html_755fcb7266a2e837a99d9f16770aa1b6" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 147.30</div>`)[0];
+                popup_c8ebcb259b9d8b00697b7132d1e526e5.setContent(html_755fcb7266a2e837a99d9f16770aa1b6);
+            
+        
+
+        circle_marker_92833e23dd483c4acd07c183dd630d2e.bindPopup(popup_c8ebcb259b9d8b00697b7132d1e526e5)
+        ;
+
+        
+    
+    
+            var circle_marker_10276c846c4438a9223b82f6f44967a9 = L.circleMarker(
+                [49.1558882, -123.1369625],
+                {"bubblingMouseEvents": true, "color": "#379c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#379c00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_f615e4a5ef58cc7b98430a73ff7e9e25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19c0f7463f8dc0b3596d1af75908320a = $(`<div id="html_19c0f7463f8dc0b3596d1af75908320a" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 150.50</div>`)[0];
+                popup_f615e4a5ef58cc7b98430a73ff7e9e25.setContent(html_19c0f7463f8dc0b3596d1af75908320a);
+            
+        
+
+        circle_marker_10276c846c4438a9223b82f6f44967a9.bindPopup(popup_f615e4a5ef58cc7b98430a73ff7e9e25)
+        ;
+
+        
+    
+    
+            var circle_marker_bb995d4448c009b092f3ed8d391ac977 = L.circleMarker(
+                [49.173339635958, -123.124954104424],
+                {"bubblingMouseEvents": true, "color": "#309800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#309800ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_4ea5bc98c70652b22d54ce6e539b06d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a057846bf9ba362d2dbe607848cbd934 = $(`<div id="html_a057846bf9ba362d2dbe607848cbd934" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 150.10</div>`)[0];
+                popup_4ea5bc98c70652b22d54ce6e539b06d3.setContent(html_a057846bf9ba362d2dbe607848cbd934);
+            
+        
+
+        circle_marker_bb995d4448c009b092f3ed8d391ac977.bindPopup(popup_4ea5bc98c70652b22d54ce6e539b06d3)
+        ;
+
+        
+    
+    
+            var circle_marker_a728a4ee830b0ab24297f1bbdfd9ff8d = L.circleMarker(
+                [49.155888686563, -123.181414604187],
+                {"bubblingMouseEvents": true, "color": "#6db700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6db700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_867bd7396a3867b5f64867dcae89d8ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25bf4d2d9bbbcbb5d075153b615419ce = $(`<div id="html_25bf4d2d9bbbcbb5d075153b615419ce" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 153.65</div>`)[0];
+                popup_867bd7396a3867b5f64867dcae89d8ee.setContent(html_25bf4d2d9bbbcbb5d075153b615419ce);
+            
+        
+
+        circle_marker_a728a4ee830b0ab24297f1bbdfd9ff8d.bindPopup(popup_867bd7396a3867b5f64867dcae89d8ee)
+        ;
+
+        
+    
+    
+            var circle_marker_9eb094bd7bb9d360c43a286864a37868 = L.circleMarker(
+                [49.1843249, -123.1236078],
+                {"bubblingMouseEvents": true, "color": "#379c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#379c00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_ac11321d9f77098ae6d8d3b8f34af848 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d84200d1a5103a1ef7fe6455f748caa2 = $(`<div id="html_d84200d1a5103a1ef7fe6455f748caa2" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 150.50</div>`)[0];
+                popup_ac11321d9f77098ae6d8d3b8f34af848.setContent(html_d84200d1a5103a1ef7fe6455f748caa2);
+            
+        
+
+        circle_marker_9eb094bd7bb9d360c43a286864a37868.bindPopup(popup_ac11321d9f77098ae6d8d3b8f34af848)
+        ;
+
+        
+    
+    
+            var circle_marker_8d0a9687821c980169b55b7ed0585b42 = L.circleMarker(
+                [49.1698419, -123.159282],
+                {"bubblingMouseEvents": true, "color": "#319900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#319900ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_d004c75cfd74594898332ce69968b3a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_877d6e834d4223e93d8383af12a66d64 = $(`<div id="html_877d6e834d4223e93d8383af12a66d64" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 150.15</div>`)[0];
+                popup_d004c75cfd74594898332ce69968b3a8.setContent(html_877d6e834d4223e93d8383af12a66d64);
+            
+        
+
+        circle_marker_8d0a9687821c980169b55b7ed0585b42.bindPopup(popup_d004c75cfd74594898332ce69968b3a8)
+        ;
+
+        
+    
+    
+            var circle_marker_a878d637dc3a685baeba8724ec2f1498 = L.circleMarker(
+                [49.18409178594, -123.136823830688],
+                {"bubblingMouseEvents": true, "color": "#53a900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#53a900ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_a7b18d1d7e5c35484f9aef2ec7b7adf7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3a02b6fc1fde58479507fcc2179b05e = $(`<div id="html_b3a02b6fc1fde58479507fcc2179b05e" style="width: 100.0%; height: 100.0%;">Station: Domo<br>Regular Price: 152.10</div>`)[0];
+                popup_a7b18d1d7e5c35484f9aef2ec7b7adf7.setContent(html_b3a02b6fc1fde58479507fcc2179b05e);
+            
+        
+
+        circle_marker_a878d637dc3a685baeba8724ec2f1498.bindPopup(popup_a7b18d1d7e5c35484f9aef2ec7b7adf7)
+        ;
+
+        
+    
+    
+            var circle_marker_dbdf6e94f42ca3db29d2e1dcbe1cf941 = L.circleMarker(
+                [49.179182137142, -123.137152791023],
+                {"bubblingMouseEvents": true, "color": "#7cbe00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7cbe00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_e0fd1c67b794caeb7142143f10ef9fc8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_085e3e5c984844334679d306526639c5 = $(`<div id="html_085e3e5c984844334679d306526639c5" style="width: 100.0%; height: 100.0%;">Station: Mobil<br>Regular Price: 154.50</div>`)[0];
+                popup_e0fd1c67b794caeb7142143f10ef9fc8.setContent(html_085e3e5c984844334679d306526639c5);
+            
+        
+
+        circle_marker_dbdf6e94f42ca3db29d2e1dcbe1cf941.bindPopup(popup_e0fd1c67b794caeb7142143f10ef9fc8)
+        ;
+
+        
+    
+    
+            var circle_marker_4007ea9ea21b8d6d74d678313ad3e960 = L.circleMarker(
+                [49.2397388, -123.065748],
+                {"bubblingMouseEvents": true, "color": "#d8ec00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d8ec00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_172bbab72ac995585f730c010d28fa4e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79ac94b670d48a4db223ecdea81f9256 = $(`<div id="html_79ac94b670d48a4db223ecdea81f9256" style="width: 100.0%; height: 100.0%;">Station: Husky<br>Regular Price: 159.82</div>`)[0];
+                popup_172bbab72ac995585f730c010d28fa4e.setContent(html_79ac94b670d48a4db223ecdea81f9256);
+            
+        
+
+        circle_marker_4007ea9ea21b8d6d74d678313ad3e960.bindPopup(popup_172bbab72ac995585f730c010d28fa4e)
+        ;
+
+        
+    
+    
+            var circle_marker_890ffca1eb9b5254e14223f3c837162e = L.circleMarker(
+                [49.210245, -123.099328],
+                {"bubblingMouseEvents": true, "color": "#3e9f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3e9f00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_5eac9e23fff20103bc5cb7152f3dc166 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49106232a54f37ab90db4d357c8c5f72 = $(`<div id="html_49106232a54f37ab90db4d357c8c5f72" style="width: 100.0%; height: 100.0%;">Station: Mobil<br>Regular Price: 150.90</div>`)[0];
+                popup_5eac9e23fff20103bc5cb7152f3dc166.setContent(html_49106232a54f37ab90db4d357c8c5f72);
+            
+        
+
+        circle_marker_890ffca1eb9b5254e14223f3c837162e.bindPopup(popup_5eac9e23fff20103bc5cb7152f3dc166)
+        ;
+
+        
+    
+    
+            var circle_marker_97371af40cb726ed036050b9aa4ed346 = L.circleMarker(
+                [49.192001, -123.124004],
+                {"bubblingMouseEvents": true, "color": "#67b400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67b400ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_5fed674e879849cdde22b772451ff639 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f7eba64900de2e9cac6a44255787ba9 = $(`<div id="html_5f7eba64900de2e9cac6a44255787ba9" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 153.30</div>`)[0];
+                popup_5fed674e879849cdde22b772451ff639.setContent(html_5f7eba64900de2e9cac6a44255787ba9);
+            
+        
+
+        circle_marker_97371af40cb726ed036050b9aa4ed346.bindPopup(popup_5fed674e879849cdde22b772451ff639)
+        ;
+
+        
+    
+    
+            var circle_marker_21c9549602b43a9a89e92c93d9c9050b = L.circleMarker(
+                [49.21081995506, -123.090755939484],
+                {"bubblingMouseEvents": true, "color": "#6eb700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6eb700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_34738b029625da83f5ee38304be46b45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00b0d81c03a6ce0c8b45fdd83b18ffe2 = $(`<div id="html_00b0d81c03a6ce0c8b45fdd83b18ffe2" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 153.70</div>`)[0];
+                popup_34738b029625da83f5ee38304be46b45.setContent(html_00b0d81c03a6ce0c8b45fdd83b18ffe2);
+            
+        
+
+        circle_marker_21c9549602b43a9a89e92c93d9c9050b.bindPopup(popup_34738b029625da83f5ee38304be46b45)
+        ;
+
+        
+    
+    
+            var circle_marker_5093b09bda59db99e54604324113c51d = L.circleMarker(
+                [49.169856952787, -123.123961687088],
+                {"bubblingMouseEvents": true, "color": "#1b8e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b8e00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_6bea9dbf9c1276e648cbbf29da12fed7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2af9bf8abd10972e1d5312980b940577 = $(`<div id="html_2af9bf8abd10972e1d5312980b940577" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Regular Price: 148.90</div>`)[0];
+                popup_6bea9dbf9c1276e648cbbf29da12fed7.setContent(html_2af9bf8abd10972e1d5312980b940577);
+            
+        
+
+        circle_marker_5093b09bda59db99e54604324113c51d.bindPopup(popup_6bea9dbf9c1276e648cbbf29da12fed7)
+        ;
+
+        
+    
+    
+            var circle_marker_c2f1e8eb4b4795312b12f57813ac5b3c = L.circleMarker(
+                [49.218250007984, -123.076816499233],
+                {"bubblingMouseEvents": true, "color": "#ddee00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ddee00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_acfb0ec97cd790251310535362eaba52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_109d85641ced143c7449d8291628cc57 = $(`<div id="html_109d85641ced143c7449d8291628cc57" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 160.10</div>`)[0];
+                popup_acfb0ec97cd790251310535362eaba52.setContent(html_109d85641ced143c7449d8291628cc57);
+            
+        
+
+        circle_marker_c2f1e8eb4b4795312b12f57813ac5b3c.bindPopup(popup_acfb0ec97cd790251310535362eaba52)
+        ;
+
+        
+    
+    
+            var circle_marker_bf7ea876bd1cdc5a01b28cf963d87e0a = L.circleMarker(
+                [49.20476, -123.02398],
+                {"bubblingMouseEvents": true, "color": "#c1e000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c1e000ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_219e9540f464511bf04a8da82817f3cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb900aafeb0994c806a9d9489203ab36 = $(`<div id="html_eb900aafeb0994c806a9d9489203ab36" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 158.50</div>`)[0];
+                popup_219e9540f464511bf04a8da82817f3cb.setContent(html_eb900aafeb0994c806a9d9489203ab36);
+            
+        
+
+        circle_marker_bf7ea876bd1cdc5a01b28cf963d87e0a.bindPopup(popup_219e9540f464511bf04a8da82817f3cb)
+        ;
+
+        
+    
+    
+            var circle_marker_0fd028ca1dd1261dd16f2b3b364cfa3a = L.circleMarker(
+                [49.2220242, -123.0654247],
+                {"bubblingMouseEvents": true, "color": "#bbdd00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bbdd00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_18f8c4ecd4e61838faab2b0921be8400 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_397fd3dc476bea4cd81013c3215e3165 = $(`<div id="html_397fd3dc476bea4cd81013c3215e3165" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 158.15</div>`)[0];
+                popup_18f8c4ecd4e61838faab2b0921be8400.setContent(html_397fd3dc476bea4cd81013c3215e3165);
+            
+        
+
+        circle_marker_0fd028ca1dd1261dd16f2b3b364cfa3a.bindPopup(popup_18f8c4ecd4e61838faab2b0921be8400)
+        ;
+
+        
+    
+    
+            var circle_marker_72f3c39ef65bda59f7490769517c6e24 = L.circleMarker(
+                [49.242132845692, -123.058204650879],
+                {"bubblingMouseEvents": true, "color": "#4ba500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ba500ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_c47d93b21908d8016a965434f4596e34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6305e8a402b8542f6bd8953e0ceed5f = $(`<div id="html_d6305e8a402b8542f6bd8953e0ceed5f" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 151.65</div>`)[0];
+                popup_c47d93b21908d8016a965434f4596e34.setContent(html_d6305e8a402b8542f6bd8953e0ceed5f);
+            
+        
+
+        circle_marker_72f3c39ef65bda59f7490769517c6e24.bindPopup(popup_c47d93b21908d8016a965434f4596e34)
+        ;
+
+        
+    
+    
+            var circle_marker_121f89682933a86fe5274bb760cb9994 = L.circleMarker(
+                [49.259758544957, -123.077272474766],
+                {"bubblingMouseEvents": true, "color": "#068300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#068300ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_b2384754022baa6a7da9f6b6738cd36c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_272c9d73df2d898df711e0414c98e6ff = $(`<div id="html_272c9d73df2d898df711e0414c98e6ff" style="width: 100.0%; height: 100.0%;">Station: Super Save Gas<br>Regular Price: 147.65</div>`)[0];
+                popup_b2384754022baa6a7da9f6b6738cd36c.setContent(html_272c9d73df2d898df711e0414c98e6ff);
+            
+        
+
+        circle_marker_121f89682933a86fe5274bb760cb9994.bindPopup(popup_b2384754022baa6a7da9f6b6738cd36c)
+        ;
+
+        
+    
+    
+            var circle_marker_4d1f79324cdec3ed54feba002f8515b3 = L.circleMarker(
+                [49.2054215, -123.1401677],
+                {"bubblingMouseEvents": true, "color": "#359b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#359b00ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_a318bc0d56e0f3c1b342418cbff13aa7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83ac741257d3b85f8cc1ca08fc995c74 = $(`<div id="html_83ac741257d3b85f8cc1ca08fc995c74" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Regular Price: 150.40</div>`)[0];
+                popup_a318bc0d56e0f3c1b342418cbff13aa7.setContent(html_83ac741257d3b85f8cc1ca08fc995c74);
+            
+        
+
+        circle_marker_4d1f79324cdec3ed54feba002f8515b3.bindPopup(popup_a318bc0d56e0f3c1b342418cbff13aa7)
+        ;
+
+        
+    
+    
+            var circle_marker_b3187c5e24d10c08fe34df7e0cc3c102 = L.circleMarker(
+                [49.133556536531, -123.092424273491],
+                {"bubblingMouseEvents": true, "color": "#0d8700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0d8700ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_9cd5806fc2a8de44de8c44ae961bd935 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_23e372fa4aa9c813bb7e35724e08520b = $(`<div id="html_23e372fa4aa9c813bb7e35724e08520b" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Regular Price: 148.10</div>`)[0];
+                popup_9cd5806fc2a8de44de8c44ae961bd935.setContent(html_23e372fa4aa9c813bb7e35724e08520b);
+            
+        
+
+        circle_marker_b3187c5e24d10c08fe34df7e0cc3c102.bindPopup(popup_9cd5806fc2a8de44de8c44ae961bd935)
+        ;
+
+        
+    
+    
+            var circle_marker_6cf0aad3d6cf0b2408b5e97711e037d3 = L.circleMarker(
+                [49.234385296079, -123.184762001038],
+                {"bubblingMouseEvents": true, "color": "#ebf500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ebf500ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6777ec37e64baea428b0b135a74b8c9c);
+        
+    
+        var popup_140c83408d5deade3e4c698159801bbe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dee64180724b763498851f12603f99f8 = $(`<div id="html_dee64180724b763498851f12603f99f8" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Regular Price: 160.90</div>`)[0];
+                popup_140c83408d5deade3e4c698159801bbe.setContent(html_dee64180724b763498851f12603f99f8);
+            
+        
+
+        circle_marker_6cf0aad3d6cf0b2408b5e97711e037d3.bindPopup(popup_140c83408d5deade3e4c698159801bbe)
+        ;
+
+        
+    
+    
+            feature_group_6777ec37e64baea428b0b135a74b8c9c.addTo(map_2f4647d6cb1bb63e2f14e9e03806332a);
+        
+    
+    var color_map_9d2bd19cfe1f87afed7ae01444c649b0 = {};
+
+    
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.color = d3.scale.threshold()
+              .domain([147.3, 147.35931863727455, 147.4186372745491, 147.47795591182367, 147.5372745490982, 147.59659318637276, 147.6559118236473, 147.71523046092184, 147.77454909819642, 147.83386773547096, 147.8931863727455, 147.95250501002005, 148.0118236472946, 148.07114228456916, 148.1304609218437, 148.18977955911825, 148.2490981963928, 148.30841683366734, 148.3677354709419, 148.42705410821645, 148.486372745491, 148.54569138276554, 148.60501002004008, 148.66432865731463, 148.7236472945892, 148.78296593186374, 148.8422845691383, 148.90160320641283, 148.96092184368737, 149.02024048096195, 149.0795591182365, 149.13887775551103, 149.19819639278558, 149.25751503006012, 149.3168336673347, 149.37615230460923, 149.43547094188378, 149.49478957915832, 149.55410821643287, 149.61342685370744, 149.67274549098198, 149.73206412825652, 149.79138276553107, 149.8507014028056, 149.91002004008018, 149.96933867735473, 150.02865731462927, 150.08797595190381, 150.14729458917836, 150.20661322645293, 150.26593186372747, 150.32525050100202, 150.38456913827656, 150.4438877755511, 150.50320641282565, 150.56252505010022, 150.62184368737476, 150.6811623246493, 150.74048096192385, 150.7997995991984, 150.85911823647297, 150.9184368737475, 150.97775551102205, 151.0370741482966, 151.09639278557114, 151.1557114228457, 151.21503006012026, 151.2743486973948, 151.33366733466934, 151.3929859719439, 151.45230460921846, 151.511623246493, 151.57094188376755, 151.6302605210421, 151.68957915831663, 151.7488977955912, 151.80821643286575, 151.8675350701403, 151.92685370741484, 151.98617234468938, 152.04549098196395, 152.1048096192385, 152.16412825651304, 152.22344689378758, 152.28276553106213, 152.3420841683367, 152.40140280561124, 152.46072144288578, 152.52004008016033, 152.57935871743487, 152.63867735470944, 152.697995991984, 152.75731462925853, 152.81663326653307, 152.87595190380762, 152.93527054108216, 152.99458917835673, 153.05390781563128, 153.11322645290582, 153.17254509018036, 153.2318637274549, 153.29118236472948, 153.35050100200402, 153.40981963927857, 153.4691382765531, 153.52845691382765, 153.58777555110223, 153.64709418837677, 153.7064128256513, 153.76573146292586, 153.8250501002004, 153.88436873747497, 153.94368737474952, 154.00300601202406, 154.0623246492986, 154.12164328657315, 154.18096192384772, 154.24028056112226, 154.2995991983968, 154.35891783567135, 154.4182364729459, 154.47755511022046, 154.536873747495, 154.59619238476955, 154.6555110220441, 154.71482965931864, 154.77414829659318, 154.83346693386775, 154.8927855711423, 154.95210420841684, 155.01142284569138, 155.07074148296593, 155.1300601202405, 155.18937875751504, 155.2486973947896, 155.30801603206413, 155.36733466933867, 155.42665330661325, 155.4859719438878, 155.54529058116233, 155.60460921843688, 155.66392785571142, 155.723246492986, 155.78256513026054, 155.84188376753508, 155.90120240480962, 155.96052104208417, 156.01983967935874, 156.07915831663328, 156.13847695390783, 156.19779559118237, 156.2571142284569, 156.31643286573149, 156.37575150300603, 156.43507014028057, 156.49438877755512, 156.55370741482966, 156.6130260521042, 156.67234468937878, 156.73166332665332, 156.79098196392786, 156.8503006012024, 156.90961923847698, 156.96893787575152, 157.02825651302607, 157.0875751503006, 157.14689378757515, 157.2062124248497, 157.26553106212427, 157.3248496993988, 157.38416833667335, 157.4434869739479, 157.50280561122244, 157.562124248497, 157.62144288577156, 157.6807615230461, 157.74008016032064, 157.7993987975952, 157.85871743486976, 157.9180360721443, 157.97735470941885, 158.0366733466934, 158.09599198396793, 158.1553106212425, 158.21462925851705, 158.2739478957916, 158.33326653306614, 158.39258517034068, 158.45190380761525, 158.5112224448898, 158.57054108216434, 158.62985971943888, 158.68917835671343, 158.748496993988, 158.80781563126254, 158.8671342685371, 158.92645290581163, 158.98577154308617, 159.04509018036072, 159.1044088176353, 159.16372745490983, 159.22304609218438, 159.28236472945892, 159.3416833667335, 159.40100200400803, 159.46032064128258, 159.51963927855712, 159.57895791583167, 159.6382765531062, 159.69759519038078, 159.75691382765532, 159.81623246492987, 159.8755511022044, 159.93486973947896, 159.99418837675353, 160.05350701402807, 160.11282565130261, 160.17214428857716, 160.2314629258517, 160.29078156312627, 160.35010020040082, 160.40941883767536, 160.4687374749499, 160.52805611222445, 160.58737474949902, 160.64669338677356, 160.7060120240481, 160.76533066132265, 160.8246492985972, 160.88396793587174, 160.9432865731463, 161.00260521042085, 161.0619238476954, 161.12124248496994, 161.1805611222445, 161.23987975951906, 161.2991983967936, 161.35851703406814, 161.4178356713427, 161.47715430861723, 161.5364729458918, 161.59579158316635, 161.6551102204409, 161.71442885771543, 161.77374749498998, 161.83306613226455, 161.8923847695391, 161.95170340681364, 162.01102204408818, 162.07034068136272, 162.1296593186373, 162.18897795591184, 162.24829659318638, 162.30761523046093, 162.36693386773547, 162.42625250501004, 162.48557114228458, 162.54488977955913, 162.60420841683367, 162.66352705410821, 162.72284569138276, 162.78216432865733, 162.84148296593187, 162.90080160320642, 162.96012024048096, 163.01943887775553, 163.07875751503008, 163.13807615230462, 163.19739478957916, 163.2567134268537, 163.31603206412825, 163.37535070140282, 163.43466933867737, 163.4939879759519, 163.55330661322645, 163.61262525050103, 163.67194388777557, 163.7312625250501, 163.79058116232466, 163.8498997995992, 163.90921843687374, 163.96853707414832, 164.02785571142286, 164.0871743486974, 164.14649298597195, 164.2058116232465, 164.26513026052106, 164.3244488977956, 164.38376753507015, 164.4430861723447, 164.50240480961924, 164.5617234468938, 164.62104208416835, 164.6803607214429, 164.73967935871744, 164.79899799599198, 164.85831663326655, 164.9176352705411, 164.97695390781564, 165.03627254509018, 165.09559118236473, 165.15490981963927, 165.21422845691384, 165.2735470941884, 165.33286573146293, 165.39218436873747, 165.45150300601205, 165.5108216432866, 165.57014028056113, 165.62945891783568, 165.68877755511022, 165.74809619238476, 165.80741482965934, 165.86673346693388, 165.92605210420842, 165.98537074148297, 166.04468937875754, 166.10400801603208, 166.16332665330663, 166.22264529058117, 166.2819639278557, 166.34128256513026, 166.40060120240483, 166.45991983967937, 166.51923847695392, 166.57855711422846, 166.637875751503, 166.69719438877758, 166.75651302605212, 166.81583166332666, 166.8751503006012, 166.93446893787575, 166.99378757515032, 167.05310621242486, 167.1124248496994, 167.17174348697395, 167.2310621242485, 167.29038076152307, 167.3496993987976, 167.40901803607215, 167.4683366733467, 167.52765531062124, 167.58697394789579, 167.64629258517036, 167.7056112224449, 167.76492985971944, 167.824248496994, 167.88356713426856, 167.9428857715431, 168.00220440881765, 168.0615230460922, 168.12084168336673, 168.18016032064128, 168.23947895791585, 168.2987975951904, 168.35811623246494, 168.41743486973948, 168.47675350701402, 168.5360721442886, 168.59539078156314, 168.65470941883768, 168.71402805611223, 168.77334669338677, 168.8326653306613, 168.8919839679359, 168.95130260521043, 169.01062124248497, 169.06993987975952, 169.1292585170341, 169.18857715430863, 169.24789579158318, 169.30721442885772, 169.36653306613226, 169.4258517034068, 169.48517034068138, 169.54448897795592, 169.60380761523047, 169.663126252505, 169.72244488977958, 169.78176352705412, 169.84108216432867, 169.9004008016032, 169.95971943887776, 170.0190380761523, 170.07835671342687, 170.13767535070141, 170.19699398797596, 170.2563126252505, 170.31563126252505, 170.37494989979962, 170.43426853707416, 170.4935871743487, 170.55290581162325, 170.6122244488978, 170.67154308617236, 170.7308617234469, 170.79018036072145, 170.849498997996, 170.90881763527054, 170.9681362725451, 171.02745490981965, 171.0867735470942, 171.14609218436874, 171.20541082164328, 171.26472945891783, 171.3240480961924, 171.38336673346694, 171.4426853707415, 171.50200400801603, 171.5613226452906, 171.62064128256515, 171.6799599198397, 171.73927855711423, 171.79859719438878, 171.85791583166332, 171.9172344689379, 171.97655310621244, 172.03587174348698, 172.09519038076152, 172.1545090180361, 172.21382765531064, 172.27314629258518, 172.33246492985973, 172.39178356713427, 172.4511022044088, 172.51042084168338, 172.56973947895793, 172.62905811623247, 172.68837675350701, 172.74769539078156, 172.80701402805613, 172.86633266533067, 172.92565130260522, 172.98496993987976, 173.0442885771543, 173.10360721442888, 173.16292585170342, 173.22224448897796, 173.2815631262525, 173.34088176352705, 173.40020040080162, 173.45951903807617, 173.5188376753507, 173.57815631262525, 173.6374749498998, 173.69679358717434, 173.7561122244489, 173.81543086172346, 173.874749498998, 173.93406813627254, 173.99338677354712, 174.05270541082166, 174.1120240480962, 174.17134268537075, 174.2306613226453, 174.28997995991983, 174.3492985971944, 174.40861723446895, 174.4679358717435, 174.52725450901804, 174.5865731462926, 174.64589178356715, 174.7052104208417, 174.76452905811624, 174.82384769539078, 174.88316633266533, 174.94248496993987, 175.00180360721444, 175.06112224448898, 175.12044088176353, 175.17975951903807, 175.23907815631264, 175.2983967935872, 175.35771543086173, 175.41703406813627, 175.47635270541082, 175.53567134268536, 175.59498997995993, 175.65430861723448, 175.71362725450902, 175.77294589178356, 175.83226452905814, 175.89158316633268, 175.95090180360722, 176.01022044088177, 176.0695390781563, 176.12885771543085, 176.18817635270543, 176.24749498997997, 176.3068136272545, 176.36613226452906, 176.4254509018036, 176.48476953907817, 176.54408817635272, 176.60340681362726, 176.6627254509018, 176.72204408817635, 176.78136272545092, 176.84068136272546, 176.9])
+              .range(['#008000ff', '#018100ff', '#028100ff', '#038200ff', '#048200ff', '#058300ff', '#068300ff', '#078400ff', '#088400ff', '#098500ff', '#0a8500ff', '#0b8600ff', '#0c8600ff', '#0d8700ff', '#0e8700ff', '#0f8800ff', '#108800ff', '#118900ff', '#128900ff', '#138a00ff', '#148a00ff', '#158b00ff', '#168b00ff', '#178c00ff', '#188c00ff', '#198d00ff', '#1a8d00ff', '#1b8e00ff', '#1c8e00ff', '#1d8f00ff', '#1e8f00ff', '#1f9000ff', '#209000ff', '#219100ff', '#229100ff', '#239200ff', '#249200ff', '#259300ff', '#269300ff', '#289400ff', '#299400ff', '#2a9500ff', '#2b9500ff', '#2c9600ff', '#2d9600ff', '#2e9700ff', '#2f9800ff', '#309800ff', '#319900ff', '#329900ff', '#339a00ff', '#349a00ff', '#359b00ff', '#369b00ff', '#379c00ff', '#389c00ff', '#399d00ff', '#3a9d00ff', '#3b9e00ff', '#3c9e00ff', '#3d9f00ff', '#3e9f00ff', '#3fa000ff', '#40a000ff', '#41a100ff', '#42a100ff', '#43a200ff', '#44a200ff', '#45a300ff', '#46a300ff', '#47a400ff', '#48a400ff', '#49a500ff', '#4aa500ff', '#4ba600ff', '#4ca600ff', '#4da700ff', '#4fa700ff', '#50a800ff', '#51a800ff', '#52a900ff', '#53a900ff', '#54aa00ff', '#55aa00ff', '#56ab00ff', '#57ab00ff', '#58ac00ff', '#59ac00ff', '#5aad00ff', '#5bad00ff', '#5cae00ff', '#5daf00ff', '#5eaf00ff', '#5fb000ff', '#60b000ff', '#61b100ff', '#62b100ff', '#63b200ff', '#64b200ff', '#65b300ff', '#66b300ff', '#67b400ff', '#68b400ff', '#69b500ff', '#6ab500ff', '#6bb600ff', '#6cb600ff', '#6db700ff', '#6eb700ff', '#6fb800ff', '#70b800ff', '#71b900ff', '#72b900ff', '#73ba00ff', '#74ba00ff', '#75bb00ff', '#77bb00ff', '#78bc00ff', '#79bc00ff', '#7abd00ff', '#7bbd00ff', '#7cbe00ff', '#7dbe00ff', '#7ebf00ff', '#7fbf00ff', '#80c000ff', '#81c000ff', '#82c100ff', '#83c100ff', '#84c200ff', '#85c200ff', '#86c300ff', '#87c300ff', '#88c400ff', '#89c400ff', '#8ac500ff', '#8bc500ff', '#8cc600ff', '#8dc700ff', '#8ec700ff', '#8fc800ff', '#90c800ff', '#91c900ff', '#92c900ff', '#93ca00ff', '#94ca00ff', '#95cb00ff', '#96cb00ff', '#97cc00ff', '#98cc00ff', '#99cd00ff', '#9acd00ff', '#9bce00ff', '#9cce00ff', '#9ecf00ff', '#9fcf00ff', '#a0d000ff', '#a1d000ff', '#a2d100ff', '#a3d100ff', '#a4d200ff', '#a5d200ff', '#a6d300ff', '#a7d300ff', '#a8d400ff', '#a9d400ff', '#aad500ff', '#abd500ff', '#acd600ff', '#add600ff', '#aed700ff', '#afd700ff', '#b0d800ff', '#b1d800ff', '#b2d900ff', '#b3d900ff', '#b4da00ff', '#b5da00ff', '#b6db00ff', '#b7db00ff', '#b8dc00ff', '#b9dc00ff', '#badd00ff', '#bbde00ff', '#bcde00ff', '#bddf00ff', '#bedf00ff', '#bfe000ff', '#c0e000ff', '#c1e100ff', '#c2e100ff', '#c3e200ff', '#c5e200ff', '#c6e300ff', '#c7e300ff', '#c8e400ff', '#c9e400ff', '#cae500ff', '#cbe500ff', '#cce600ff', '#cde600ff', '#cee700ff', '#cfe700ff', '#d0e800ff', '#d1e800ff', '#d2e900ff', '#d3e900ff', '#d4ea00ff', '#d5ea00ff', '#d6eb00ff', '#d7eb00ff', '#d8ec00ff', '#d9ec00ff', '#daed00ff', '#dbed00ff', '#dcee00ff', '#ddee00ff', '#deef00ff', '#dfef00ff', '#e0f000ff', '#e1f000ff', '#e2f100ff', '#e3f100ff', '#e4f200ff', '#e5f200ff', '#e6f300ff', '#e7f300ff', '#e8f400ff', '#e9f500ff', '#eaf500ff', '#ebf600ff', '#edf600ff', '#eef700ff', '#eff700ff', '#f0f800ff', '#f1f800ff', '#f2f900ff', '#f3f900ff', '#f4fa00ff', '#f5fa00ff', '#f6fb00ff', '#f7fb00ff', '#f8fc00ff', '#f9fc00ff', '#fafd00ff', '#fbfd00ff', '#fcfe00ff', '#fdfe00ff', '#feff00ff', '#ffff00ff', '#ffff00ff', '#fffe00ff', '#fffd00ff', '#fffc00ff', '#fffb00ff', '#fffa00ff', '#fff900ff', '#fff800ff', '#fff700ff', '#fff600ff', '#fff500ff', '#fff400ff', '#fff300ff', '#fff200ff', '#fff100ff', '#fff000ff', '#ffef00ff', '#ffee00ff', '#ffed00ff', '#ffeb00ff', '#ffea00ff', '#ffe900ff', '#ffe800ff', '#ffe700ff', '#ffe600ff', '#ffe500ff', '#ffe400ff', '#ffe300ff', '#ffe200ff', '#ffe100ff', '#ffe000ff', '#ffdf00ff', '#ffde00ff', '#ffdd00ff', '#ffdc00ff', '#ffdb00ff', '#ffda00ff', '#ffd900ff', '#ffd800ff', '#ffd700ff', '#ffd600ff', '#ffd500ff', '#ffd400ff', '#ffd300ff', '#ffd200ff', '#ffd100ff', '#ffd000ff', '#ffcf00ff', '#ffce00ff', '#ffcd00ff', '#ffcc00ff', '#ffcb00ff', '#ffca00ff', '#ffc900ff', '#ffc800ff', '#ffc700ff', '#ffc600ff', '#ffc500ff', '#ffc300ff', '#ffc200ff', '#ffc100ff', '#ffc000ff', '#ffbf00ff', '#ffbe00ff', '#ffbd00ff', '#ffbc00ff', '#ffbb00ff', '#ffba00ff', '#ffb900ff', '#ffb800ff', '#ffb700ff', '#ffb600ff', '#ffb500ff', '#ffb400ff', '#ffb300ff', '#ffb200ff', '#ffb100ff', '#ffb000ff', '#ffaf00ff', '#ffae00ff', '#ffad00ff', '#ffac00ff', '#ffab00ff', '#ffaa00ff', '#ffa900ff', '#ffa800ff', '#ffa700ff', '#ffa600ff', '#ffa500ff', '#ffa400ff', '#ffa300ff', '#ffa200ff', '#ffa100ff', '#ffa000ff', '#ff9f00ff', '#ff9e00ff', '#ff9c00ff', '#ff9b00ff', '#ff9a00ff', '#ff9900ff', '#ff9800ff', '#ff9700ff', '#ff9600ff', '#ff9500ff', '#ff9400ff', '#ff9300ff', '#ff9200ff', '#ff9100ff', '#ff9000ff', '#ff8f00ff', '#ff8e00ff', '#ff8d00ff', '#ff8c00ff', '#ff8b00ff', '#ff8a00ff', '#ff8900ff', '#ff8800ff', '#ff8700ff', '#ff8600ff', '#ff8500ff', '#ff8400ff', '#ff8300ff', '#ff8200ff', '#ff8100ff', '#ff8000ff', '#ff7f00ff', '#ff7e00ff', '#ff7d00ff', '#ff7c00ff', '#ff7b00ff', '#ff7a00ff', '#ff7900ff', '#ff7800ff', '#ff7700ff', '#ff7500ff', '#ff7400ff', '#ff7300ff', '#ff7200ff', '#ff7100ff', '#ff7000ff', '#ff6f00ff', '#ff6e00ff', '#ff6d00ff', '#ff6c00ff', '#ff6b00ff', '#ff6a00ff', '#ff6900ff', '#ff6800ff', '#ff6700ff', '#ff6600ff', '#ff6500ff', '#ff6400ff', '#ff6300ff', '#ff6200ff', '#ff6100ff', '#ff6000ff', '#ff5f00ff', '#ff5e00ff', '#ff5d00ff', '#ff5c00ff', '#ff5b00ff', '#ff5a00ff', '#ff5900ff', '#ff5800ff', '#ff5700ff', '#ff5600ff', '#ff5500ff', '#ff5400ff', '#ff5300ff', '#ff5200ff', '#ff5100ff', '#ff5000ff', '#ff4f00ff', '#ff4d00ff', '#ff4c00ff', '#ff4b00ff', '#ff4a00ff', '#ff4900ff', '#ff4800ff', '#ff4700ff', '#ff4600ff', '#ff4500ff', '#ff4400ff', '#ff4300ff', '#ff4200ff', '#ff4100ff', '#ff4000ff', '#ff3f00ff', '#ff3e00ff', '#ff3d00ff', '#ff3c00ff', '#ff3b00ff', '#ff3a00ff', '#ff3900ff', '#ff3800ff', '#ff3700ff', '#ff3600ff', '#ff3500ff', '#ff3400ff', '#ff3300ff', '#ff3200ff', '#ff3100ff', '#ff3000ff', '#ff2f00ff', '#ff2e00ff', '#ff2d00ff', '#ff2c00ff', '#ff2b00ff', '#ff2a00ff', '#ff2900ff', '#ff2800ff', '#ff2600ff', '#ff2500ff', '#ff2400ff', '#ff2300ff', '#ff2200ff', '#ff2100ff', '#ff2000ff', '#ff1f00ff', '#ff1e00ff', '#ff1d00ff', '#ff1c00ff', '#ff1b00ff', '#ff1a00ff', '#ff1900ff', '#ff1800ff', '#ff1700ff', '#ff1600ff', '#ff1500ff', '#ff1400ff', '#ff1300ff', '#ff1200ff', '#ff1100ff', '#ff1000ff', '#ff0f00ff', '#ff0e00ff', '#ff0d00ff', '#ff0c00ff', '#ff0b00ff', '#ff0a00ff', '#ff0900ff', '#ff0800ff', '#ff0700ff', '#ff0600ff', '#ff0500ff', '#ff0400ff', '#ff0300ff', '#ff0200ff', '#ff0100ff', '#ff0000ff']);
+    
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.x = d3.scale.linear()
+              .domain([147.3, 176.9])
+              .range([0, 450 - 50]);
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.legend = L.control({position: 'topright'});
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.legend.addTo(map_2f4647d6cb1bb63e2f14e9e03806332a);
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.xAxis = d3.svg.axis()
+        .scale(color_map_9d2bd19cfe1f87afed7ae01444c649b0.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([147.3, 162.10000000000002, 176.9]);
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.g = color_map_9d2bd19cfe1f87afed7ae01444c649b0.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.g.selectAll("rect")
+        .data(color_map_9d2bd19cfe1f87afed7ae01444c649b0.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_9d2bd19cfe1f87afed7ae01444c649b0.x(color_map_9d2bd19cfe1f87afed7ae01444c649b0.color.domain()[i - 1]) : color_map_9d2bd19cfe1f87afed7ae01444c649b0.x.range()[0],
+            x1: i < color_map_9d2bd19cfe1f87afed7ae01444c649b0.color.domain().length ? color_map_9d2bd19cfe1f87afed7ae01444c649b0.x(color_map_9d2bd19cfe1f87afed7ae01444c649b0.color.domain()[i]) : color_map_9d2bd19cfe1f87afed7ae01444c649b0.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_9d2bd19cfe1f87afed7ae01444c649b0.g.call(color_map_9d2bd19cfe1f87afed7ae01444c649b0.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Regular Gas Prices");
+    
+            var feature_group_97ecff3eb75504518d50801c9d38ff06 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_5ebc961ea7522b29c4f613f7907c3ff1 = L.circleMarker(
+                [49.279145231489, -123.12982365489],
+                {"bubblingMouseEvents": true, "color": "#c466a8ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c466a8ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_cd445f301230bd7239c49bb52f82d5ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f7a0a937ad7d5fc03d95f6f50b8a869 = $(`<div id="html_1f7a0a937ad7d5fc03d95f6f50b8a869" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 200.50</div>`)[0];
+                popup_cd445f301230bd7239c49bb52f82d5ca.setContent(html_1f7a0a937ad7d5fc03d95f6f50b8a869);
+            
+        
+
+        circle_marker_5ebc961ea7522b29c4f613f7907c3ff1.bindPopup(popup_cd445f301230bd7239c49bb52f82d5ca)
+        ;
+
+        
+    
+    
+            var circle_marker_dcd74fc7970937dca3da91b9b65a56a5 = L.circleMarker(
+                [49.259878978744, -123.078074455261],
+                {"bubblingMouseEvents": true, "color": "#6a0096ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6a0096ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_19e8999e9ab0bad4dbbd7840bc129acd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b31dbbd34abf6f1d75505eee276b2427 = $(`<div id="html_b31dbbd34abf6f1d75505eee276b2427" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 187.90</div>`)[0];
+                popup_19e8999e9ab0bad4dbbd7840bc129acd.setContent(html_b31dbbd34abf6f1d75505eee276b2427);
+            
+        
+
+        circle_marker_dcd74fc7970937dca3da91b9b65a56a5.bindPopup(popup_19e8999e9ab0bad4dbbd7840bc129acd)
+        ;
+
+        
+    
+    
+            var circle_marker_f52e0c9063b2cf8dc93f26336c42fc16 = L.circleMarker(
+                [49.226226639452, -123.128687739372],
+                {"bubblingMouseEvents": true, "color": "#780088ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#780088ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_9b6c2dad2ffe6ec415273dfb0883d293 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_77ad7a2640e3f7176511b4e9f42d3b46 = $(`<div id="html_77ad7a2640e3f7176511b4e9f42d3b46" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 189.90</div>`)[0];
+                popup_9b6c2dad2ffe6ec415273dfb0883d293.setContent(html_77ad7a2640e3f7176511b4e9f42d3b46);
+            
+        
+
+        circle_marker_f52e0c9063b2cf8dc93f26336c42fc16.bindPopup(popup_9b6c2dad2ffe6ec415273dfb0883d293)
+        ;
+
+        
+    
+    
+            var circle_marker_79100760aaac745c1e76b5d5fd33f674 = L.circleMarker(
+                [49.24894071957, -123.127040863037],
+                {"bubblingMouseEvents": true, "color": "#ffc0cbff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffc0cbff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_24eba1859aecc288cc29746ddc601d30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c864674864e6cb5539c25d73f777a4c8 = $(`<div id="html_c864674864e6cb5539c25d73f777a4c8" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 208.90</div>`)[0];
+                popup_24eba1859aecc288cc29746ddc601d30.setContent(html_c864674864e6cb5539c25d73f777a4c8);
+            
+        
+
+        circle_marker_79100760aaac745c1e76b5d5fd33f674.bindPopup(popup_24eba1859aecc288cc29746ddc601d30)
+        ;
+
+        
+    
+    
+            var circle_marker_8155077c5261e225771eb82202311071 = L.circleMarker(
+                [49.234634576953, -123.139971792698],
+                {"bubblingMouseEvents": true, "color": "#aa3f99ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aa3f99ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_82975ae316a5c6fef1ae988ef2fcf7ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5bb386281812c24c28fafdf747f05b9c = $(`<div id="html_5bb386281812c24c28fafdf747f05b9c" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 196.90</div>`)[0];
+                popup_82975ae316a5c6fef1ae988ef2fcf7ae.setContent(html_5bb386281812c24c28fafdf747f05b9c);
+            
+        
+
+        circle_marker_8155077c5261e225771eb82202311071.bindPopup(popup_82975ae316a5c6fef1ae988ef2fcf7ae)
+        ;
+
+        
+    
+    
+            var circle_marker_9488221d181babaf1110cf0e18ee5e50 = L.circleMarker(
+                [49.2325708, -123.1010069],
+                {"bubblingMouseEvents": true, "color": "#2d00d3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2d00d3ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_8bbb0303b422ff54dff02b56b6555fbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99a9ff7a3faa8bd89efc013f12b8598d = $(`<div id="html_99a9ff7a3faa8bd89efc013f12b8598d" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 179.40</div>`)[0];
+                popup_8bbb0303b422ff54dff02b56b6555fbc.setContent(html_99a9ff7a3faa8bd89efc013f12b8598d);
+            
+        
+
+        circle_marker_9488221d181babaf1110cf0e18ee5e50.bindPopup(popup_8bbb0303b422ff54dff02b56b6555fbc)
+        ;
+
+        
+    
+    
+            var circle_marker_a50839b42215bf5a724bc863819994ea = L.circleMarker(
+                [49.1923857, -123.0911072],
+                {"bubblingMouseEvents": true, "color": "#6a0096ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6a0096ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_a1742b7f05197bca271ad3a8b2e0f1b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e15972accca2895ab7cba10361acbbfe = $(`<div id="html_e15972accca2895ab7cba10361acbbfe" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 187.90</div>`)[0];
+                popup_a1742b7f05197bca271ad3a8b2e0f1b1.setContent(html_e15972accca2895ab7cba10361acbbfe);
+            
+        
+
+        circle_marker_a50839b42215bf5a724bc863819994ea.bindPopup(popup_a1742b7f05197bca271ad3a8b2e0f1b1)
+        ;
+
+        
+    
+    
+            var circle_marker_ee178bda929a7f5a43ba7bccac8621f6 = L.circleMarker(
+                [49.1328393, -123.0926312],
+                {"bubblingMouseEvents": true, "color": "#e395baff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e395baff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_1d10eeb7df3535b739cccc567ebcb3ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90a8d3be6f19425ab7b8c67e02016f93 = $(`<div id="html_90a8d3be6f19425ab7b8c67e02016f93" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 204.90</div>`)[0];
+                popup_1d10eeb7df3535b739cccc567ebcb3ff.setContent(html_90a8d3be6f19425ab7b8c67e02016f93);
+            
+        
+
+        circle_marker_ee178bda929a7f5a43ba7bccac8621f6.bindPopup(popup_1d10eeb7df3535b739cccc567ebcb3ff)
+        ;
+
+        
+    
+    
+            var circle_marker_6f196c287e9873df26ecd7e4c67c7112 = L.circleMarker(
+                [49.140582914547, -123.137168884277],
+                {"bubblingMouseEvents": true, "color": "#0200fdff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0200fdff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_bc6757679c7e5122c87d2e67995c0537 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de466b455ee834802f337e3025390d19 = $(`<div id="html_de466b455ee834802f337e3025390d19" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 173.40</div>`)[0];
+                popup_bc6757679c7e5122c87d2e67995c0537.setContent(html_de466b455ee834802f337e3025390d19);
+            
+        
+
+        circle_marker_6f196c287e9873df26ecd7e4c67c7112.bindPopup(popup_bc6757679c7e5122c87d2e67995c0537)
+        ;
+
+        
+    
+    
+            var circle_marker_9a5f7d6a8e1a31a0596c3c2a5bd0cf87 = L.circleMarker(
+                [49.14867500071, -123.180856704712],
+                {"bubblingMouseEvents": true, "color": "#d580b2ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d580b2ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_5a6fffa1c111005c8c3862c549f7e30e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fef83a9fd9643783bf1a6067746470e8 = $(`<div id="html_fef83a9fd9643783bf1a6067746470e8" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 202.90</div>`)[0];
+                popup_5a6fffa1c111005c8c3862c549f7e30e.setContent(html_fef83a9fd9643783bf1a6067746470e8);
+            
+        
+
+        circle_marker_9a5f7d6a8e1a31a0596c3c2a5bd0cf87.bindPopup(popup_5a6fffa1c111005c8c3862c549f7e30e)
+        ;
+
+        
+    
+    
+            var circle_marker_54ce3e08c433a67813190724a9f4bac0 = L.circleMarker(
+                [49.2449719, -123.1540385],
+                {"bubblingMouseEvents": true, "color": "#4e00b1ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e00b1ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_380b8e93c46587f90ffdb9cfacae01e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a53a565c69db0e4df54ddcca6eaa2f5 = $(`<div id="html_7a53a565c69db0e4df54ddcca6eaa2f5" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 184.10</div>`)[0];
+                popup_380b8e93c46587f90ffdb9cfacae01e8.setContent(html_7a53a565c69db0e4df54ddcca6eaa2f5);
+            
+        
+
+        circle_marker_54ce3e08c433a67813190724a9f4bac0.bindPopup(popup_380b8e93c46587f90ffdb9cfacae01e8)
+        ;
+
+        
+    
+    
+            var circle_marker_fa62bdadeda222f8e29b56ee3af04bcc = L.circleMarker(
+                [49.2251291, -123.0545048],
+                {"bubblingMouseEvents": true, "color": "#7a0086ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7a0086ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_98feb443166fb76edd15579a6bb26f9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ecc11edf5a81885766ec6f8d596d491 = $(`<div id="html_2ecc11edf5a81885766ec6f8d596d491" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 190.15</div>`)[0];
+                popup_98feb443166fb76edd15579a6bb26f9a.setContent(html_2ecc11edf5a81885766ec6f8d596d491);
+            
+        
+
+        circle_marker_fa62bdadeda222f8e29b56ee3af04bcc.bindPopup(popup_98feb443166fb76edd15579a6bb26f9a)
+        ;
+
+        
+    
+    
+            var circle_marker_4c4c020b2063ea472d60137c383bca50 = L.circleMarker(
+                [49.2177761, -123.0775405],
+                {"bubblingMouseEvents": true, "color": "#c76aaaff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c76aaaff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_5bceaa423773027232fc9bf62f6c3756 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2fbbe214ebfccf934c573a9a31cef82d = $(`<div id="html_2fbbe214ebfccf934c573a9a31cef82d" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 200.90</div>`)[0];
+                popup_5bceaa423773027232fc9bf62f6c3756.setContent(html_2fbbe214ebfccf934c573a9a31cef82d);
+            
+        
+
+        circle_marker_4c4c020b2063ea472d60137c383bca50.bindPopup(popup_5bceaa423773027232fc9bf62f6c3756)
+        ;
+
+        
+    
+    
+            var circle_marker_0d53300e7f14b1fd11a97c78284b4017 = L.circleMarker(
+                [49.23608, -123.0454858],
+                {"bubblingMouseEvents": true, "color": "#63009dff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#63009dff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_fec00ace5e68c7ff71d48dbc5cc5b0f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9e3fbd9098cd4e0759b93bce1df9871 = $(`<div id="html_b9e3fbd9098cd4e0759b93bce1df9871" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 186.90</div>`)[0];
+                popup_fec00ace5e68c7ff71d48dbc5cc5b0f1.setContent(html_b9e3fbd9098cd4e0759b93bce1df9871);
+            
+        
+
+        circle_marker_0d53300e7f14b1fd11a97c78284b4017.bindPopup(popup_fec00ace5e68c7ff71d48dbc5cc5b0f1)
+        ;
+
+        
+    
+    
+            var circle_marker_d1f8cfc3356ed354905f8d93b719e334 = L.circleMarker(
+                [49.2372145, -123.0650857],
+                {"bubblingMouseEvents": true, "color": "#860984ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#860984ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_f6d859a7277172e74bca9ff9e924d5e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c7167ac4b35a6bfee7eaf19589beadc = $(`<div id="html_1c7167ac4b35a6bfee7eaf19589beadc" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 191.90</div>`)[0];
+                popup_f6d859a7277172e74bca9ff9e924d5e6.setContent(html_1c7167ac4b35a6bfee7eaf19589beadc);
+            
+        
+
+        circle_marker_d1f8cfc3356ed354905f8d93b719e334.bindPopup(popup_f6d859a7277172e74bca9ff9e924d5e6)
+        ;
+
+        
+    
+    
+            var circle_marker_51afdbbbf3324b11d7ccd167b9f22da4 = L.circleMarker(
+                [49.2579053, -123.0438464],
+                {"bubblingMouseEvents": true, "color": "#860984ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#860984ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_6dd6459d3bc44a1e96d790035d238170 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64ad1e5b2fc1ad5a4e2888616cb3ed64 = $(`<div id="html_64ad1e5b2fc1ad5a4e2888616cb3ed64" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 191.90</div>`)[0];
+                popup_6dd6459d3bc44a1e96d790035d238170.setContent(html_64ad1e5b2fc1ad5a4e2888616cb3ed64);
+            
+        
+
+        circle_marker_51afdbbbf3324b11d7ccd167b9f22da4.bindPopup(popup_6dd6459d3bc44a1e96d790035d238170)
+        ;
+
+        
+    
+    
+            var circle_marker_b67febca9130e890b36747a9df4037d6 = L.circleMarker(
+                [49.2106867, -123.1027436],
+                {"bubblingMouseEvents": true, "color": "#8c1287ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c1287ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_b7d80c4be93d9715a2ff2f1ab7fceab8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dea320e3200ff7e7f8294ac05050b81 = $(`<div id="html_5dea320e3200ff7e7f8294ac05050b81" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 192.70</div>`)[0];
+                popup_b7d80c4be93d9715a2ff2f1ab7fceab8.setContent(html_5dea320e3200ff7e7f8294ac05050b81);
+            
+        
+
+        circle_marker_b67febca9130e890b36747a9df4037d6.bindPopup(popup_b7d80c4be93d9715a2ff2f1ab7fceab8)
+        ;
+
+        
+    
+    
+            var circle_marker_9f2398a79d47e1d9a0aca13b43dee063 = L.circleMarker(
+                [49.2573819, -123.1680407],
+                {"bubblingMouseEvents": true, "color": "#a93d98ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a93d98ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_400fbf8b1bbeae64b3f0a1aef750cca2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dcccfdd60591e787270b1778c3763bd3 = $(`<div id="html_dcccfdd60591e787270b1778c3763bd3" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 196.70</div>`)[0];
+                popup_400fbf8b1bbeae64b3f0a1aef750cca2.setContent(html_dcccfdd60591e787270b1778c3763bd3);
+            
+        
+
+        circle_marker_9f2398a79d47e1d9a0aca13b43dee063.bindPopup(popup_400fbf8b1bbeae64b3f0a1aef750cca2)
+        ;
+
+        
+    
+    
+            var circle_marker_d58bd38ac9f794bdbda5aca93f08a8da = L.circleMarker(
+                [49.2685375, -123.1453067],
+                {"bubblingMouseEvents": true, "color": "#5b00a4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5b00a4ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_b75eb1f47b2c84470e571760429f9f01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cebff63d22904f1d084c0c0ca6bc1fee = $(`<div id="html_cebff63d22904f1d084c0c0ca6bc1fee" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 185.90</div>`)[0];
+                popup_b75eb1f47b2c84470e571760429f9f01.setContent(html_cebff63d22904f1d084c0c0ca6bc1fee);
+            
+        
+
+        circle_marker_d58bd38ac9f794bdbda5aca93f08a8da.bindPopup(popup_b75eb1f47b2c84470e571760429f9f01)
+        ;
+
+        
+    
+    
+            var circle_marker_4bae73023e95f719146fc8418ac6d94a = L.circleMarker(
+                [49.210798928329, -123.09152841568],
+                {"bubblingMouseEvents": true, "color": "#780088ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#780088ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_a74c50c136b0b838f06555db600ae29a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18cf3b126f02ada77718ae5588c9bfd2 = $(`<div id="html_18cf3b126f02ada77718ae5588c9bfd2" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 189.90</div>`)[0];
+                popup_a74c50c136b0b838f06555db600ae29a.setContent(html_18cf3b126f02ada77718ae5588c9bfd2);
+            
+        
+
+        circle_marker_4bae73023e95f719146fc8418ac6d94a.bindPopup(popup_a74c50c136b0b838f06555db600ae29a)
+        ;
+
+        
+    
+    
+            var circle_marker_58df122b9adadeef41b19b398da21e4f = L.circleMarker(
+                [49.264037962303, -123.145408630371],
+                {"bubblingMouseEvents": true, "color": "#6000a0ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6000a0ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_ed4268bf95009c5ce830c749f35b9c67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_875649394eeacfab8fd1d05aafece35b = $(`<div id="html_875649394eeacfab8fd1d05aafece35b" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 186.50</div>`)[0];
+                popup_ed4268bf95009c5ce830c749f35b9c67.setContent(html_875649394eeacfab8fd1d05aafece35b);
+            
+        
+
+        circle_marker_58df122b9adadeef41b19b398da21e4f.bindPopup(popup_ed4268bf95009c5ce830c749f35b9c67)
+        ;
+
+        
+    
+    
+            var circle_marker_2e05a08fe0337fa2c30457fe82394adb = L.circleMarker(
+                [49.20806537721, -123.123285770416],
+                {"bubblingMouseEvents": true, "color": "#5a00a6ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5a00a6ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_9f1a3c81b797e50925254da0536124f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f50f5cf717a155a4486117ae656753b4 = $(`<div id="html_f50f5cf717a155a4486117ae656753b4" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 185.70</div>`)[0];
+                popup_9f1a3c81b797e50925254da0536124f7.setContent(html_f50f5cf717a155a4486117ae656753b4);
+            
+        
+
+        circle_marker_2e05a08fe0337fa2c30457fe82394adb.bindPopup(popup_9f1a3c81b797e50925254da0536124f7)
+        ;
+
+        
+    
+    
+            var circle_marker_9b748d42eb8bb302a70116956f1cd68c = L.circleMarker(
+                [49.2591601, -123.0617495],
+                {"bubblingMouseEvents": true, "color": "#860984ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#860984ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_b0d75ca1f5f2790f5e42162ebc969886 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e5bfd975635e1d087b34edcfa6f5b1d = $(`<div id="html_1e5bfd975635e1d087b34edcfa6f5b1d" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 191.90</div>`)[0];
+                popup_b0d75ca1f5f2790f5e42162ebc969886.setContent(html_1e5bfd975635e1d087b34edcfa6f5b1d);
+            
+        
+
+        circle_marker_9b748d42eb8bb302a70116956f1cd68c.bindPopup(popup_b0d75ca1f5f2790f5e42162ebc969886)
+        ;
+
+        
+    
+    
+            var circle_marker_15947d7d8da292cccf3d15ad63b7597c = L.circleMarker(
+                [49.240045470021, -123.076765537262],
+                {"bubblingMouseEvents": true, "color": "#1000efff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1000efff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_61499da414c74115d6a2871bd42ed5d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf9e0ee5b47a1fae23c8b76f3767f7c3 = $(`<div id="html_cf9e0ee5b47a1fae23c8b76f3767f7c3" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 175.40</div>`)[0];
+                popup_61499da414c74115d6a2871bd42ed5d0.setContent(html_cf9e0ee5b47a1fae23c8b76f3767f7c3);
+            
+        
+
+        circle_marker_15947d7d8da292cccf3d15ad63b7597c.bindPopup(popup_61499da414c74115d6a2871bd42ed5d0)
+        ;
+
+        
+    
+    
+            var circle_marker_22cc75554092987142b95af96211462d = L.circleMarker(
+                [49.224996944057, -123.065521717072],
+                {"bubblingMouseEvents": true, "color": "#3400ccff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3400ccff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_38cddedda0586039324bb0cfaf71faae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_215e574001c5a0cd7494b53ff73b74c6 = $(`<div id="html_215e574001c5a0cd7494b53ff73b74c6" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 180.40</div>`)[0];
+                popup_38cddedda0586039324bb0cfaf71faae.setContent(html_215e574001c5a0cd7494b53ff73b74c6);
+            
+        
+
+        circle_marker_22cc75554092987142b95af96211462d.bindPopup(popup_38cddedda0586039324bb0cfaf71faae)
+        ;
+
+        
+    
+    
+            var circle_marker_64da27644110dac49421c55d4f53e457 = L.circleMarker(
+                [49.262693682723, -123.078117370605],
+                {"bubblingMouseEvents": true, "color": "#bf5fa5ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bf5fa5ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_f4cce6a5eb2c68452838a118063716fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e1a29c08340474a83c4e2908a5b0d98 = $(`<div id="html_8e1a29c08340474a83c4e2908a5b0d98" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 199.90</div>`)[0];
+                popup_f4cce6a5eb2c68452838a118063716fe.setContent(html_8e1a29c08340474a83c4e2908a5b0d98);
+            
+        
+
+        circle_marker_64da27644110dac49421c55d4f53e457.bindPopup(popup_f4cce6a5eb2c68452838a118063716fe)
+        ;
+
+        
+    
+    
+            var circle_marker_0ab8930f1b63eb22c94001c26fd56820 = L.circleMarker(
+                [49.263883932125, -123.168604373932],
+                {"bubblingMouseEvents": true, "color": "#4c00b4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4c00b4ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_12377fd9c5a4176315c060134cefca47 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bc76f29477c03e93eb1929dedb35eba = $(`<div id="html_3bc76f29477c03e93eb1929dedb35eba" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 183.70</div>`)[0];
+                popup_12377fd9c5a4176315c060134cefca47.setContent(html_3bc76f29477c03e93eb1929dedb35eba);
+            
+        
+
+        circle_marker_0ab8930f1b63eb22c94001c26fd56820.bindPopup(popup_12377fd9c5a4176315c060134cefca47)
+        ;
+
+        
+    
+    
+            var circle_marker_76181bedbf1485c78527607f957cc521 = L.circleMarker(
+                [49.270429790667, -123.145886063576],
+                {"bubblingMouseEvents": true, "color": "#72008eff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#72008eff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_2ebeb11a635e8b6fb7e38105b0894fc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4de4b30e1db4a21cafcad017d6a92834 = $(`<div id="html_4de4b30e1db4a21cafcad017d6a92834" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 189.10</div>`)[0];
+                popup_2ebeb11a635e8b6fb7e38105b0894fc7.setContent(html_4de4b30e1db4a21cafcad017d6a92834);
+            
+        
+
+        circle_marker_76181bedbf1485c78527607f957cc521.bindPopup(popup_2ebeb11a635e8b6fb7e38105b0894fc7)
+        ;
+
+        
+    
+    
+            var circle_marker_399ab54673716cef3e81906c3877f038 = L.circleMarker(
+                [49.234217162181, -123.127684593201],
+                {"bubblingMouseEvents": true, "color": "#0f00f0ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0f00f0ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_9cfcdea2c9d38b3debc7c96fd5106af3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9711f9051d25b56f8871d1c8ce686969 = $(`<div id="html_9711f9051d25b56f8871d1c8ce686969" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 175.30</div>`)[0];
+                popup_9cfcdea2c9d38b3debc7c96fd5106af3.setContent(html_9711f9051d25b56f8871d1c8ce686969);
+            
+        
+
+        circle_marker_399ab54673716cef3e81906c3877f038.bindPopup(popup_9cfcdea2c9d38b3debc7c96fd5106af3)
+        ;
+
+        
+    
+    
+            var circle_marker_bb01e76d71a540250b2c27ccc0b513e9 = L.circleMarker(
+                [49.267881559667, -123.14772605896],
+                {"bubblingMouseEvents": true, "color": "#3f00c1ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3f00c1ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_52caab0101fe27c38fbf91a214e5d570 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b86de0297ac82d9c3672bfb6a8f10c50 = $(`<div id="html_b86de0297ac82d9c3672bfb6a8f10c50" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 181.90</div>`)[0];
+                popup_52caab0101fe27c38fbf91a214e5d570.setContent(html_b86de0297ac82d9c3672bfb6a8f10c50);
+            
+        
+
+        circle_marker_bb01e76d71a540250b2c27ccc0b513e9.bindPopup(popup_52caab0101fe27c38fbf91a214e5d570)
+        ;
+
+        
+    
+    
+            var circle_marker_26fed110cb90b9a4fd22f62dfc739215 = L.circleMarker(
+                [49.212495055855, -123.14013004303],
+                {"bubblingMouseEvents": true, "color": "#890d85ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#890d85ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_9d948e2f6fd00da1268b20b0370d4bc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7001a30310372affe396dad83f2723c9 = $(`<div id="html_7001a30310372affe396dad83f2723c9" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 192.30</div>`)[0];
+                popup_9d948e2f6fd00da1268b20b0370d4bc9.setContent(html_7001a30310372affe396dad83f2723c9);
+            
+        
+
+        circle_marker_26fed110cb90b9a4fd22f62dfc739215.bindPopup(popup_9d948e2f6fd00da1268b20b0370d4bc9)
+        ;
+
+        
+    
+    
+            var circle_marker_1d3d282868b26ff9addb38ae4a679a6d = L.circleMarker(
+                [49.264135981257, -123.153326511383],
+                {"bubblingMouseEvents": true, "color": "#63009dff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#63009dff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_89136020ff8ed4832f70c66df71b1230 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3088798437676b3aac7482040285e17b = $(`<div id="html_3088798437676b3aac7482040285e17b" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 186.90</div>`)[0];
+                popup_89136020ff8ed4832f70c66df71b1230.setContent(html_3088798437676b3aac7482040285e17b);
+            
+        
+
+        circle_marker_1d3d282868b26ff9addb38ae4a679a6d.bindPopup(popup_89136020ff8ed4832f70c66df71b1230)
+        ;
+
+        
+    
+    
+            var circle_marker_d71795020776fe001ce65a752cf377d7 = L.circleMarker(
+                [49.263533861752, -123.203430175781],
+                {"bubblingMouseEvents": true, "color": "#b0489cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b0489cff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_ebef22836a31ef1bdf1fc8a3b0c8f8c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aeaf4fb870badb45f2d24ac93075e1b3 = $(`<div id="html_aeaf4fb870badb45f2d24ac93075e1b3" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 197.70</div>`)[0];
+                popup_ebef22836a31ef1bdf1fc8a3b0c8f8c8.setContent(html_aeaf4fb870badb45f2d24ac93075e1b3);
+            
+        
+
+        circle_marker_d71795020776fe001ce65a752cf377d7.bindPopup(popup_ebef22836a31ef1bdf1fc8a3b0c8f8c8)
+        ;
+
+        
+    
+    
+            var circle_marker_fae147bbfb93f480fece49a2bc90e372 = L.circleMarker(
+                [49.207280329467, -123.140280246735],
+                {"bubblingMouseEvents": true, "color": "#ffc0cbff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffc0cbff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_d99caaee2ccfaab9d4f265a3d5d29b7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ead26de81b2e1e3e35fd9f4eb989f701 = $(`<div id="html_ead26de81b2e1e3e35fd9f4eb989f701" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 208.90</div>`)[0];
+                popup_d99caaee2ccfaab9d4f265a3d5d29b7d.setContent(html_ead26de81b2e1e3e35fd9f4eb989f701);
+            
+        
+
+        circle_marker_fae147bbfb93f480fece49a2bc90e372.bindPopup(popup_d99caaee2ccfaab9d4f265a3d5d29b7d)
+        ;
+
+        
+    
+    
+            var circle_marker_58c0fc9df3a58b9f241c8117a6204215 = L.circleMarker(
+                [49.232593005895, -123.07728856802],
+                {"bubblingMouseEvents": true, "color": "#7f0081ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f0081ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_667b336db99fd6222bdd4eaffba1c44f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd96cb1b289d17240c7dacd2ac90d380 = $(`<div id="html_bd96cb1b289d17240c7dacd2ac90d380" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 190.90</div>`)[0];
+                popup_667b336db99fd6222bdd4eaffba1c44f.setContent(html_bd96cb1b289d17240c7dacd2ac90d380);
+            
+        
+
+        circle_marker_58c0fc9df3a58b9f241c8117a6204215.bindPopup(popup_667b336db99fd6222bdd4eaffba1c44f)
+        ;
+
+        
+    
+    
+            var circle_marker_3dbcbe16f9e84c398bb68051e77e2e2c = L.circleMarker(
+                [49.192919, -123.166797],
+                {"bubblingMouseEvents": true, "color": "#1b00e4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b00e4ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_900a7a18da354509ace2f6564b32b2fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6fb86d5e26b3235731269a7ce37f17b3 = $(`<div id="html_6fb86d5e26b3235731269a7ce37f17b3" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 176.90</div>`)[0];
+                popup_900a7a18da354509ace2f6564b32b2fa.setContent(html_6fb86d5e26b3235731269a7ce37f17b3);
+            
+        
+
+        circle_marker_3dbcbe16f9e84c398bb68051e77e2e2c.bindPopup(popup_900a7a18da354509ace2f6564b32b2fa)
+        ;
+
+        
+    
+    
+            var circle_marker_02589d9e1626bc9a5d8a5ddbf6cb8bd1 = L.circleMarker(
+                [49.2604441, -123.1005869],
+                {"bubblingMouseEvents": true, "color": "#3700c8ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3700c8ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_8dd8af671e9a217f6ac24ee98941cd10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85fa5faad45a23ab241c3fbc39a3a977 = $(`<div id="html_85fa5faad45a23ab241c3fbc39a3a977" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 180.90</div>`)[0];
+                popup_8dd8af671e9a217f6ac24ee98941cd10.setContent(html_85fa5faad45a23ab241c3fbc39a3a977);
+            
+        
+
+        circle_marker_02589d9e1626bc9a5d8a5ddbf6cb8bd1.bindPopup(popup_8dd8af671e9a217f6ac24ee98941cd10)
+        ;
+
+        
+    
+    
+            var circle_marker_c0e9aa9ab67f80c4191835a8c1ec5a6a = L.circleMarker(
+                [49.249188, -123.127767],
+                {"bubblingMouseEvents": true, "color": "#e395baff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e395baff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_d3ed04a4bb9f00bf876d509f08f3012f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6bad1851ba3b8cb70f67a21ab4ef792e = $(`<div id="html_6bad1851ba3b8cb70f67a21ab4ef792e" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 204.90</div>`)[0];
+                popup_d3ed04a4bb9f00bf876d509f08f3012f.setContent(html_6bad1851ba3b8cb70f67a21ab4ef792e);
+            
+        
+
+        circle_marker_c0e9aa9ab67f80c4191835a8c1ec5a6a.bindPopup(popup_d3ed04a4bb9f00bf876d509f08f3012f)
+        ;
+
+        
+    
+    
+            var circle_marker_7af9ea919e842ffcac63f80562073700 = L.circleMarker(
+                [49.169873456637, -123.091178619746],
+                {"bubblingMouseEvents": true, "color": "#0000ffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0000ffff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_c40b28fba5e1cfde9744189edb458191 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c65713e29707f5e8d9718765c9c9fd1 = $(`<div id="html_4c65713e29707f5e8d9718765c9c9fd1" style="width: 100.0%; height: 100.0%;">Station: Super Save Gas<br>Premium Price: 173.10</div>`)[0];
+                popup_c40b28fba5e1cfde9744189edb458191.setContent(html_4c65713e29707f5e8d9718765c9c9fd1);
+            
+        
+
+        circle_marker_7af9ea919e842ffcac63f80562073700.bindPopup(popup_c40b28fba5e1cfde9744189edb458191)
+        ;
+
+        
+    
+    
+            var circle_marker_5e2c8368864dbbd1d15fb5c355d9ffb5 = L.circleMarker(
+                [49.162989071149, -123.134229183197],
+                {"bubblingMouseEvents": true, "color": "#0200fdff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0200fdff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_88422adc25ff9f70ecf4c0cd87642545 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cab96bc7fa09dc316ce6fc4535d35eb3 = $(`<div id="html_cab96bc7fa09dc316ce6fc4535d35eb3" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 173.50</div>`)[0];
+                popup_88422adc25ff9f70ecf4c0cd87642545.setContent(html_cab96bc7fa09dc316ce6fc4535d35eb3);
+            
+        
+
+        circle_marker_5e2c8368864dbbd1d15fb5c355d9ffb5.bindPopup(popup_88422adc25ff9f70ecf4c0cd87642545)
+        ;
+
+        
+    
+    
+            var circle_marker_f21cfe1940c0b27a648c976070c66eef = L.circleMarker(
+                [49.1558882, -123.1369625],
+                {"bubblingMouseEvents": true, "color": "#9c2990ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9c2990ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_65096d50072552024b31ff6cc31eb82b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d162a4e7a4577723042fd1239c51276 = $(`<div id="html_8d162a4e7a4577723042fd1239c51276" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 194.90</div>`)[0];
+                popup_65096d50072552024b31ff6cc31eb82b.setContent(html_8d162a4e7a4577723042fd1239c51276);
+            
+        
+
+        circle_marker_f21cfe1940c0b27a648c976070c66eef.bindPopup(popup_65096d50072552024b31ff6cc31eb82b)
+        ;
+
+        
+    
+    
+            var circle_marker_a20d25dc20f059f1fc54d9d3a8c51be7 = L.circleMarker(
+                [49.173339635958, -123.124954104424],
+                {"bubblingMouseEvents": true, "color": "#c76aaaff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c76aaaff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_d2df5caf5955c364237aa7030fabf7bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fa6f7bc19ed0078ef781192baca85a7 = $(`<div id="html_4fa6f7bc19ed0078ef781192baca85a7" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 200.90</div>`)[0];
+                popup_d2df5caf5955c364237aa7030fabf7bd.setContent(html_4fa6f7bc19ed0078ef781192baca85a7);
+            
+        
+
+        circle_marker_a20d25dc20f059f1fc54d9d3a8c51be7.bindPopup(popup_d2df5caf5955c364237aa7030fabf7bd)
+        ;
+
+        
+    
+    
+            var circle_marker_19bb8768a596df912f232b1b5d7516a2 = L.circleMarker(
+                [49.155888686563, -123.181414604187],
+                {"bubblingMouseEvents": true, "color": "#860984ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#860984ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_8da30c2b20726d3c6253d81ee9e3dfb5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5047ce6d2a901caa85796d13d1ee2fc = $(`<div id="html_c5047ce6d2a901caa85796d13d1ee2fc" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 191.90</div>`)[0];
+                popup_8da30c2b20726d3c6253d81ee9e3dfb5.setContent(html_c5047ce6d2a901caa85796d13d1ee2fc);
+            
+        
+
+        circle_marker_19bb8768a596df912f232b1b5d7516a2.bindPopup(popup_8da30c2b20726d3c6253d81ee9e3dfb5)
+        ;
+
+        
+    
+    
+            var circle_marker_b6a1f41012ee8974b3aac8f258c70af5 = L.circleMarker(
+                [49.1843249, -123.1236078],
+                {"bubblingMouseEvents": true, "color": "#4700b8ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4700b8ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_66fe90c60be562af544acafbddbb4917 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5397c142c528d279822ecffa036eef2 = $(`<div id="html_a5397c142c528d279822ecffa036eef2" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 183.10</div>`)[0];
+                popup_66fe90c60be562af544acafbddbb4917.setContent(html_a5397c142c528d279822ecffa036eef2);
+            
+        
+
+        circle_marker_b6a1f41012ee8974b3aac8f258c70af5.bindPopup(popup_66fe90c60be562af544acafbddbb4917)
+        ;
+
+        
+    
+    
+            var circle_marker_e502c9612f6f62bceb648b3c3de1ff96 = L.circleMarker(
+                [49.1698419, -123.159282],
+                {"bubblingMouseEvents": true, "color": "#0c00f3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c00f3ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_799ebe057c1ef2259fe9cdf7cf6f266a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46541dc321cf1a76d2f2574155945388 = $(`<div id="html_46541dc321cf1a76d2f2574155945388" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 174.90</div>`)[0];
+                popup_799ebe057c1ef2259fe9cdf7cf6f266a.setContent(html_46541dc321cf1a76d2f2574155945388);
+            
+        
+
+        circle_marker_e502c9612f6f62bceb648b3c3de1ff96.bindPopup(popup_799ebe057c1ef2259fe9cdf7cf6f266a)
+        ;
+
+        
+    
+    
+            var circle_marker_275e8bb3ed6d4e581b133c36650dfc0a = L.circleMarker(
+                [49.18409178594, -123.136823830688],
+                {"bubblingMouseEvents": true, "color": "#1c00e3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1c00e3ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_771fcc4aa28f49e1930001788526b742 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c23905dcb1bf39f3a1fbf0652c05ed1e = $(`<div id="html_c23905dcb1bf39f3a1fbf0652c05ed1e" style="width: 100.0%; height: 100.0%;">Station: Domo<br>Premium Price: 177.10</div>`)[0];
+                popup_771fcc4aa28f49e1930001788526b742.setContent(html_c23905dcb1bf39f3a1fbf0652c05ed1e);
+            
+        
+
+        circle_marker_275e8bb3ed6d4e581b133c36650dfc0a.bindPopup(popup_771fcc4aa28f49e1930001788526b742)
+        ;
+
+        
+    
+    
+            var circle_marker_d69ce458b4bb7978d19b29a626c05bdd = L.circleMarker(
+                [49.179182137142, -123.137152791023],
+                {"bubblingMouseEvents": true, "color": "#3000cfff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3000cfff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_20a29397ee26d333bdeea9ab07a42753 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ad8fc68fd5fe8b8f5a4be0553a34bfb = $(`<div id="html_3ad8fc68fd5fe8b8f5a4be0553a34bfb" style="width: 100.0%; height: 100.0%;">Station: Mobil<br>Premium Price: 179.90</div>`)[0];
+                popup_20a29397ee26d333bdeea9ab07a42753.setContent(html_3ad8fc68fd5fe8b8f5a4be0553a34bfb);
+            
+        
+
+        circle_marker_d69ce458b4bb7978d19b29a626c05bdd.bindPopup(popup_20a29397ee26d333bdeea9ab07a42753)
+        ;
+
+        
+    
+    
+            var circle_marker_015e064e36897e5c28ff2b4c9144bd11 = L.circleMarker(
+                [49.2397388, -123.065748],
+                {"bubblingMouseEvents": true, "color": "#5600aaff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5600aaff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_0a15c7c1603dd5cc30c693bbfe5f4b96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_919b5a0b22ad2acf284894ae738a7051 = $(`<div id="html_919b5a0b22ad2acf284894ae738a7051" style="width: 100.0%; height: 100.0%;">Station: Husky<br>Premium Price: 185.15</div>`)[0];
+                popup_0a15c7c1603dd5cc30c693bbfe5f4b96.setContent(html_919b5a0b22ad2acf284894ae738a7051);
+            
+        
+
+        circle_marker_015e064e36897e5c28ff2b4c9144bd11.bindPopup(popup_0a15c7c1603dd5cc30c693bbfe5f4b96)
+        ;
+
+        
+    
+    
+            var circle_marker_ab22c6d14076026b81a1a65721cfbed4 = L.circleMarker(
+                [49.210245, -123.099328],
+                {"bubblingMouseEvents": true, "color": "#860984ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#860984ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_2aec8ae25f371b08564980dfcf458731 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b416700c4980dd7b64ab927a774b2cf7 = $(`<div id="html_b416700c4980dd7b64ab927a774b2cf7" style="width: 100.0%; height: 100.0%;">Station: Mobil<br>Premium Price: 191.90</div>`)[0];
+                popup_2aec8ae25f371b08564980dfcf458731.setContent(html_b416700c4980dd7b64ab927a774b2cf7);
+            
+        
+
+        circle_marker_ab22c6d14076026b81a1a65721cfbed4.bindPopup(popup_2aec8ae25f371b08564980dfcf458731)
+        ;
+
+        
+    
+    
+            var circle_marker_88c7aba1b8a60621f32ef96b0a155249 = L.circleMarker(
+                [49.192001, -123.124004],
+                {"bubblingMouseEvents": true, "color": "#780088ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#780088ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_64811fce587cc993e890f7309ac18572 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5871cad1b8e6806325dee2143e49a279 = $(`<div id="html_5871cad1b8e6806325dee2143e49a279" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 189.90</div>`)[0];
+                popup_64811fce587cc993e890f7309ac18572.setContent(html_5871cad1b8e6806325dee2143e49a279);
+            
+        
+
+        circle_marker_88c7aba1b8a60621f32ef96b0a155249.bindPopup(popup_64811fce587cc993e890f7309ac18572)
+        ;
+
+        
+    
+    
+            var circle_marker_76707417110d7148024d94ea3ba03113 = L.circleMarker(
+                [49.21081995506, -123.090755939484],
+                {"bubblingMouseEvents": true, "color": "#4e00b1ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e00b1ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_f7b41b30ec564dad924f1a310fb09f28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0940e72510a0e7a34182c26563530e77 = $(`<div id="html_0940e72510a0e7a34182c26563530e77" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 184.10</div>`)[0];
+                popup_f7b41b30ec564dad924f1a310fb09f28.setContent(html_0940e72510a0e7a34182c26563530e77);
+            
+        
+
+        circle_marker_76707417110d7148024d94ea3ba03113.bindPopup(popup_f7b41b30ec564dad924f1a310fb09f28)
+        ;
+
+        
+    
+    
+            var circle_marker_5550f9c12da203a4653dcb5d9a89b48a = L.circleMarker(
+                [49.169856952787, -123.123961687088],
+                {"bubblingMouseEvents": true, "color": "#64009cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#64009cff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_8099f503541e180bd723927fb31845a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_311bff0eed297f102f2d37dabfdce2f6 = $(`<div id="html_311bff0eed297f102f2d37dabfdce2f6" style="width: 100.0%; height: 100.0%;">Station: Esso<br>Premium Price: 187.10</div>`)[0];
+                popup_8099f503541e180bd723927fb31845a3.setContent(html_311bff0eed297f102f2d37dabfdce2f6);
+            
+        
+
+        circle_marker_5550f9c12da203a4653dcb5d9a89b48a.bindPopup(popup_8099f503541e180bd723927fb31845a3)
+        ;
+
+        
+    
+    
+            var circle_marker_ab0cf990f8c38835d7227d4978146fa4 = L.circleMarker(
+                [49.218250007984, -123.076816499233],
+                {"bubblingMouseEvents": true, "color": "#8e1488ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8e1488ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_3d4dedae5999e4b5d10aff9460896b7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d22abefa278682526ab38f0e51edb4c = $(`<div id="html_3d22abefa278682526ab38f0e51edb4c" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 192.90</div>`)[0];
+                popup_3d4dedae5999e4b5d10aff9460896b7e.setContent(html_3d22abefa278682526ab38f0e51edb4c);
+            
+        
+
+        circle_marker_ab0cf990f8c38835d7227d4978146fa4.bindPopup(popup_3d4dedae5999e4b5d10aff9460896b7e)
+        ;
+
+        
+    
+    
+            var circle_marker_15fb52e0a3c92ed39e979ac4594a386d = L.circleMarker(
+                [49.20476, -123.02398],
+                {"bubblingMouseEvents": true, "color": "#d580b2ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d580b2ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_60cfbe7bb3d3d1418f52652926cc0372 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d41c359d6261912c2edeb15c4eb62b4 = $(`<div id="html_0d41c359d6261912c2edeb15c4eb62b4" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 202.90</div>`)[0];
+                popup_60cfbe7bb3d3d1418f52652926cc0372.setContent(html_0d41c359d6261912c2edeb15c4eb62b4);
+            
+        
+
+        circle_marker_15fb52e0a3c92ed39e979ac4594a386d.bindPopup(popup_60cfbe7bb3d3d1418f52652926cc0372)
+        ;
+
+        
+    
+    
+            var circle_marker_2337c0224ce1375fd7692482c51d4292 = L.circleMarker(
+                [49.2220242, -123.0654247],
+                {"bubblingMouseEvents": true, "color": "#71008fff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#71008fff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_11b681233e1c6257160c04cfb0d8625d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_683da66dabf0c2fff7753d6854f51e0a = $(`<div id="html_683da66dabf0c2fff7753d6854f51e0a" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 188.90</div>`)[0];
+                popup_11b681233e1c6257160c04cfb0d8625d.setContent(html_683da66dabf0c2fff7753d6854f51e0a);
+            
+        
+
+        circle_marker_2337c0224ce1375fd7692482c51d4292.bindPopup(popup_11b681233e1c6257160c04cfb0d8625d)
+        ;
+
+        
+    
+    
+            var circle_marker_da11c0f85311cebc0c0c3c6f5fd72879 = L.circleMarker(
+                [49.242132845692, -123.058204650879],
+                {"bubblingMouseEvents": true, "color": "#1900e6ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1900e6ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_cd7a9d5f7133ef588c73413c7ca3eb75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ecbb5b363fa517a973489e8efd1db370 = $(`<div id="html_ecbb5b363fa517a973489e8efd1db370" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 176.65</div>`)[0];
+                popup_cd7a9d5f7133ef588c73413c7ca3eb75.setContent(html_ecbb5b363fa517a973489e8efd1db370);
+            
+        
+
+        circle_marker_da11c0f85311cebc0c0c3c6f5fd72879.bindPopup(popup_cd7a9d5f7133ef588c73413c7ca3eb75)
+        ;
+
+        
+    
+    
+            var circle_marker_26c9280fb840d63fc3e0ed8ae10a4274 = L.circleMarker(
+                [49.259758544957, -123.077272474766],
+                {"bubblingMouseEvents": true, "color": "#2000dfff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2000dfff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_815731b7cc2db00fbe9ddc6889f7a819 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_775313d0f140b3068de01f0b1a21e9ed = $(`<div id="html_775313d0f140b3068de01f0b1a21e9ed" style="width: 100.0%; height: 100.0%;">Station: Super Save Gas<br>Premium Price: 177.65</div>`)[0];
+                popup_815731b7cc2db00fbe9ddc6889f7a819.setContent(html_775313d0f140b3068de01f0b1a21e9ed);
+            
+        
+
+        circle_marker_26c9280fb840d63fc3e0ed8ae10a4274.bindPopup(popup_815731b7cc2db00fbe9ddc6889f7a819)
+        ;
+
+        
+    
+    
+            var circle_marker_6dfb44b16dbdc28aaf6b6d81f66c2f61 = L.circleMarker(
+                [49.2054215, -123.1401677],
+                {"bubblingMouseEvents": true, "color": "#4000bfff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4000bfff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_a75d3bef92711c32fccc1cf0e6ac2b89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_58d0cbd86ce0fcbdfa6f6ac8ea392df9 = $(`<div id="html_58d0cbd86ce0fcbdfa6f6ac8ea392df9" style="width: 100.0%; height: 100.0%;">Station: Chevron<br>Premium Price: 182.15</div>`)[0];
+                popup_a75d3bef92711c32fccc1cf0e6ac2b89.setContent(html_58d0cbd86ce0fcbdfa6f6ac8ea392df9);
+            
+        
+
+        circle_marker_6dfb44b16dbdc28aaf6b6d81f66c2f61.bindPopup(popup_a75d3bef92711c32fccc1cf0e6ac2b89)
+        ;
+
+        
+    
+    
+            var circle_marker_97cb54eeddf1d318123268ed0ca07eb6 = L.circleMarker(
+                [49.133556536531, -123.092424273491],
+                {"bubblingMouseEvents": true, "color": "#2300dcff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2300dcff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_94f82cca43bb7f3d49020380fb8a92ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b49c36a734267475fc01e7543bd623ed = $(`<div id="html_b49c36a734267475fc01e7543bd623ed" style="width: 100.0%; height: 100.0%;">Station: Petro-Canada<br>Premium Price: 178.10</div>`)[0];
+                popup_94f82cca43bb7f3d49020380fb8a92ab.setContent(html_b49c36a734267475fc01e7543bd623ed);
+            
+        
+
+        circle_marker_97cb54eeddf1d318123268ed0ca07eb6.bindPopup(popup_94f82cca43bb7f3d49020380fb8a92ab)
+        ;
+
+        
+    
+    
+            var circle_marker_2b7082af2ad5828f8589d3013c9c3daf = L.circleMarker(
+                [49.234385296079, -123.184762001038],
+                {"bubblingMouseEvents": true, "color": "#7f0081ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f0081ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_97ecff3eb75504518d50801c9d38ff06);
+        
+    
+        var popup_75e75db814c6dc0fd2a6560fd5bfa2c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_411e1c10de9905a9d46225cddc51b909 = $(`<div id="html_411e1c10de9905a9d46225cddc51b909" style="width: 100.0%; height: 100.0%;">Station: Shell<br>Premium Price: 190.90</div>`)[0];
+                popup_75e75db814c6dc0fd2a6560fd5bfa2c7.setContent(html_411e1c10de9905a9d46225cddc51b909);
+            
+        
+
+        circle_marker_2b7082af2ad5828f8589d3013c9c3daf.bindPopup(popup_75e75db814c6dc0fd2a6560fd5bfa2c7)
+        ;
+
+        
+    
+    
+            feature_group_97ecff3eb75504518d50801c9d38ff06.addTo(map_2f4647d6cb1bb63e2f14e9e03806332a);
+        
+    
+    var color_map_2729dd5c156eecef4a2ef5c226435136 = {};
+
+    
+    color_map_2729dd5c156eecef4a2ef5c226435136.color = d3.scale.threshold()
+              .domain([173.1, 173.17174348697395, 173.24348697394788, 173.31523046092184, 173.3869739478958, 173.45871743486973, 173.53046092184368, 173.60220440881764, 173.67394789579157, 173.74569138276553, 173.8174348697395, 173.88917835671342, 173.96092184368737, 174.03266533066133, 174.10440881763526, 174.17615230460922, 174.24789579158315, 174.3196392785571, 174.39138276553106, 174.463126252505, 174.53486973947895, 174.6066132264529, 174.67835671342684, 174.7501002004008, 174.82184368737475, 174.89358717434868, 174.96533066132264, 175.0370741482966, 175.10881763527053, 175.18056112224448, 175.25230460921844, 175.32404809619237, 175.39579158316633, 175.4675350701403, 175.53927855711422, 175.61102204408817, 175.68276553106213, 175.75450901803606, 175.82625250501002, 175.89799599198398, 175.9697394789579, 176.04148296593186, 176.11322645290582, 176.18496993987975, 176.2567134268537, 176.32845691382764, 176.4002004008016, 176.47194388777555, 176.54368737474948, 176.61543086172344, 176.6871743486974, 176.75891783567133, 176.83066132264528, 176.90240480961924, 176.97414829659317, 177.04589178356713, 177.1176352705411, 177.18937875751502, 177.26112224448897, 177.33286573146293, 177.40460921843686, 177.47635270541082, 177.54809619238478, 177.6198396793587, 177.69158316633266, 177.76332665330662, 177.83507014028055, 177.9068136272545, 177.97855711422847, 178.0503006012024, 178.12204408817635, 178.19378757515028, 178.26553106212424, 178.3372745490982, 178.40901803607215, 178.48076152304608, 178.55250501002004, 178.62424849699397, 178.69599198396793, 178.7677354709419, 178.83947895791582, 178.91122244488977, 178.98296593186373, 179.05470941883766, 179.12645290581162, 179.19819639278558, 179.2699398797595, 179.34168336673346, 179.41342685370742, 179.48517034068135, 179.5569138276553, 179.62865731462927, 179.7004008016032, 179.77214428857715, 179.8438877755511, 179.91563126252504, 179.987374749499, 180.05911823647295, 180.13086172344688, 180.20260521042084, 180.27434869739477, 180.34609218436873, 180.4178356713427, 180.48957915831664, 180.56132264529057, 180.63306613226453, 180.70480961923846, 180.77655310621242, 180.84829659318638, 180.9200400801603, 180.99178356713426, 181.06352705410822, 181.13527054108215, 181.2070140280561, 181.27875751503007, 181.350501002004, 181.42224448897795, 181.4939879759519, 181.56573146292584, 181.6374749498998, 181.70921843687375, 181.78096192384768, 181.85270541082164, 181.9244488977956, 181.99619238476953, 182.0679358717435, 182.13967935871744, 182.21142284569137, 182.28316633266533, 182.3549098196393, 182.42665330661322, 182.49839679358718, 182.57014028056113, 182.64188376753506, 182.71362725450902, 182.78537074148295, 182.8571142284569, 182.92885771543087, 183.0006012024048, 183.07234468937875, 183.1440881763527, 183.21583166332664, 183.2875751503006, 183.35931863727455, 183.43106212424848, 183.50280561122244, 183.5745490981964, 183.64629258517033, 183.7180360721443, 183.78977955911824, 183.86152304609217, 183.93326653306613, 184.0050100200401, 184.07675350701402, 184.14849699398798, 184.22024048096193, 184.29198396793586, 184.36372745490982, 184.43547094188375, 184.5072144288577, 184.57895791583167, 184.65070140280562, 184.72244488977955, 184.7941883767535, 184.86593186372744, 184.9376753507014, 185.00941883767536, 185.08116232464928, 185.15290581162324, 185.2246492985972, 185.29639278557113, 185.3681362725451, 185.43987975951904, 185.51162324649297, 185.58336673346693, 185.6551102204409, 185.72685370741482, 185.79859719438878, 185.87034068136273, 185.94208416833666, 186.01382765531062, 186.08557114228458, 186.1573146292585, 186.22905811623247, 186.30080160320642, 186.37254509018035, 186.4442885771543, 186.51603206412827, 186.5877755511022, 186.65951903807616, 186.7312625250501, 186.80300601202404, 186.874749498998, 186.94649298597193, 187.0182364729459, 187.08997995991984, 187.16172344689377, 187.23346693386773, 187.3052104208417, 187.37695390781562, 187.44869739478958, 187.52044088176353, 187.59218436873746, 187.66392785571142, 187.73567134268538, 187.8074148296593, 187.87915831663327, 187.95090180360722, 188.02264529058115, 188.0943887775551, 188.16613226452907, 188.237875751503, 188.30961923847696, 188.3813627254509, 188.45310621242484, 188.5248496993988, 188.59659318637276, 188.6683366733467, 188.74008016032064, 188.8118236472946, 188.88356713426853, 188.9553106212425, 189.02705410821642, 189.09879759519038, 189.17054108216433, 189.2422845691383, 189.31402805611222, 189.38577154308618, 189.4575150300601, 189.52925851703407, 189.60100200400802, 189.67274549098195, 189.7444889779559, 189.81623246492987, 189.8879759519038, 189.95971943887776, 190.0314629258517, 190.10320641282564, 190.1749498997996, 190.24669338677356, 190.3184368737475, 190.39018036072144, 190.4619238476954, 190.53366733466933, 190.6054108216433, 190.67715430861725, 190.74889779559118, 190.82064128256513, 190.8923847695391, 190.96412825651302, 191.03587174348698, 191.1076152304609, 191.17935871743487, 191.25110220440882, 191.32284569138275, 191.3945891783567, 191.46633266533067, 191.5380761523046, 191.60981963927856, 191.6815631262525, 191.75330661322644, 191.8250501002004, 191.89679358717436, 191.9685370741483, 192.04028056112224, 192.1120240480962, 192.18376753507013, 192.2555110220441, 192.32725450901805, 192.39899799599198, 192.47074148296593, 192.5424849699399, 192.61422845691382, 192.68597194388778, 192.7577154308617, 192.82945891783567, 192.90120240480962, 192.97294589178358, 193.0446893787575, 193.11643286573147, 193.1881763527054, 193.25991983967936, 193.3316633266533, 193.40340681362727, 193.4751503006012, 193.54689378757516, 193.6186372745491, 193.69038076152304, 193.762124248497, 193.83386773547093, 193.9056112224449, 193.97735470941885, 194.04909819639278, 194.12084168336673, 194.1925851703407, 194.26432865731462, 194.33607214428858, 194.40781563126254, 194.47955911823647, 194.55130260521042, 194.62304609218438, 194.6947895791583, 194.76653306613227, 194.8382765531062, 194.91002004008016, 194.9817635270541, 195.05350701402807, 195.125250501002, 195.19699398797596, 195.2687374749499, 195.34048096192384, 195.4122244488978, 195.48396793587176, 195.5557114228457, 195.62745490981965, 195.69919839679358, 195.77094188376753, 195.8426853707415, 195.91442885771542, 195.98617234468938, 196.05791583166334, 196.12965931863727, 196.20140280561122, 196.27314629258518, 196.3448897795591, 196.41663326653307, 196.48837675350703, 196.56012024048096, 196.6318637274549, 196.70360721442887, 196.7753507014028, 196.84709418837676, 196.91883767535072, 196.99058116232464, 197.0623246492986, 197.13406813627256, 197.2058116232465, 197.27755511022045, 197.34929859719438, 197.42104208416833, 197.4927855711423, 197.56452905811625, 197.63627254509018, 197.70801603206414, 197.77975951903807, 197.85150300601202, 197.92324649298598, 197.9949899799599, 198.06673346693387, 198.13847695390783, 198.21022044088176, 198.2819639278557, 198.35370741482967, 198.4254509018036, 198.49719438877756, 198.56893787575152, 198.64068136272545, 198.7124248496994, 198.78416833667336, 198.8559118236473, 198.92765531062125, 198.9993987975952, 199.07114228456913, 199.1428857715431, 199.21462925851705, 199.28637274549098, 199.35811623246494, 199.42985971943887, 199.50160320641282, 199.57334669338678, 199.6450901803607, 199.71683366733467, 199.78857715430863, 199.86032064128256, 199.9320641282565, 200.00380761523047, 200.0755511022044, 200.14729458917836, 200.21903807615232, 200.29078156312625, 200.3625250501002, 200.43426853707416, 200.5060120240481, 200.57775551102205, 200.649498997996, 200.72124248496993, 200.7929859719439, 200.86472945891785, 200.93647294589178, 201.00821643286574, 201.07995991983967, 201.15170340681362, 201.22344689378758, 201.29519038076154, 201.36693386773547, 201.43867735470943, 201.51042084168336, 201.5821643286573, 201.65390781563127, 201.72565130260523, 201.79739478957916, 201.86913827655312, 201.94088176352705, 202.012625250501, 202.08436873747496, 202.15611222444892, 202.22785571142285, 202.2995991983968, 202.37134268537073, 202.4430861723447, 202.51482965931865, 202.58657314629258, 202.65831663326654, 202.7300601202405, 202.80180360721442, 202.87354709418838, 202.94529058116234, 203.01703406813627, 203.08877755511023, 203.16052104208416, 203.2322645290581, 203.30400801603207, 203.37575150300603, 203.44749498997996, 203.51923847695392, 203.59098196392785, 203.6627254509018, 203.73446893787576, 203.80621242484972, 203.87795591182365, 203.9496993987976, 204.02144288577153, 204.0931863727455, 204.16492985971945, 204.23667334669338, 204.30841683366734, 204.3801603206413, 204.45190380761522, 204.52364729458918, 204.59539078156314, 204.66713426853707, 204.73887775551103, 204.81062124248498, 204.8823647294589, 204.95410821643287, 205.02585170340683, 205.09759519038076, 205.16933867735472, 205.24108216432865, 205.3128256513026, 205.38456913827656, 205.45631262525052, 205.52805611222445, 205.5997995991984, 205.67154308617233, 205.7432865731463, 205.81503006012025, 205.8867735470942, 205.95851703406814, 206.0302605210421, 206.10200400801602, 206.17374749498998, 206.24549098196394, 206.3172344689379, 206.38897795591183, 206.46072144288576, 206.5324649298597, 206.60420841683367, 206.67595190380763, 206.74769539078156, 206.81943887775552, 206.89118236472947, 206.9629258517034, 207.03466933867736, 207.10641282565132, 207.17815631262525, 207.2498997995992, 207.32164328657313, 207.3933867735471, 207.46513026052105, 207.536873747495, 207.60861723446894, 207.6803607214429, 207.75210420841682, 207.82384769539078, 207.89559118236474, 207.9673346693387, 208.03907815631263, 208.11082164328658, 208.1825651302605, 208.25430861723447, 208.32605210420843, 208.3977955911824, 208.46953907815632, 208.54128256513027, 208.6130260521042, 208.68476953907816, 208.75651302605212, 208.82825651302605, 208.9])
+              .range(['#0000ffff', '#0000ffff', '#0100feff', '#0100feff', '#0200fdff', '#0200fdff', '#0300fcff', '#0300fcff', '#0400fbff', '#0400fbff', '#0500faff', '#0500faff', '#0600f9ff', '#0600f9ff', '#0700f8ff', '#0700f8ff', '#0800f7ff', '#0800f7ff', '#0900f6ff', '#0900f6ff', '#0a00f5ff', '#0a00f5ff', '#0b00f4ff', '#0b00f4ff', '#0c00f3ff', '#0c00f3ff', '#0d00f2ff', '#0d00f2ff', '#0e00f1ff', '#0e00f1ff', '#0f00f0ff', '#0f00f0ff', '#1000efff', '#1000efff', '#1100eeff', '#1200eeff', '#1200edff', '#1300edff', '#1300ecff', '#1400ecff', '#1400ebff', '#1500ebff', '#1500eaff', '#1600eaff', '#1600e9ff', '#1700e9ff', '#1700e8ff', '#1800e7ff', '#1800e7ff', '#1900e6ff', '#1900e6ff', '#1a00e5ff', '#1a00e5ff', '#1b00e4ff', '#1b00e4ff', '#1c00e3ff', '#1c00e3ff', '#1d00e2ff', '#1d00e2ff', '#1e00e1ff', '#1e00e1ff', '#1f00e0ff', '#1f00e0ff', '#2000dfff', '#2000dfff', '#2100deff', '#2100deff', '#2200ddff', '#2300ddff', '#2300dcff', '#2400dcff', '#2400dbff', '#2500dbff', '#2500daff', '#2600daff', '#2600d9ff', '#2700d9ff', '#2700d8ff', '#2800d8ff', '#2800d7ff', '#2900d7ff', '#2900d6ff', '#2a00d6ff', '#2a00d5ff', '#2b00d5ff', '#2b00d4ff', '#2c00d4ff', '#2c00d3ff', '#2d00d3ff', '#2d00d2ff', '#2e00d2ff', '#2e00d1ff', '#2f00d0ff', '#2f00d0ff', '#3000cfff', '#3000cfff', '#3100ceff', '#3100ceff', '#3200cdff', '#3200cdff', '#3300ccff', '#3400ccff', '#3400cbff', '#3500cbff', '#3500caff', '#3600caff', '#3600c9ff', '#3700c9ff', '#3700c8ff', '#3800c8ff', '#3800c7ff', '#3900c7ff', '#3900c6ff', '#3a00c6ff', '#3a00c5ff', '#3b00c5ff', '#3b00c4ff', '#3c00c4ff', '#3c00c3ff', '#3d00c3ff', '#3d00c2ff', '#3e00c2ff', '#3e00c1ff', '#3f00c1ff', '#3f00c0ff', '#4000c0ff', '#4000bfff', '#4100bfff', '#4100beff', '#4200beff', '#4200bdff', '#4300bdff', '#4300bcff', '#4400bcff', '#4500bbff', '#4500bbff', '#4600baff', '#4600b9ff', '#4700b9ff', '#4700b8ff', '#4800b8ff', '#4800b7ff', '#4900b7ff', '#4900b6ff', '#4a00b6ff', '#4a00b5ff', '#4b00b5ff', '#4b00b4ff', '#4c00b4ff', '#4c00b3ff', '#4d00b3ff', '#4d00b2ff', '#4e00b2ff', '#4e00b1ff', '#4f00b1ff', '#4f00b0ff', '#5000b0ff', '#5000afff', '#5100afff', '#5100aeff', '#5200aeff', '#5200adff', '#5300adff', '#5300acff', '#5400acff', '#5400abff', '#5500abff', '#5600aaff', '#5600aaff', '#5700a9ff', '#5700a9ff', '#5800a8ff', '#5800a8ff', '#5900a7ff', '#5900a7ff', '#5a00a6ff', '#5a00a6ff', '#5b00a5ff', '#5b00a5ff', '#5c00a4ff', '#5c00a4ff', '#5d00a3ff', '#5d00a2ff', '#5e00a2ff', '#5e00a1ff', '#5f00a1ff', '#5f00a0ff', '#6000a0ff', '#60009fff', '#61009fff', '#61009eff', '#62009eff', '#62009dff', '#63009dff', '#63009cff', '#64009cff', '#64009bff', '#65009bff', '#65009aff', '#66009aff', '#670099ff', '#670099ff', '#680098ff', '#680098ff', '#690097ff', '#690097ff', '#6a0096ff', '#6a0096ff', '#6b0095ff', '#6b0095ff', '#6c0094ff', '#6c0094ff', '#6d0093ff', '#6d0093ff', '#6e0092ff', '#6e0092ff', '#6f0091ff', '#6f0091ff', '#700090ff', '#700090ff', '#71008fff', '#71008fff', '#72008eff', '#72008eff', '#73008dff', '#73008dff', '#74008cff', '#74008bff', '#75008bff', '#75008aff', '#76008aff', '#760089ff', '#770089ff', '#780088ff', '#780088ff', '#790087ff', '#790087ff', '#7a0086ff', '#7a0086ff', '#7b0085ff', '#7b0085ff', '#7c0084ff', '#7c0084ff', '#7d0083ff', '#7d0083ff', '#7e0082ff', '#7e0082ff', '#7f0081ff', '#7f0081ff', '#800080ff', '#800080ff', '#810180ff', '#810181ff', '#820281ff', '#820381ff', '#830482ff', '#830582ff', '#840582ff', '#840683ff', '#850783ff', '#850883ff', '#860883ff', '#860984ff', '#870a84ff', '#870b84ff', '#880b85ff', '#880c85ff', '#890d85ff', '#890e86ff', '#8a0f86ff', '#8a0f86ff', '#8b1086ff', '#8b1187ff', '#8c1287ff', '#8d1287ff', '#8d1388ff', '#8e1488ff', '#8e1588ff', '#8f1689ff', '#8f1689ff', '#901789ff', '#90188aff', '#91198aff', '#91198aff', '#921a8aff', '#921b8bff', '#931c8bff', '#931c8bff', '#941d8cff', '#941e8cff', '#951f8cff', '#95208dff', '#96208dff', '#96218dff', '#97228dff', '#97238eff', '#98238eff', '#98248eff', '#99258fff', '#99268fff', '#9a278fff', '#9a2790ff', '#9b2890ff', '#9b2990ff', '#9c2a90ff', '#9c2a91ff', '#9d2b91ff', '#9d2c91ff', '#9e2d92ff', '#9e2d92ff', '#9f2e92ff', '#9f2f93ff', '#a03093ff', '#a03193ff', '#a13193ff', '#a13294ff', '#a23394ff', '#a23494ff', '#a33495ff', '#a43595ff', '#a43695ff', '#a53796ff', '#a53896ff', '#a63896ff', '#a63996ff', '#a73a97ff', '#a73b97ff', '#a83b97ff', '#a83c98ff', '#a93d98ff', '#a93e98ff', '#aa3e99ff', '#aa3f99ff', '#ab4099ff', '#ab419aff', '#ac429aff', '#ac429aff', '#ad439aff', '#ad449bff', '#ae459bff', '#ae459bff', '#af469cff', '#af479cff', '#b0489cff', '#b0499dff', '#b1499dff', '#b14a9dff', '#b24b9dff', '#b24c9eff', '#b34c9eff', '#b34d9eff', '#b44e9fff', '#b44f9fff', '#b54f9fff', '#b550a0ff', '#b651a0ff', '#b652a0ff', '#b753a0ff', '#b753a1ff', '#b854a1ff', '#b855a1ff', '#b956a2ff', '#b956a2ff', '#ba57a2ff', '#bb58a3ff', '#bb59a3ff', '#bc5aa3ff', '#bc5aa3ff', '#bd5ba4ff', '#bd5ca4ff', '#be5da4ff', '#be5da5ff', '#bf5ea5ff', '#bf5fa5ff', '#c060a6ff', '#c060a6ff', '#c161a6ff', '#c162a6ff', '#c263a7ff', '#c264a7ff', '#c364a7ff', '#c365a8ff', '#c466a8ff', '#c467a8ff', '#c567a9ff', '#c568a9ff', '#c669a9ff', '#c66aa9ff', '#c76aaaff', '#c76baaff', '#c86caaff', '#c86dabff', '#c96eabff', '#c96eabff', '#ca6facff', '#ca70acff', '#cb71acff', '#cb71adff', '#cc72adff', '#cc73adff', '#cd74adff', '#cd75aeff', '#ce75aeff', '#ce76aeff', '#cf77afff', '#cf78afff', '#d078afff', '#d079b0ff', '#d17ab0ff', '#d27bb0ff', '#d27bb0ff', '#d37cb1ff', '#d37db1ff', '#d47eb1ff', '#d47fb2ff', '#d57fb2ff', '#d580b2ff', '#d681b3ff', '#d682b3ff', '#d782b3ff', '#d783b3ff', '#d884b4ff', '#d885b4ff', '#d986b4ff', '#d986b5ff', '#da87b5ff', '#da88b5ff', '#db89b6ff', '#db89b6ff', '#dc8ab6ff', '#dc8bb6ff', '#dd8cb7ff', '#dd8cb7ff', '#de8db7ff', '#de8eb8ff', '#df8fb8ff', '#df90b8ff', '#e090b9ff', '#e091b9ff', '#e192b9ff', '#e193b9ff', '#e293baff', '#e294baff', '#e395baff', '#e396bbff', '#e497bbff', '#e497bbff', '#e598bcff', '#e599bcff', '#e69abcff', '#e69abdff', '#e79bbdff', '#e79cbdff', '#e89dbdff', '#e99dbeff', '#e99ebeff', '#ea9fbeff', '#eaa0bfff', '#eba1bfff', '#eba1bfff', '#eca2c0ff', '#eca3c0ff', '#eda4c0ff', '#eda4c0ff', '#eea5c1ff', '#eea6c1ff', '#efa7c1ff', '#efa8c2ff', '#f0a8c2ff', '#f0a9c2ff', '#f1aac3ff', '#f1abc3ff', '#f2abc3ff', '#f2acc3ff', '#f3adc4ff', '#f3aec4ff', '#f4aec4ff', '#f4afc5ff', '#f5b0c5ff', '#f5b1c5ff', '#f6b2c6ff', '#f6b2c6ff', '#f7b3c6ff', '#f7b4c6ff', '#f8b5c7ff', '#f8b5c7ff', '#f9b6c7ff', '#f9b7c8ff', '#fab8c8ff', '#fab9c8ff', '#fbb9c9ff', '#fbbac9ff', '#fcbbc9ff', '#fcbcc9ff', '#fdbccaff', '#fdbdcaff', '#febecaff', '#febfcbff', '#ffbfcbff', '#ffc0cbff']);
+    
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.x = d3.scale.linear()
+              .domain([173.1, 208.9])
+              .range([0, 450 - 50]);
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.legend = L.control({position: 'topright'});
+    color_map_2729dd5c156eecef4a2ef5c226435136.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_2729dd5c156eecef4a2ef5c226435136.legend.addTo(map_2f4647d6cb1bb63e2f14e9e03806332a);
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.xAxis = d3.svg.axis()
+        .scale(color_map_2729dd5c156eecef4a2ef5c226435136.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([173.1, 191.0, 208.9]);
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.g = color_map_2729dd5c156eecef4a2ef5c226435136.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.g.selectAll("rect")
+        .data(color_map_2729dd5c156eecef4a2ef5c226435136.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_2729dd5c156eecef4a2ef5c226435136.x(color_map_2729dd5c156eecef4a2ef5c226435136.color.domain()[i - 1]) : color_map_2729dd5c156eecef4a2ef5c226435136.x.range()[0],
+            x1: i < color_map_2729dd5c156eecef4a2ef5c226435136.color.domain().length ? color_map_2729dd5c156eecef4a2ef5c226435136.x(color_map_2729dd5c156eecef4a2ef5c226435136.color.domain()[i]) : color_map_2729dd5c156eecef4a2ef5c226435136.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_2729dd5c156eecef4a2ef5c226435136.g.call(color_map_2729dd5c156eecef4a2ef5c226435136.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Premium Gas Prices");
+    
+            var layer_control_64c1c81eb0f40e40c2e7d345de731f42_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_00b0eedb04bcbf07a2673177b819674d,
+                },
+                overlays :  {
+                    "Regular Gas Prices" : feature_group_6777ec37e64baea428b0b135a74b8c9c,
+                    "Premium Gas Prices" : feature_group_97ecff3eb75504518d50801c9d38ff06,
+                },
+            };
+            let layer_control_64c1c81eb0f40e40c2e7d345de731f42 = L.control.layers(
+                layer_control_64c1c81eb0f40e40c2e7d345de731f42_layers.base_layers,
+                layer_control_64c1c81eb0f40e40c2e7d345de731f42_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_2f4647d6cb1bb63e2f14e9e03806332a);
+
+        
+</script>
+</html>
