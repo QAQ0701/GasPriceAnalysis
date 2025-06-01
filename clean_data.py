@@ -10,6 +10,7 @@ logging.basicConfig(
     filemode="a",  # 'w' for overwrite, 'a' for append
 )
 
+logging.debug("\nCleaning gas prices data...")
 # Load the Excel file
 file_path = "./data/gas_prices.xlsx"  # Change if needed
 output_path = "./data/cleaned_gas_prices.xlsx"
@@ -27,11 +28,11 @@ df = df.dropna(subset=["Regular Price", "Premium Price"], how="all")
 
 # Add 'Time Tag' column based on the hour of 'Query Time'
 def tag_time(hour):
-    if 8 <= hour < 10:
+    if 7 <= hour < 10:
         return "morning"
-    elif 13 <= hour < 16:
+    elif 12 <= hour < 16:
         return "afternoon"
-    elif 22 <= hour < 24:
+    elif 19 <= hour < 24:
         return "evening"
     elif 2 <= hour < 4:
         return "midnight"

@@ -16,6 +16,8 @@ logging.basicConfig(
     filemode="a",  # 'w' for overwrite, 'a' for append
 )
 
+logging.debug("\nVisualizing gas prices data...")
+
 # Load cleaned data
 df = pd.read_excel("./data/cleaned_gas_prices.xlsx")
 
