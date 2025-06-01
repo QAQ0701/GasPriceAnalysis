@@ -88,7 +88,6 @@ async def parse_gas_stations(zip_code="V6M 3V2", lat=49.249, lon=-123.173):
     parsed_results = []
     logging.debug(f"stations: {stations}")
     for station, gas_prices in zip(stations, prices):
-        # logging.debug("Appending gas prices")
         parsed_results.append(
             {
                 "Station Name": station.get("name"),
