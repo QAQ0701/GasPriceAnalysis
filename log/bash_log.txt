@@ -1,0 +1,1 @@
+/bin/bash: /Users/o_o/Documents/GitHub/GasPriceAnalysis/autorun.sh: Operation not permitted
