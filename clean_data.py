@@ -18,6 +18,10 @@ df = pd.read_excel(file_path)
 
 # Convert 'Query Time' to datetime FIRST
 df["Query Time"] = pd.to_datetime(df["Query Time"], errors="coerce")
+df["Query Time"] = df["Query Time"] - pd.Timedelta(
+    hours=15   # -15hrs to account for time difference
+)  
+
 
 # Drop rows where 'Query Time' couldn't be parsed
 df = df.dropna(subset=["Query Time"])
@@ -28,16 +32,17 @@ df = df.dropna(subset=["Regular Price", "Premium Price"], how="all")
 
 # Add 'Time Tag' column based on the hour of 'Query Time'
 def tag_time(hour):
-    if 7 <= hour < 11:
+    if 7 <= hour < 12:
         return "morning"
-    elif 12 <= hour < 16:
+    elif 12 <= hour < 17:
         return "afternoon"
-    elif 19 <= hour < 24:
+    elif 17 <= hour <= 24:
         return "evening"
-    elif 1 <= hour < 4:
+    elif 1 <= hour < 7:
         return "midnight"
     else:
-        return "other"
+        # print(hour)
+        return "midnight"  # 00:XX:XX
 
 
 df["Time Tag"] = df["Query Time"].dt.hour.apply(tag_time)
