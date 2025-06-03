@@ -82,7 +82,7 @@ The pipeline is executed in three sequential steps:
   - Computes average prices per station.
   - Creates an interactive map using Folium with price-coded markers.
   - Outputs `./output/heatmap.html`.
-- **Scatter Plote (`plotHeatMap`)**:
+- **Scatter Plot (`plotHeatMap`)**:
   -plots all data points on a time and price scale.
 
 ### Outputs:
