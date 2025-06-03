@@ -7,6 +7,7 @@ This document provides an overview of the gas price data pipeline consisting of 
 - `scrape_gasprice.py`
 - `clean_data.py`
 - `visualization.py`
+- https://htmlpreview.github.io/?https://github.com/QAQ0701/GasPriceAnalysis/blob/main/visualization.html
 
 ---
 
