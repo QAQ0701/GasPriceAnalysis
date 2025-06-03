@@ -16,7 +16,7 @@ The pipeline is executed in three sequential steps:
 
 1. **`scrape_gasprice.py`**: Collects raw gas price data for specified geographic locations using the GasBuddy API and saves it to an Excel file.
 2. **`clean_data.py`**: Reads the raw data, performs cleaning operations such as timestamp conversion, deduplication, and tagging, and outputs a cleaned dataset.
-3. **`visualization.py`**: Loads the cleaned data and generates two visual outputs—a time-series plot of average gas prices by time of day and an interactive geographic heatmap of station prices. These outputs are saved as image files and an HTML file for map interaction.
+3. **`visualization.py`**: Loads the cleaned data and generates two visual outputs—a time-series plot of average gas prices by time of day, an interactive geographic heatmap of station prices, and a scatter plot of all the data points. These outputs are saved as image files and an HTML file for map interaction.
 
 ---
 
@@ -81,11 +81,14 @@ The pipeline is executed in three sequential steps:
   - Computes average prices per station.
   - Creates an interactive map using Folium with price-coded markers.
   - Outputs `./output/heatmap.html`.
+- **Scatter Plote (`plotHeatMap`)**:
+  -plots all data points on a time and price scale.
 
 ### Outputs:
 
 - `./output/time_plot.png`
 - `./output/heatmap.html`
+- `./output/interactive_graph.html`
 
 ---
 
@@ -99,8 +102,7 @@ Ensure the following Python packages are installed:
 - `datetime`, `time` – standard time handling
 - `gasbuddy` – (3rd party) API access
 - `matplotlib` – plotting
-- `folium`, `branca` – interactive mapping
-- `python-docx` – (only for this documentation)
+- `folium`, `branca`, `plotly`
 
 Use `pip install <package>` as needed.
 

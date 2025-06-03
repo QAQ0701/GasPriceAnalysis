@@ -4,9 +4,14 @@ import folium
 import branca.colormap as cm
 import logging
 import os
+import plotly.express as px
+from plotly.offline import plot
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
 hm_output_path = "./output/heatmap.html"
 ts_output_path = "./output/time_series.png"
+it_output_path = "./output/interactive_graph.html"
 
 # Configure logging to view debug messages
 logging.basicConfig(
@@ -20,8 +25,7 @@ logging.debug("\nVisualizing gas prices data...")
 
 # Load cleaned data
 df = pd.read_excel("./data/cleaned_gas_prices.xlsx")
-
-
+    
 def plotTimeGraph(df):
     # Prepare date and time tags
     df["Query Time"] = pd.to_datetime(df["Query Time"], errors="coerce")
@@ -63,12 +67,12 @@ def plotTimeGraph(df):
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
+    # plt.show()
     try:
         if os.path.exists(ts_output_path):
             logging.debug(f"File {ts_output_path} already exists. Deleting it.")
             os.remove(ts_output_path)
             # Save the plot
-        output_path = "./output/time_plot.png"
         plt.savefig(ts_output_path, format="png", dpi=300)
         plt.close()
         logging.debug(f"Time graph saved to '{ts_output_path}'.")
@@ -184,5 +188,85 @@ def plotHeatMap(df):
         logging.debug(f"An error occurred: {e}")
 
 
+def plotInteractive(df):
+
+    # Clean and preprocess
+    df = df.copy()
+    df["Query Time"] = pd.to_datetime(df["Query Time"], errors="coerce")
+    df = df.dropna(subset=["Query Time"])
+    df["Date"] = df["Query Time"].dt.date
+    df["Time Tag"] = df["Time Tag"].str.lower().str.strip()
+
+    # Set color map for time tags
+    time_colors = {
+        "morning": "orange",
+        "afternoon": "green",
+        "evening": "blue",
+        "midnight": "purple"
+    }
+
+    # Create subplots: 2 rows, 1 column
+    fig = make_subplots(rows=2, cols=1, 
+                        subplot_titles=("Regular Gas Prices", "Premium Gas Prices"))
+
+    # Plot Regular Prices
+    for tag in df["Time Tag"].unique():
+        sub_df = df[df["Time Tag"] == tag]
+        fig.add_trace(
+            go.Scatter(
+                x=sub_df["Query Time"],
+                y=sub_df["Regular Price"],
+                mode="markers",
+                name=f"Regular - {tag}",
+                marker=dict(color=time_colors.get(tag, "gray"), size=9),
+                hovertext=sub_df.apply(
+                    lambda row: f"Station: {row['Station Name']}<br>ID: {row['Station ID']}<br>Add: {row['Address']}", axis=1),
+                hoverinfo="text+x+y"
+            ),
+            row=1, col=1
+        )
+
+    # Plot Premium Prices
+    for tag in df["Time Tag"].unique():
+        sub_df = df[df["Time Tag"] == tag]
+        fig.add_trace(
+            go.Scatter(
+                x=sub_df["Query Time"],
+                y=sub_df["Premium Price"],
+                mode="markers",
+                name=f"Premium - {tag}",
+                marker=dict(color=time_colors.get(tag, "gray"), size=9, symbol="diamond"),
+                hovertext=sub_df.apply(
+                    lambda row: f"Station: {row['Station Name']}<br>ID: {row['Station ID']}<br>Add: {row['Address']}", axis=1),
+                hoverinfo="text+x+y"
+            ),
+            row=2, col=1
+        )
+
+    # Layout settings
+    fig.update_layout(
+        height=1600,  # Increased height for scrollable view
+        title_text="Gas Prices by Time of Day and Type (Interactive)",
+        template="plotly_white",
+        legend_title_text="Fuel Type & Time Tag",
+        xaxis_title="Date",
+        yaxis_title="Price (cents/liter)",
+        xaxis2_title="Date",
+        yaxis2_title="Price (cents/liter)",
+    )
+    try:
+        if os.path.exists(it_output_path):
+            logging.debug(f"File {it_output_path} already exists. Deleting it.")
+            os.remove(it_output_path)
+        # Save to HTML
+        plot(fig, filename=it_output_path, auto_open=False)
+        logging.debug(
+            "Interactive graph saved as 'interactive_graph.html'. Open this file to view the graph."
+        )
+    except Exception as e:
+        logging.debug(f"An error occurred: {e}")
+
 plotTimeGraph(df)
 plotHeatMap(df)
+plotInteractive(df)
+

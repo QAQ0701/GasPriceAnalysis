@@ -28,13 +28,13 @@ df = df.dropna(subset=["Regular Price", "Premium Price"], how="all")
 
 # Add 'Time Tag' column based on the hour of 'Query Time'
 def tag_time(hour):
-    if 7 <= hour < 10:
+    if 7 <= hour < 11:
         return "morning"
     elif 12 <= hour < 16:
         return "afternoon"
     elif 19 <= hour < 24:
         return "evening"
-    elif 2 <= hour < 4:
+    elif 1 <= hour < 4:
         return "midnight"
     else:
         return "other"
@@ -46,7 +46,8 @@ df["Time Tag"] = df["Query Time"].dt.hour.apply(tag_time)
 df["Query Date"] = df["Query Time"].dt.normalize()
 
 # Drop duplicates based on Station ID, Time Tag, and Query Date
-df = df.drop_duplicates(subset=["Station ID", "Time Tag", "Query Date"])
+# df = df.drop_duplicates(subset=["Station ID", "Time Tag", "Query Date"])
+df = df.drop_duplicates(subset=["Station ID", "Time Tag", "Query Time"])
 
 # Sort by Station ID
 df = df.sort_values(by="Station ID")
