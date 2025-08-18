@@ -1,15 +1,19 @@
 import asyncio
 import logging
+import random
 from gasbuddy import GasBuddy
 import pandas as pd
 from datetime import datetime
 
 # ------------------- CONFIG -------------------
-LOCATIONS = [(49.243, -123.0823), (49.173, -123.079), (49.15, -123.159)]
+LOCATIONS = [(49.243, -123.0823)]  # add more if needed
 ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
 COOKIE_FILE = "./data/cookies/my_cookies.json"
 LOG_FILE = "./log/debug_log.txt"
 EXCEL_FILE = "./data/gas_prices.xlsx"
+MIN_DELAY = 3
+MAX_DELAY = 7
+MAX_CONCURRENT = 3  # maximum concurrent requests
 
 # Configure logging
 logging.basicConfig(
@@ -20,32 +24,45 @@ logging.basicConfig(
 )
 
 # ------------------- GASBUDDY INSTANCE -------------------
-gb = GasBuddy(cookie_file=COOKIE_FILE)  # Single instance for all queries
+gb = GasBuddy(cookie_file=COOKIE_FILE)  # single instance for all queries
+semaphore = asyncio.Semaphore(MAX_CONCURRENT)  # control concurrency
+
 
 # ------------------- ASYNC FETCH -------------------
 async def fetch_station_prices(station_id: str) -> dict:
-    """Fetch price info for a single station."""
-    try:
-        return await gb.price_lookup(station_id=station_id)
-    except Exception as e:
-        logging.error(f"Failed fetching station {station_id}: {e}")
-        return {"error": str(e)}
+    """Fetch price info for a single station with concurrency control."""
+    async with semaphore:
+        gb._id = station_id
+        try:
+            await asyncio.sleep(random.uniform(MIN_DELAY, MAX_DELAY))  # random delay
+            return await gb.price_lookup()
+        except Exception as e:
+            logging.error(f"Failed fetching station {station_id}: {e}")
+            return {"error": str(e)}
+
 
 async def search_stations_by_coords(lat: float, lon: float) -> dict:
     """Return all nearby stations given latitude and longitude."""
-    try:
-        return await gb.location_search(lat=lat, lon=lon)
-    except Exception as e:
-        logging.error(f"Error searching by coordinates ({lat},{lon}): {e}")
-        return {"error": str(e)}
+    async with semaphore:
+        try:
+            await asyncio.sleep(random.uniform(MIN_DELAY, MAX_DELAY))
+            logging.info(f"Searching stations by coordinates ({lat},{lon})")
+            return await gb.location_search(lat=lat, lon=lon)
+        except Exception as e:
+            logging.error(f"Error searching by coordinates ({lat},{lon}): {e}")
+            return {"error": str(e)}
+
 
 async def search_stations_by_zip(zip_code: str) -> dict:
     """Return stations for a given postal code."""
-    try:
-        return await gb.location_search(zipcode=zip_code)
-    except Exception as e:
-        logging.error(f"Error searching by zip code {zip_code}: {e}")
-        return {"error": str(e)}
+    async with semaphore:
+        try:
+            await asyncio.sleep(random.uniform(MIN_DELAY, MAX_DELAY))
+            return await gb.location_search(zipcode=zip_code)
+        except Exception as e:
+            logging.error(f"Error searching by zip code {zip_code}: {e}")
+            return {"error": str(e)}
+
 
 # ------------------- PARSE RESPONSE -------------------
 async def parse_gas_stations(response: dict):
@@ -53,27 +70,39 @@ async def parse_gas_stations(response: dict):
     if "error" in response:
         return []
 
-    stations = response.get("data", {}).get("locationBySearchTerm", {}).get("stations", {}).get("results", [])
+    stations = (
+        response.get("data", {})
+        .get("locationBySearchTerm", {})
+        .get("stations", {})
+        .get("results", [])
+    )
     if not stations:
         return []
 
+    # Fetch prices with concurrency control
     tasks = [fetch_station_prices(st.get("id")) for st in stations]
     prices_list = await asyncio.gather(*tasks)
 
     parsed_results = []
     for st, prices in zip(stations, prices_list):
-        parsed_results.append({
-            "Station ID": st.get("id"),
-            "Station Name": st.get("name"),
-            "Address": st.get("address", {}).get("line1"),
-            "Location": {"Latitude": st.get("latitude"), "Longitude": st.get("longitude")},
-            "Unit of Measure": prices.get("unit_of_measure"),
-            "Currency": prices.get("currency"),
-            "Image URL": prices.get("image_url"),
-            "Regular Gas": prices.get("regular_gas"),
-            "Premium Gas": prices.get("premium_gas"),
-        })
+        parsed_results.append(
+            {
+                "Station ID": st.get("id"),
+                "Station Name": st.get("name"),
+                "Address": st.get("address", {}).get("line1"),
+                "Location": {
+                    "Latitude": st.get("latitude"),
+                    "Longitude": st.get("longitude"),
+                },
+                "Unit of Measure": prices.get("unit_of_measure"),
+                "Currency": prices.get("currency"),
+                "Image URL": prices.get("image_url"),
+                "Regular Gas": prices.get("regular_gas"),
+                "Premium Gas": prices.get("premium_gas"),
+            }
+        )
     return parsed_results
+
 
 # ------------------- SAVE TO EXCEL -------------------
 def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
@@ -81,10 +110,19 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
     try:
         existing = pd.read_excel(filename)
     except FileNotFoundError:
-        existing = pd.DataFrame(columns=[
-            "Station ID", "Station Name", "Address", "Location", "Query Time",
-            "Regular Last Update Time", "Regular Price", "Premium Last Update Time", "Premium Price"
-        ])
+        existing = pd.DataFrame(
+            columns=[
+                "Station ID",
+                "Station Name",
+                "Address",
+                "Location",
+                "Query Time",
+                "Regular Last Update Time",
+                "Regular Price",
+                "Premium Last Update Time",
+                "Premium Price",
+            ]
+        )
 
     query_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_rows = []
@@ -103,8 +141,8 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
             "Premium Price": premium.get("price"),
         }
         duplicate = existing[
-            (existing["Station ID"] == new_row["Station ID"]) &
-            (existing["Query Time"] == new_row["Query Time"])
+            (existing["Station ID"] == new_row["Station ID"])
+            & (existing["Query Time"] == new_row["Query Time"])
         ]
         if duplicate.empty:
             new_rows.append(new_row)
@@ -116,24 +154,22 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
     else:
         logging.info("No new data to save.")
 
-# ------------------- MAIN -------------------
+
+# ------------------- MAIN FETCH -------------------
 async def fetch_all_locations_and_zips():
     """Fetch and save prices for all locations and zip codes."""
-    # Fetch by coordinates
     for lat, lon in LOCATIONS:
         logging.info(f"Fetching stations for ({lat},{lon})")
         response = await search_stations_by_coords(lat, lon)
         data = await parse_gas_stations(response)
         save_prices_to_excel(data)
-        await asyncio.sleep(5)
 
-    # Fetch by zip codes
-    for zip_code in ZIP_CODES:
-        logging.info(f"Fetching stations for zip code {zip_code}")
-        response = await search_stations_by_zip(zip_code)
-        data = await parse_gas_stations(response)
-        save_prices_to_excel(data)
-        await asyncio.sleep(5)
+    # for zip_code in ZIP_CODES:
+    #     logging.info(f"Fetching stations for zip code {zip_code}")
+    #     response = await search_stations_by_zip(zip_code)
+    #     data = await parse_gas_stations(response)
+    #     save_prices_to_excel(data)
+
 
 def main():
     try:
@@ -141,11 +177,13 @@ def main():
     except Exception as e:
         logging.error(f"Error in main: {e}")
 
+
 if __name__ == "__main__":
     # main()
-    async def test(): 
+    async def test():
         gb = GasBuddy()
         gb._load_cookies("data/cookies/my_cookies.json")
         result = await gb.location_search(lat=49.249, lon=-123.173)
         print(result)
+
     asyncio.run(test())
