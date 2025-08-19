@@ -18,7 +18,7 @@ df = pd.read_excel(file_path)
 
 # Convert 'Query Time' to datetime first
 df["Query Time"] = pd.to_datetime(df["Query Time"], errors="coerce")
-df["Query Time"] = df["Query Time"] - pd.Timedelta(hours=15)  # Adjust timezone
+# df["Query Time"] = df["Query Time"] - pd.Timedelta(hours=15)  # Adjust timezone
 
 # Drop rows where 'Query Time' couldn't be parsed
 df = df.dropna(subset=["Query Time"])
