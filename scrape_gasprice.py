@@ -6,14 +6,14 @@ import pandas as pd
 from datetime import datetime
 
 # ------------------- CONFIG -------------------
-LOCATIONS = [(49.243, -123.0823)]  # add more if needed
+LOCATIONS = [(49.243, -123.0823), (49.173, -123.079), (49.15, -123.159)]
 ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
 COOKIE_FILE = "./data/cookies/my_cookies.json"
 LOG_FILE = "./log/debug_log.txt"
 EXCEL_FILE = "./data/gas_prices.xlsx"
-MIN_DELAY = 3
-MAX_DELAY = 7
-MAX_CONCURRENT = 3  # maximum concurrent requests
+MIN_DELAY = 2
+MAX_DELAY = 5
+MAX_CONCURRENT = 1  # maximum concurrent requests
 
 # Configure logging
 logging.basicConfig(
@@ -30,12 +30,15 @@ semaphore = asyncio.Semaphore(MAX_CONCURRENT)  # control concurrency
 
 # ------------------- ASYNC FETCH -------------------
 async def fetch_station_prices(station_id: str) -> dict:
-    """Fetch price info for a single station with concurrency control."""
     async with semaphore:
         gb._id = station_id
         try:
-            await asyncio.sleep(random.uniform(MIN_DELAY, MAX_DELAY))  # random delay
-            return await gb.price_lookup()
+            await asyncio.sleep(random.uniform(MIN_DELAY, MAX_DELAY))
+            result = await gb.price_lookup()
+            logging.debug(f"Fetched_station_prices {station_id}: {result}")
+            if not isinstance(result, dict):
+                return {"error": "No data"}
+            return result
         except Exception as e:
             logging.error(f"Failed fetching station {station_id}: {e}")
             return {"error": str(e)}
@@ -66,30 +69,55 @@ async def search_stations_by_zip(zip_code: str) -> dict:
 
 # ------------------- PARSE RESPONSE -------------------
 async def parse_gas_stations(response: dict):
-    """Parse raw response from GasBuddy into structured station data."""
-    if "error" in response:
+    """Parse raw response from GasBuddy into structured station data with debug logging."""
+    if not isinstance(response, dict):
+        logging.error("Invalid response: not a dict")
+        logging.error(
+            f"parse_gas_stations: Unexpected response type: {type(response)}, value: {response}"
+        )
         return []
 
-    stations = (
-        response.get("data", {})
-        .get("locationBySearchTerm", {})
-        .get("stations", {})
-        .get("results", [])
-    )
+    if response.get("error"):
+        logging.error(
+            f"parse_gas_stations: Response contains error: {response.get('error')}"
+        )
+        return []
+
+    logging.debug(f"Raw response: {response}")
+    data = response.get("data")
+    logging.debug(f"data: {data}")
+    loc = data.get("locationBySearchTerm") if data else None
+    logging.debug(f"locationBySearchTerm: {loc}")
+    stations_obj = loc.get("stations") if loc else None
+    logging.debug(f"stations object: {stations_obj}")
+    stations = stations_obj.get("results") if stations_obj else []
+    logging.debug(f"stations list: {stations}")
+
     if not stations:
+        logging.warning("parse_gas_stations: No stations found in response")
         return []
 
     # Fetch prices with concurrency control
-    tasks = [fetch_station_prices(st.get("id")) for st in stations]
+    tasks = [fetch_station_prices(st.get("id")) for st in stations if st]
+    logging.info(f"Fetching prices for {len(stations)} stations")
     prices_list = await asyncio.gather(*tasks)
 
     parsed_results = []
     for st, prices in zip(stations, prices_list):
+        logging.debug(f"Station loop raw: {st}, prices raw: {prices}")
+        st = st or {}
+        prices = prices or {}
+
+        if not st.get("id") or not st.get("name"):
+            logging.warning(f"Station missing ID or name: {st}")
+        if not prices:
+            logging.warning(f"Prices missing for station {st.get('id')}: {prices}")
+
         parsed_results.append(
             {
                 "Station ID": st.get("id"),
                 "Station Name": st.get("name"),
-                "Address": st.get("address", {}).get("line1"),
+                "Address": (st.get("address") or {}).get("line1"),
                 "Location": {
                     "Latitude": st.get("latitude"),
                     "Longitude": st.get("longitude"),
@@ -101,12 +129,14 @@ async def parse_gas_stations(response: dict):
                 "Premium Gas": prices.get("premium_gas"),
             }
         )
+    logging.info("Exited loop")
+
     return parsed_results
 
 
 # ------------------- SAVE TO EXCEL -------------------
 def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
-    """Append gas station data to Excel, avoiding duplicates."""
+    """Append gas station data to Excel, avoiding duplicates, safely handling None values."""
     try:
         existing = pd.read_excel(filename)
     except FileNotFoundError:
@@ -123,12 +153,19 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
                 "Premium Price",
             ]
         )
-
     query_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_rows = []
+    logging.info(f"Saving {len(data)} rows to {filename}")
 
-    for st in data:
-        regular, premium = st.get("Regular Gas", {}), st.get("Premium Gas", {})
+    for idx, st in enumerate(data):
+        if not isinstance(st, dict):
+            logging.warning(f"Skipping invalid station data at index {idx}: {st}")
+            continue
+
+        # Safely get gas price info
+        regular = st.get("Regular Gas") or {}
+        premium = st.get("Premium Gas") or {}
+
         new_row = {
             "Station ID": st.get("Station ID"),
             "Station Name": st.get("Station Name"),
@@ -140,6 +177,18 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
             "Premium Last Update Time": premium.get("last_updated"),
             "Premium Price": premium.get("price"),
         }
+
+        # Log missing prices
+        if not regular:
+            logging.debug(
+                f"Missing regular gas info for station {st.get('Station ID')}"
+            )
+        if not premium:
+            logging.debug(
+                f"Missing premium gas info for station {st.get('Station ID')}"
+            )
+
+        # Avoid duplicates
         duplicate = existing[
             (existing["Station ID"] == new_row["Station ID"])
             & (existing["Query Time"] == new_row["Query Time"])
@@ -179,11 +228,11 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
-    async def test():
-        gb = GasBuddy()
-        gb._load_cookies("data/cookies/my_cookies.json")
-        result = await gb.location_search(lat=49.249, lon=-123.173)
-        print(result)
+    main()
+    # async def test():
+    #     gb = GasBuddy()
+    #     gb._load_cookies("data/cookies/my_cookies.json")
+    #     result = await gb.location_search(lat=49.249, lon=-123.173)
+    #     print(result)
 
-    asyncio.run(test())
+    # asyncio.run(test())

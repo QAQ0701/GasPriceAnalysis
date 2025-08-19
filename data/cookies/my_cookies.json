@@ -1,0 +1,254 @@
+{
+  "cookies": [
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_ga",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "GA1.1.1021071403.1755566637"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_ga_V2LZ5H9RW6",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "GS2.1.s1755566636$o1$g0$t1755566636$j60$l0$h0"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1755566696,
+      "httpOnly": false,
+      "name": "_gat_UA-3201164-1",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1787102638,
+      "httpOnly": false,
+      "name": "OptanonAlertBoxClosed",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "2025-08-19T01:23:58.270Z"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1755653036,
+      "httpOnly": false,
+      "name": "_gid",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "GA1.2.321242380.1755566637"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1789262636,
+      "httpOnly": false,
+      "name": "__gpi",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "UID=0000125ec177cb37:T=1755566636:RT=1755566636:S=ALNI_MYhgGfybGDkkajbRXwYO_cy7QXcWA"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_csu",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "%223b1c6e6c-cd78-454a-b611-9dc47e3f867c%22"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_ct",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "1755566636.453"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1763342637,
+      "httpOnly": false,
+      "name": "_gcl_au",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1.1.133439545.1755566637"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_cd",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "[]"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1787102637,
+      "httpOnly": false,
+      "name": "FCNEC",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "%5B%5B%22AKsRol-6UDpc838Yg7bl59b8I52BrF2q5utTBE2T2sDRYQDa13cnxCAjQVqq4H8uFHU2k6ipkAZtjSf0V1ZReAUWt3f-8_hbwbtJJxhRF2IEfc3EeDqusFe4jprW2iqrPEYqWBupZORc8xIE5Lwt5vq8CScwg8IRyA%3D%3D%22%5D%5D"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_fl",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "[]"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_csi",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "1"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_pa",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "1755566636"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1755568435,
+      "httpOnly": true,
+      "name": "__cf_bm",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "oLOIiQOxj9b2tgD_glUmLDwbdCwpRQc1vMyjjpxYh1w-1755566635-1.0.1.1-sfJ5ErO4AngBaAtEp0CMmYsne6B6me3mFLJEmmmpQDYiP8_DGWBfuTehgWi8DgHimoi13muKRPnkYOikHuOTZCcVZQYQfM7YEIXi3bgxD04"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_iu",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "%224997e01f-3a68-4872-94f8-dad21263a81c%22"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_dat",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "false"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1787102638,
+      "httpOnly": false,
+      "name": "OptanonConsent",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "isGpcEnabled=0&datestamp=Mon+Aug+18+2025+18%3A23%3A58+GMT-0700+(Pacific+Daylight+Time)&version=202309.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=5577e487-2aee-48ac-895a-900aa305c720&interactionCount=1&landingPath=NotLandingPage&groups=C0004%3A1%2CC0003%3A1%2CC0002%3A1%2CC0001%3A1"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1771118636,
+      "httpOnly": false,
+      "name": "__eoi",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "ID=01f08f8ef90cdd59:T=1755566636:RT=1755566636:S=AA-AfjbOiXkRIDjZ8pQ9H_zaf3iK"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_cst",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "1755566636"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_ids",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "{}"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1789262636,
+      "httpOnly": false,
+      "name": "__gads",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "ID=87cc0599ee016148:T=1755566636:RT=1755566636:S=ALNI_MZ7efEuKFVqCdWeG8ORe9RPv2VItQ"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_csq",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "1"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "expiry": 1790126636,
+      "httpOnly": false,
+      "name": "_loc_ne",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "false"
+    },
+    {
+      "domain": ".gasbuddy.com",
+      "httpOnly": true,
+      "name": "_cfuvid",
+      "path": "/",
+      "sameSite": "None",
+      "secure": true,
+      "value": "aAwzTUlT19fcVdmuVkC0RxXZm.2I2y4JcNA0l13O5pE-1755566635661-0.0.1.1-604800000"
+    }
+  ],
+  "gbcsrf": "1.tx+vRvr+ADcHVwij"
+}
