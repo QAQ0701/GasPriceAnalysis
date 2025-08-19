@@ -11,6 +11,12 @@ This document provides an overview of the gas price data pipeline consisting of 
 
 ---
 
+##Versions
+
+Python 3.12.1
+Selenium Version: 4.16.0
+Requires: certifi, trio, trio-websocket, urllib3
+
 ## Overview of the Pipeline
 
 The pipeline is executed in three sequential steps:
