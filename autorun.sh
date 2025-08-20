@@ -6,6 +6,7 @@
 
 # Run the first Python script
 cd /Users/o_o/Documents/GitHub/GasPriceAnalysis
+
 echo "Running scrape_gasprice.py..."
 python3 ./scrape_gasprice.py
 
@@ -44,3 +45,13 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "All scripts executed successfully!"
+
+cd /Users/o_o/Documents/GitHub/
+cp -R GasPriceAnalysis/output/* QAQ0701.github.io/output
+cd QAQ0701.github.io
+git pull
+git add .
+git commit -m "auto-update gasbuddy graphs"
+git push
+
+echo "Updated graphs and pushed to https://qaq0701.github.io/visualization.html"
