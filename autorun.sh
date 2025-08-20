@@ -45,6 +45,8 @@ if [ $? -ne 0 ]; then
 fi
 """
 echo "All scripts executed successfully!"
+
+echo "Pushing to GasPriceAnalysis GitHub..."
 git pull
 git add output
 git add data/cleaned_gas_prices.xlsx
@@ -53,6 +55,7 @@ git add log
 git commit -m "auto-update new data"
 git push 
 
+echo "Pushing to QAQ0701.github.io ..."
 cd /Users/o_o/Documents/GitHub/
 cp -R GasPriceAnalysis/output/* QAQ0701.github.io/output
 cd QAQ0701.github.io
