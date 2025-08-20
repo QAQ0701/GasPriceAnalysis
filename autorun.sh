@@ -6,7 +6,7 @@
 
 # Run the first Python script
 cd /Users/o_o/Documents/GitHub/GasPriceAnalysis
-"""
+
 echo "Running scrape_gasprice.py..."
 python3 ./scrape_gasprice.py
 
@@ -43,7 +43,7 @@ if [ $? -ne 0 ]; then
     echo "visualization.py failed. Exiting."
     exit 1
 fi
-"""
+
 echo "All scripts executed successfully!"
 
 echo "Pushing to GasPriceAnalysis GitHub..."
