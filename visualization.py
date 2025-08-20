@@ -33,6 +33,7 @@ for col in ["Regular Price", "Premium Price"]:
         logging.debug(f"{zero_count} zero values found in '{col}', converting to NaN.")
         df.loc[df[col] == 0, col] = pd.NA
 
+
 # ---------------- Time Series Plot ----------------
 def plotTimeGraph(df):
     df_ts = df.copy()
@@ -51,9 +52,20 @@ def plotTimeGraph(df):
     plt.figure(figsize=(12, 6))
     for tag in df_ts["Time Tag"].unique():
         if tag in pivot_regular.columns:
-            plt.plot(pivot_regular.index, pivot_regular[tag], label=f"Regular {tag}", marker="o")
+            plt.plot(
+                pivot_regular.index,
+                pivot_regular[tag],
+                label=f"Regular {tag}",
+                marker="o",
+            )
         if tag in pivot_premium.columns:
-            plt.plot(pivot_premium.index, pivot_premium[tag], linestyle="--", label=f"Premium {tag}", marker="x")
+            plt.plot(
+                pivot_premium.index,
+                pivot_premium[tag],
+                linestyle="--",
+                label=f"Premium {tag}",
+                marker="x",
+            )
 
     plt.xlabel("Date")
     plt.ylabel("Price (cents/liter)")
@@ -72,12 +84,17 @@ def plotTimeGraph(df):
     except Exception as e:
         logging.debug(f"An error occurred: {e}")
 
+
 # ---------------- Heatmap ----------------
 def plotHeatMap(df):
     df_hm = df.copy()
     # Safely parse Latitude/Longitude
-    df_hm["Latitude"] = df_hm["Location"].apply(lambda x: ast.literal_eval(x).get("Latitude"))
-    df_hm["Longitude"] = df_hm["Location"].apply(lambda x: ast.literal_eval(x).get("Longitude"))
+    df_hm["Latitude"] = df_hm["Location"].apply(
+        lambda x: ast.literal_eval(x).get("Latitude")
+    )
+    df_hm["Longitude"] = df_hm["Location"].apply(
+        lambda x: ast.literal_eval(x).get("Longitude")
+    )
 
     # Drop rows with missing coordinates
     df_hm = df_hm.dropna(subset=["Latitude", "Longitude"])
@@ -91,7 +108,7 @@ def plotHeatMap(df):
     ).agg({"Regular Price": "mean", "Premium Price": "mean"})
 
     # Drop rows where all prices are missing
-    avg_prices = avg_prices.dropna(subset=["Regular Price", "Premium Price"], how='all')
+    avg_prices = avg_prices.dropna(subset=["Regular Price", "Premium Price"], how="all")
     if avg_prices.empty:
         logging.debug("No valid stations to plot heatmap.")
         return
@@ -100,10 +117,12 @@ def plotHeatMap(df):
     map_gas_prices = folium.Map(location=map_center, zoom_start=12)
 
     # Regular layer
-    regular_color_scale = cm.LinearColormap(colors=["green", "yellow", "red"],
-                                            vmin=avg_prices["Regular Price"].min(),
-                                            vmax=avg_prices["Regular Price"].max(),
-                                            caption="Regular Gas Prices")
+    regular_color_scale = cm.LinearColormap(
+        colors=["green", "yellow", "red"],
+        vmin=avg_prices["Regular Price"].min(),
+        vmax=avg_prices["Regular Price"].max(),
+        caption="Regular Gas Prices",
+    )
     regular_layer = folium.FeatureGroup(name="Regular Gas Prices")
     for _, row in avg_prices.iterrows():
         if pd.notna(row["Regular Price"]):
@@ -121,10 +140,12 @@ def plotHeatMap(df):
     regular_color_scale.add_to(map_gas_prices)
 
     # Premium layer
-    premium_color_scale = cm.LinearColormap(colors=["blue", "purple", "pink"],
-                                            vmin=avg_prices["Premium Price"].min(),
-                                            vmax=avg_prices["Premium Price"].max(),
-                                            caption="Premium Gas Prices")
+    premium_color_scale = cm.LinearColormap(
+        colors=["blue", "purple", "pink"],
+        vmin=avg_prices["Premium Price"].min(),
+        vmax=avg_prices["Premium Price"].max(),
+        caption="Premium Gas Prices",
+    )
     premium_layer = folium.FeatureGroup(name="Premium Gas Prices")
     for _, row in avg_prices.iterrows():
         if pd.notna(row["Premium Price"]):
@@ -152,6 +173,7 @@ def plotHeatMap(df):
     except Exception as e:
         logging.debug(f"An error occurred: {e}")
 
+
 # ---------------- Interactive Plot ----------------
 def plotInteractive(df):
     df_it = df.copy()
@@ -160,8 +182,15 @@ def plotInteractive(df):
     df_it["Date"] = df_it["Query Time"].dt.date
     df_it["Time Tag"] = df_it["Time Tag"].str.lower().str.strip()
 
-    time_colors = {"morning": "orange", "afternoon": "green", "evening": "blue", "midnight": "purple"}
-    fig = make_subplots(rows=2, cols=1, subplot_titles=("Regular Gas Prices", "Premium Gas Prices"))
+    time_colors = {
+        "morning": "orange",
+        "afternoon": "green",
+        "evening": "blue",
+        "midnight": "purple",
+    }
+    fig = make_subplots(
+        rows=2, cols=1, subplot_titles=("Regular Gas Prices", "Premium Gas Prices")
+    )
 
     for tag in df_it["Time Tag"].unique():
         sub_df = df_it[df_it["Time Tag"] == tag]
@@ -176,9 +205,13 @@ def plotInteractive(df):
                 name=f"Regular - {tag}",
                 marker=dict(color=time_colors.get(tag, "gray"), size=9),
                 hovertext=sub_df_regular.apply(
-                    lambda row: f"Station: {row['Station Name']}<br>ID: {row['Station ID']}<br>Add: {row['Address']}", axis=1),
-                hoverinfo="text+x+y"
-            ), row=1, col=1
+                    lambda row: f"Station: {row['Station Name']}<br>ID: {row['Station ID']}<br>Add: {row['Address']}",
+                    axis=1,
+                ),
+                hoverinfo="text+x+y",
+            ),
+            row=1,
+            col=1,
         )
 
         # Premium prices
@@ -189,11 +222,17 @@ def plotInteractive(df):
                 y=sub_df_premium["Premium Price"],
                 mode="markers",
                 name=f"Premium - {tag}",
-                marker=dict(color=time_colors.get(tag, "gray"), size=9, symbol="diamond"),
+                marker=dict(
+                    color=time_colors.get(tag, "gray"), size=9, symbol="diamond"
+                ),
                 hovertext=sub_df_premium.apply(
-                    lambda row: f"Station: {row['Station Name']}<br>ID: {row['Station ID']}<br>Add: {row['Address']}", axis=1),
-                hoverinfo="text+x+y"
-            ), row=2, col=1
+                    lambda row: f"Station: {row['Station Name']}<br>ID: {row['Station ID']}<br>Add: {row['Address']}",
+                    axis=1,
+                ),
+                hoverinfo="text+x+y",
+            ),
+            row=2,
+            col=1,
         )
 
     fig.update_layout(
@@ -215,6 +254,7 @@ def plotInteractive(df):
         logging.debug(f"Interactive graph saved to '{it_output_path}'.")
     except Exception as e:
         logging.debug(f"An error occurred: {e}")
+
 
 # ---------------- Run All Plots ----------------
 plotTimeGraph(df)

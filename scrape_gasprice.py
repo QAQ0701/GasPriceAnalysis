@@ -6,7 +6,12 @@ import pandas as pd
 from datetime import datetime
 
 # ------------------- CONFIG -------------------
-LOCATIONS = [(49.243, -123.0823), (49.173, -123.079), (49.15, -123.159)]
+LOCATIONS = [
+    (49.249, -123.173),
+    (49.243, -123.0823),
+    (49.173, -123.079),
+    (49.15, -123.159),
+]
 ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
 COOKIE_FILE = "./data/cookies/my_cookies.json"
 LOG_FILE = "./log/debug_log.txt"
@@ -119,8 +124,8 @@ async def parse_gas_stations(response: dict):
                 "Station Name": st.get("name"),
                 "Address": (st.get("address") or {}).get("line1"),
                 "Location": {
-                    "Latitude": st.get("latitude"),
-                    "Longitude": st.get("longitude"),
+                    "Latitude": prices.get("latitude"),
+                    "Longitude": prices.get("longitude"),
                 },
                 "Unit of Measure": prices.get("unit_of_measure"),
                 "Currency": prices.get("currency"),
@@ -208,6 +213,7 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
 async def fetch_all_locations_and_zips():
     """Fetch and save prices for all locations and zip codes."""
     for lat, lon in LOCATIONS:
+        print(lat, lon)
         logging.info(f"Fetching stations for ({lat},{lon})")
         response = await search_stations_by_coords(lat, lon)
         data = await parse_gas_stations(response)
