@@ -6,7 +6,7 @@
 
 # Run the first Python script
 cd /Users/o_o/Documents/GitHub/GasPriceAnalysis
-
+"""
 echo "Running scrape_gasprice.py..."
 python3 ./scrape_gasprice.py
 
@@ -43,8 +43,15 @@ if [ $? -ne 0 ]; then
     echo "visualization.py failed. Exiting."
     exit 1
 fi
-
+"""
 echo "All scripts executed successfully!"
+git pull
+git add output
+git add data/cleaned_gas_prices.xlsx
+git add data/gas_prices.xlsx
+git add log
+git commit -m "auto-update new data"
+git push 
 
 cd /Users/o_o/Documents/GitHub/
 cp -R GasPriceAnalysis/output/* QAQ0701.github.io/output
