@@ -48,11 +48,11 @@ def tag_time(hour):
 
 df["Time Tag"] = df["Query Time"].dt.hour.apply(tag_time)
 
-# # Extract the date part for deduplication
-# df["Query Date"] = df["Query Time"].dt.normalize()
+# Extract the date part for deduplication
+df["Query Date"] = df["Query Time"].dt.normalize()
 
-# # Drop duplicates based on Station ID, Time Tag, and Query Date
-# df = df.drop_duplicates(subset=["Station ID", "Time Tag", "Query Date"])
+# Drop duplicates based on Station ID, Time Tag, and Query Date
+df = df.drop_duplicates(subset=["Station ID", "Time Tag", "Query Date"])
 
 # Sort by Station ID
 df = df.sort_values(by="Station ID")
