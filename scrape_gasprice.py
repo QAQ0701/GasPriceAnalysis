@@ -11,8 +11,9 @@ LOCATIONS = [
     (49.243, -123.0823),  # Vancouver East
     (49.173, -123.079),  # Richmond East
     (49.15, -123.159),  # Richmond West
-    (49.34, -123.16),  # West Vancouver
-    (49.27, -122.96),  # Burnaby North
+    (49.337039, -123.157945),  # West Vancouver
+    (49.326, -123.073),  # North Vancouver
+    (49.266048, -122.962936),  # Burnaby North
     (49.22, -122.96),  # Burnaby South
 ]
 ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
