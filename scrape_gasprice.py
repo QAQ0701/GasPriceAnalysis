@@ -7,10 +7,13 @@ from datetime import datetime
 
 # ------------------- CONFIG -------------------
 LOCATIONS = [
-    (49.249, -123.173),
-    (49.243, -123.0823),
-    (49.173, -123.079),
-    (49.15, -123.159),
+    (49.249, -123.173),  # Vancouver West
+    (49.243, -123.0823),  # Vancouver East
+    (49.173, -123.079),  # Richmond East
+    (49.15, -123.159),  # Richmond West
+    (49.34, -123.16),  # West Vancouver
+    (49.27, -122.96),  # Burnaby North
+    (49.22, -122.96),  # Burnaby South
 ]
 ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
 COOKIE_FILE = "./data/cookies/my_cookies.json"
