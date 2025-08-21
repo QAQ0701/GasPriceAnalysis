@@ -57,6 +57,7 @@ git push
 
 echo "Pushing to QAQ0701.github.io ..."
 cd /Users/o_o/Documents/GitHub/
+echo "Copying files to QAQ0701.github.io..."
 cp -R GasPriceAnalysis/output/* QAQ0701.github.io/output
 cd QAQ0701.github.io
 git pull
