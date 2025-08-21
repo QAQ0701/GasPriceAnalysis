@@ -8,8 +8,10 @@ from plotly.offline import plot
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import ast
+from datetime import date
 
-hm_output_path = "./output/heatmap.html"
+hm_avg_output_path = "./output/heatmap.html"
+hm_today_output_path = "./output/heatmap_today.html"
 ts_output_path = "./output/time_series.png"
 it_output_path = "./output/interactive_graph.html"
 
@@ -86,45 +88,20 @@ def plotTimeGraph(df):
 
 
 # ---------------- Heatmap ----------------
-def plotHeatMap(df):
-    df_hm = df.copy()
-    # Safely parse Latitude/Longitude
-    df_hm["Latitude"] = df_hm["Location"].apply(
-        lambda x: ast.literal_eval(x).get("Latitude")
-    )
-    df_hm["Longitude"] = df_hm["Location"].apply(
-        lambda x: ast.literal_eval(x).get("Longitude")
-    )
-
-    # Drop rows with missing coordinates
-    df_hm = df_hm.dropna(subset=["Latitude", "Longitude"])
-
-    # Clip prices
-    df_hm["Regular Price"] = df_hm["Regular Price"].clip(lower=100, upper=300)
-    df_hm["Premium Price"] = df_hm["Premium Price"].clip(lower=100, upper=400)
-
-    avg_prices = df_hm.groupby(
-        ["Station ID", "Station Name", "Latitude", "Longitude"], as_index=False
-    ).agg({"Regular Price": "mean", "Premium Price": "mean"})
-
-    # Drop rows where all prices are missing
-    avg_prices = avg_prices.dropna(subset=["Regular Price", "Premium Price"], how="all")
-    if avg_prices.empty:
-        logging.debug("No valid stations to plot heatmap.")
-        return
-
-    map_center = [avg_prices["Latitude"].mean(), avg_prices["Longitude"].mean()]
+def plotHeatMap(prices, path):
+    # Initialize the map
+    map_center = [prices["Latitude"].mean(), prices["Longitude"].mean()]
     map_gas_prices = folium.Map(location=map_center, zoom_start=12)
 
     # Regular layer
     regular_color_scale = cm.LinearColormap(
         colors=["green", "yellow", "red"],
-        vmin=avg_prices["Regular Price"].min(),
-        vmax=avg_prices["Regular Price"].max(),
+        vmin=prices["Regular Price"].min(),
+        vmax=prices["Regular Price"].max(),
         caption="Regular Gas Prices",
     )
     regular_layer = folium.FeatureGroup(name="Regular Gas Prices")
-    for _, row in avg_prices.iterrows():
+    for _, row in prices.iterrows():
         if pd.notna(row["Regular Price"]):
             color = regular_color_scale(row["Regular Price"])
             folium.CircleMarker(
@@ -142,12 +119,12 @@ def plotHeatMap(df):
     # Premium layer
     premium_color_scale = cm.LinearColormap(
         colors=["blue", "purple", "pink"],
-        vmin=avg_prices["Premium Price"].min(),
-        vmax=avg_prices["Premium Price"].max(),
+        vmin=prices["Premium Price"].min(),
+        vmax=prices["Premium Price"].max(),
         caption="Premium Gas Prices",
     )
     premium_layer = folium.FeatureGroup(name="Premium Gas Prices")
-    for _, row in avg_prices.iterrows():
+    for _, row in prices.iterrows():
         if pd.notna(row["Premium Price"]):
             color = premium_color_scale(row["Premium Price"])
             folium.CircleMarker(
@@ -165,13 +142,54 @@ def plotHeatMap(df):
     folium.LayerControl().add_to(map_gas_prices)
 
     try:
-        if os.path.exists(hm_output_path):
-            logging.debug(f"File {hm_output_path} already exists. Deleting it.")
-            os.remove(hm_output_path)
-        map_gas_prices.save(hm_output_path)
-        logging.debug(f"Interactive map saved to '{hm_output_path}'.")
+        if os.path.exists(path):
+            logging.debug(f"File {path} already exists. Deleting it.")
+            os.remove(path)
+        map_gas_prices.save(path)
+        logging.debug(f"Interactive map saved to '{path}'.")
     except Exception as e:
         logging.debug(f"An error occurred: {e}")
+
+
+def generate_heatmap_data(df):
+    df_hm = df.copy()
+    # Safely parse Latitude/Longitude
+    df_hm["Latitude"] = df_hm["Location"].apply(
+        lambda x: ast.literal_eval(x).get("Latitude")
+    )
+    df_hm["Longitude"] = df_hm["Location"].apply(
+        lambda x: ast.literal_eval(x).get("Longitude")
+    )
+    df_hm["Query Date"] = df_hm["Query Date"].dt.date
+    today = date.today()
+
+    # Drop rows with missing coordinates
+    df_hm = df_hm.dropna(subset=["Latitude", "Longitude"])
+
+    # Clip prices
+    df_hm["Regular Price"] = df_hm["Regular Price"].clip(lower=100, upper=300)
+    df_hm["Premium Price"] = df_hm["Premium Price"].clip(lower=100, upper=400)
+
+    avg_prices = df_hm.groupby(
+        ["Station ID", "Station Name", "Latitude", "Longitude"], as_index=False
+    ).agg({"Regular Price": "mean", "Premium Price": "mean"})
+
+    # # Drop rows where all prices are missing
+    # avg_prices = avg_prices.dropna(subset=["Regular Price", "Premium Price"], how="all")
+    # if avg_prices.empty:
+    #     logging.debug("No valid stations to plot heatmap.")
+    #     return
+
+    plotHeatMap(avg_prices, hm_avg_output_path)
+
+    # Filter by today's dat
+    df_hm = df_hm[df_hm["Query Date"] == today]
+
+    today_prices = df_hm.groupby(
+        ["Station ID", "Station Name", "Latitude", "Longitude"], as_index=False
+    ).agg({"Regular Price": "mean", "Premium Price": "mean"})
+
+    plotHeatMap(today_prices, hm_today_output_path)
 
 
 # ---------------- Interactive Plot ----------------
@@ -258,7 +276,7 @@ def plotInteractive(df):
 
 # ---------------- Run All Plots ----------------
 plotTimeGraph(df)
-plotHeatMap(df)
+generate_heatmap_data(df)
 plotInteractive(df)
 
 logging.info("All plots completed.")
