@@ -100,7 +100,7 @@ def plotHeatMap(prices, path):
         vmax=prices["Regular Price"].max(),
         caption="Regular Gas Prices",
     )
-    regular_layer = folium.FeatureGroup(name="Regular Gas Prices")
+    regular_layer = folium.FeatureGroup(name="Regular Gas Prices", show=True)
     for _, row in prices.iterrows():
         if pd.notna(row["Regular Price"]):
             color = regular_color_scale(row["Regular Price"])
@@ -123,7 +123,7 @@ def plotHeatMap(prices, path):
         vmax=prices["Premium Price"].max(),
         caption="Premium Gas Prices",
     )
-    premium_layer = folium.FeatureGroup(name="Premium Gas Prices")
+    premium_layer = folium.FeatureGroup(name="Premium Gas Prices", show=False)
     for _, row in prices.iterrows():
         if pd.notna(row["Premium Price"]):
             color = premium_color_scale(row["Premium Price"])
