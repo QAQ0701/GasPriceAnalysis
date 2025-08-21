@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
 import folium
 import branca.colormap as cm
 import logging
@@ -14,6 +15,7 @@ hm_avg_output_path = "./output/heatmap.html"
 hm_today_output_path = "./output/heatmap_today.html"
 ts_output_path = "./output/time_series.png"
 it_output_path = "./output/interactive_graph.html"
+bar_output_path = "./output/bar_chart.png"
 
 # Configure logging
 logging.basicConfig(
@@ -273,10 +275,67 @@ def plotInteractive(df):
     except Exception as e:
         logging.debug(f"An error occurred: {e}")
 
+def plotBarChart(df):
+    tickHeight = 10
+    # Ensure Query Date is datetime
+    df["Query Date"] = pd.to_datetime(df["Query Date"])
+
+    # Get weekday names
+    df["Weekday"] = df["Query Date"].dt.day_name()
+
+    # Group by weekday and take average prices
+    avg_prices = df.groupby("Weekday", as_index=False).agg({
+        "Regular Price": "mean",
+        "Premium Price": "mean"
+    })
+
+    # Order weekdays Monday → Sunday
+    weekday_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    avg_prices["Weekday"] = pd.Categorical(avg_prices["Weekday"], categories=weekday_order, ordered=True)
+    avg_prices = avg_prices.sort_values("Weekday")
+
+    # Plot grouped bar chart
+    plt.figure(figsize=(10, 6))
+    ax = plt.gca()
+    plt.grid(True, zorder=1)
+    bar_width = 0.1
+    x = range(len(avg_prices))
+    
+    # Determine y-axis max for shading
+    y_max = max(avg_prices[["Regular Price", "Premium Price"]].max()) + 10
+
+    # Add alternating horizontal bands
+    band_height = tickHeight  # match your yticks increment
+    for y in range(0, int(y_max), band_height*2):
+        ax.axhspan(y, y + band_height, facecolor='gray', alpha=0.2, zorder=0)
+    plt.bar([i - bar_width/2 for i in x], avg_prices["Regular Price"], width=bar_width, label="Regular", alpha=0.8)
+    plt.bar([i + bar_width/2 for i in x], avg_prices["Premium Price"], width=bar_width, label="Premium", alpha=0.8)
+
+    plt.xticks(x, avg_prices["Weekday"], rotation=30)
+    plt.xlabel("Day of Week")
+    plt.ylabel("Price (¢/L)")
+    plt.title("Average Regular vs Premium Gas Price by Day of Week")
+    plt.yticks(range(0, int(y_max), tickHeight))  # ticks every 10¢
+    plt.yticks(fontsize=9)
+    plt.legend()
+    
+    plt.tight_layout()
+    
+    try:
+        if os.path.exists(bar_output_path):
+            logging.debug(f"File {bar_output_path} already exists. Deleting it.")
+            os.remove(bar_output_path)
+        plt.savefig(bar_output_path, format="png", dpi=300)
+        plt.close()
+        logging.debug(f"Time graph saved to '{bar_output_path}'.")
+    except Exception as e:
+        logging.debug(f"An error occurred: {e}")
+
 
 # ---------------- Run All Plots ----------------
 plotTimeGraph(df)
 generate_heatmap_data(df)
 plotInteractive(df)
+plotBarChart(df)
 
 logging.info("All plots completed.")
