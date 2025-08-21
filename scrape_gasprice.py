@@ -20,8 +20,8 @@ ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
 COOKIE_FILE = "./data/cookies/my_cookies.json"
 LOG_FILE = "./log/debug_log.txt"
 EXCEL_FILE = "./data/gas_prices.xlsx"
-MIN_DELAY = 2
-MAX_DELAY = 5
+MIN_DELAY = 4
+MAX_DELAY = 9
 MAX_CONCURRENT = 1  # maximum concurrent requests
 
 # Configure logging
@@ -222,6 +222,7 @@ async def fetch_all_locations_and_zips():
         response = await search_stations_by_coords(lat, lon)
         data = await parse_gas_stations(response)
         save_prices_to_excel(data)
+        await asyncio.sleep(5)
 
     # for zip_code in ZIP_CODES:
     #     logging.info(f"Fetching stations for zip code {zip_code}")
