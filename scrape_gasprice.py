@@ -20,8 +20,8 @@ ZIP_CODES = ["V6M 3V2", "V6M 2V6", "V6P 2Z2", "V6X 3Z9"]
 COOKIE_FILE = "./data/cookies/my_cookies.json"
 LOG_FILE = "./log/debug_log.txt"
 EXCEL_FILE = "./data/gas_prices.xlsx"
-MIN_DELAY = 4
-MAX_DELAY = 9
+MIN_DELAY = 5
+MAX_DELAY = 10
 MAX_CONCURRENT = 1  # maximum concurrent requests
 
 # Configure logging
