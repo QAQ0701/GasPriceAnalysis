@@ -21,7 +21,7 @@ COOKIE_FILE = "./data/cookies/my_cookies.json"
 LOG_FILE = "./log/debug_log.txt"
 EXCEL_FILE = "./data/gas_prices.xlsx"
 MIN_DELAY = 5
-MAX_DELAY = 10
+MAX_DELAY = 15
 MAX_CONCURRENT = 1  # maximum concurrent requests
 
 # Configure logging

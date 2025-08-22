@@ -1,0 +1,890 @@
+[1] Response data: {
+  "locationBySearchTerm": {
+    "stations": {
+      "results": [
+        {
+          "address": {
+            "line1": "3250 MacDonald St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "2012ml",
+                "postedTime": "2025-08-22T03:03:56.105Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "shockstorm",
+                "postedTime": "2025-08-21T05:37:56.501Z",
+                "price": 180.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "shockstorm",
+                "postedTime": "2025-08-21T05:37:56.532Z",
+                "price": 188.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65542",
+          "latitude": 49.2573819,
+          "longitude": -123.1680407
+        },
+        {
+          "address": {
+            "line1": "4615 Arbutus St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "cyndylim",
+                "postedTime": "2025-08-22T02:15:46.313Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "cyndylim",
+                "postedTime": "2025-08-22T02:15:46.329Z",
+                "price": 179.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "cyndylim",
+                "postedTime": "2025-08-22T02:15:46.360Z",
+                "price": 187.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65533",
+          "latitude": 49.2449719,
+          "longitude": -123.1540385
+        },
+        {
+          "address": {
+            "line1": "3205 Arbutus St"
+          },
+          "prices": [],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "83068",
+          "latitude": 49.256927568207,
+          "longitude": -123.153288960457
+        },
+        {
+          "address": {
+            "line1": "2808 W Broadway"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_995nakrd",
+                "postedTime": "2025-08-21T22:13:30.527Z",
+                "price": 164.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "susanackerman88",
+                "postedTime": "2025-08-21T18:22:12.073Z",
+                "price": 182.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "susanackerman88",
+                "postedTime": "2025-08-21T18:22:12.089Z",
+                "price": 190.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65562",
+          "latitude": 49.263883932125,
+          "longitude": -123.168604373932
+        },
+        {
+          "address": {
+            "line1": "3596 W 41st Ave"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Anne5345",
+                "postedTime": "2025-08-21T23:24:22.395Z",
+                "price": 164.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_8yk9z7yz",
+                "postedTime": "2025-08-21T22:45:28.845Z",
+                "price": 189.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_8yk9z7yz",
+                "postedTime": "2025-08-21T22:45:28.860Z",
+                "price": 194.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "113305",
+          "latitude": 49.234385296079,
+          "longitude": -123.184762001038
+        },
+        {
+          "address": {
+            "line1": "2103 W Broadway"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "2012ml",
+                "postedTime": "2025-08-22T03:03:50.343Z",
+                "price": 162.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "chunchun2010",
+                "postedTime": "2025-08-22T01:51:32.975Z",
+                "price": 190.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "chunchun2010",
+                "postedTime": "2025-08-22T01:51:32.975Z",
+                "price": 195.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "2012ml",
+                "postedTime": "2025-08-22T03:03:50.343Z",
+                "price": 178.9
+              },
+              "fuelProduct": "diesel",
+              "longName": "Diesel"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65570",
+          "latitude": 49.264135981257,
+          "longitude": -123.153326511383
+        },
+        {
+          "address": {
+            "line1": "1795 W Broadway"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "namron",
+                "postedTime": "2025-08-21T22:18:17.016Z",
+                "price": 165.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "shopbuddy11",
+                "postedTime": "2025-08-21T20:52:38.101Z",
+                "price": 185.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "shopbuddy11",
+                "postedTime": "2025-08-21T20:52:38.117Z",
+                "price": 192.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65554",
+          "latitude": 49.264037962303,
+          "longitude": -123.145408630371
+        },
+        {
+          "address": {
+            "line1": "4314 W 10th Ave"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_drbq8ghv",
+                "postedTime": "2025-08-22T04:29:43.861Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_drbq8ghv",
+                "postedTime": "2025-08-22T04:29:43.880Z",
+                "price": 186.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_drbq8ghv",
+                "postedTime": "2025-08-22T04:29:43.895Z",
+                "price": 191.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_9ez5hrpz",
+                "postedTime": "2025-08-21T21:28:25.085Z",
+                "price": 178.9
+              },
+              "fuelProduct": "diesel",
+              "longName": "Diesel"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65571",
+          "latitude": 49.263533861752,
+          "longitude": -123.203430175781
+        },
+        {
+          "address": {
+            "line1": "1896 W 4th Ave"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Buddy_cb4k3bgn",
+                "postedTime": "2025-08-22T00:23:16.373Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": null,
+                "postedTime": null,
+                "price": 0
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": null,
+                "postedTime": null,
+                "price": 0
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65565",
+          "latitude": 49.267881559667,
+          "longitude": -123.14772605896
+        },
+        {
+          "address": {
+            "line1": "1503 W 41st Ave"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "2012ml",
+                "postedTime": "2025-08-22T03:03:52.722Z",
+                "price": 159.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "renegade_mami",
+                "postedTime": "2025-08-21T23:24:56.809Z",
+                "price": 189.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "32376",
+          "latitude": 49.234634576953,
+          "longitude": -123.139971792698
+        },
+        {
+          "address": {
+            "line1": "5702 Granville St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "aplog",
+                "postedTime": "2025-08-22T01:47:29.946Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "harmanpreetinfo",
+                "postedTime": "2025-08-22T00:05:40.484Z",
+                "price": 178.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "harmanpreetinfo",
+                "postedTime": "2025-08-22T00:05:40.501Z",
+                "price": 196.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65549",
+          "latitude": 49.234036184118,
+          "longitude": -123.139244914055
+        },
+        {
+          "address": {
+            "line1": "1900 Burrard St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "smjmtyvr",
+                "postedTime": "2025-08-21T19:46:17.762Z",
+                "price": 165.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "smjmtyvr",
+                "postedTime": "2025-08-21T19:46:17.778Z",
+                "price": 181.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "smjmtyvr",
+                "postedTime": "2025-08-21T19:46:17.794Z",
+                "price": 194.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "smjmtyvr",
+                "postedTime": "2025-08-21T19:46:17.809Z",
+                "price": 172.9
+              },
+              "fuelProduct": "diesel",
+              "longName": "Diesel"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65543",
+          "latitude": 49.2685375,
+          "longitude": -123.1453067
+        },
+        {
+          "address": {
+            "line1": "1743 Burrard St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "wilaw",
+                "postedTime": "2025-08-21T19:28:51.238Z",
+                "price": 162.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": null,
+                "postedTime": null,
+                "price": 0
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "jovyF",
+                "postedTime": "2025-08-20T23:25:11.555Z",
+                "price": 184.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65563",
+          "latitude": 49.270429790667,
+          "longitude": -123.145886063576
+        },
+        {
+          "address": {
+            "line1": "1010 W King Edward Ave"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Jimjo58",
+                "postedTime": "2025-08-22T04:31:59.370Z",
+                "price": 155.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:51:18.046Z",
+                "price": 173.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:51:18.062Z",
+                "price": 180.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:51:18.078Z",
+                "price": 172.9
+              },
+              "fuelProduct": "diesel",
+              "longName": "Diesel"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "72747",
+          "latitude": 49.249188,
+          "longitude": -123.127767
+        },
+        {
+          "address": {
+            "line1": "4110 Oak St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Jimjo58",
+                "postedTime": "2025-08-22T04:31:40.078Z",
+                "price": 155.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "PumpMyMazda",
+                "postedTime": "2025-08-22T03:16:57.742Z",
+                "price": 180.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "PumpMyMazda",
+                "postedTime": "2025-08-22T03:17:09.064Z",
+                "price": 185.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "32375",
+          "latitude": 49.24894071957,
+          "longitude": -123.127040863037
+        },
+        {
+          "address": {
+            "line1": "5680 Oak St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "Jimjo58",
+                "postedTime": "2025-08-22T04:29:04.801Z",
+                "price": 159.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:48:09.813Z",
+                "price": 179.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:48:09.828Z",
+                "price": 187.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65564",
+          "latitude": 49.234217162181,
+          "longitude": -123.127684593201
+        },
+        {
+          "address": {
+            "line1": "6525 Oak St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "2012ml",
+                "postedTime": "2025-08-22T00:25:08.864Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:46:43.326Z",
+                "price": 180.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "khaedee",
+                "postedTime": "2025-08-21T23:46:43.341Z",
+                "price": 188.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "32372",
+          "latitude": 49.226226639452,
+          "longitude": -123.128687739372
+        },
+        {
+          "address": {
+            "line1": "1205 Burrard St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "shatin126",
+                "postedTime": "2025-08-22T00:49:20.616Z",
+                "price": 159.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "MamaMia27",
+                "postedTime": "2025-08-21T19:49:01.359Z",
+                "price": 185.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "MamaMia27",
+                "postedTime": "2025-08-21T19:49:01.374Z",
+                "price": 196.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "9707",
+          "latitude": 49.279145231489,
+          "longitude": -123.12982365489
+        },
+        {
+          "address": {
+            "line1": "8072 Granville St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "wilaw",
+                "postedTime": "2025-08-22T01:15:48.444Z",
+                "price": 161.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": null,
+                "postedTime": null,
+                "price": 0
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": null,
+                "postedTime": null,
+                "price": 0
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": null,
+                "postedTime": null,
+                "price": 0
+              },
+              "fuelProduct": "diesel",
+              "longName": "Diesel"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65566",
+          "latitude": 49.212495055855,
+          "longitude": -123.14013004303
+        },
+        {
+          "address": {
+            "line1": "8686 Granville St"
+          },
+          "prices": [
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "wilaw",
+                "postedTime": "2025-08-22T01:15:25.202Z",
+                "price": 164.9
+              },
+              "fuelProduct": "regular_gas",
+              "longName": "Regular"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "ysrael04",
+                "postedTime": "2025-08-21T21:50:22.584Z",
+                "price": 190.9
+              },
+              "fuelProduct": "midgrade_gas",
+              "longName": "Midgrade"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "ysrael04",
+                "postedTime": "2025-08-21T21:50:22.600Z",
+                "price": 195.9
+              },
+              "fuelProduct": "premium_gas",
+              "longName": "Premium"
+            },
+            {
+              "cash": null,
+              "credit": {
+                "nickname": "ysrael04",
+                "postedTime": "2025-08-21T21:50:22.631Z",
+                "price": 175.9
+              },
+              "fuelProduct": "diesel",
+              "longName": "Diesel"
+            }
+          ],
+          "priceUnit": "cents_per_liter",
+          "currency": "CAD",
+          "id": "65572",
+          "latitude": 49.207280329467,
+          "longitude": -123.140280246735
+        }
+      ]
+    },
+    "trends": [
+      {
+        "areaName": "Vancouver",
+        "country": "CA",
+        "today": 161.6,
+        "todayLow": 145.9,
+        "trend": 0
+      },
+      {
+        "areaName": "British Columbia",
+        "country": "CA",
+        "today": 156,
+        "todayLow": 130.9,
+        "trend": 0
+      },
+      {
+        "areaName": "Canada",
+        "country": "CA",
+        "today": 136.4,
+        "todayLow": 0,
+        "trend": 1
+      }
+    ]
+  }
+}

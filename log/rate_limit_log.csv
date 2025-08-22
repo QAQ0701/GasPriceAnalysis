@@ -1,0 +1,26 @@
+timestamp,request_index,delay_sec,status,http_code,message_snippet,success_count_before_block
+2025-08-22T04:40:27.707777,2,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",0
+2025-08-22T04:40:32.937462,3,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",1
+2025-08-22T04:40:38.146203,4,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",2
+2025-08-22T04:40:43.377587,5,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",3
+2025-08-22T04:40:48.617538,6,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",4
+2025-08-22T04:40:58.852566,7,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",5
+2025-08-22T04:41:04.166074,8,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",6
+2025-08-22T04:41:09.627456,9,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",7
+2025-08-22T04:41:14.858224,10,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",8
+2025-08-22T04:41:17.581837,11,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",9
+2025-08-22T04:41:20.318181,12,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",10
+2025-08-22T04:41:23.136766,13,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",11
+2025-08-22T04:41:25.845289,14,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",12
+2025-08-22T04:41:28.640461,15,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",13
+2025-08-22T04:41:31.348590,16,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",14
+2025-08-22T04:41:34.133556,17,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",15
+2025-08-22T04:41:36.865150,18,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",16
+2025-08-22T04:41:39.588342,19,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",17
+2025-08-22T04:41:42.318966,20,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",18
+2025-08-22T04:41:43.841943,21,1.25,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",19
+2025-08-22T04:41:45.264571,22,1.25,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",20
+2025-08-22T04:42:15.550445,retry-22,30.00,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",20
+2025-08-22T04:42:45.903527,retry-22,30.00,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",20
+2025-08-22T04:43:16.281460,retry-22,30.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",20
+2025-08-22T04:43:16.290031,22,30.00,UNBLOCKED,200,Block duration 91.0s,20
