@@ -48,7 +48,7 @@ def tag_time(hour):
         return "morning"
     elif 12 <= hour < 17:
         return "afternoon"
-    elif 17 <= hour <= 24:
+    elif 17 <= hour < 24:
         return "evening"
     elif 1 <= hour < 6:
         return "midnight"

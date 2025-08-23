@@ -3008,3 +3008,10 @@ Visualizing gas prices data...
 2025-08-22 23:55:30,987 - DEBUG - File ./output/heatmap_today.html already exists. Deleting it.
 2025-08-22 23:55:31,105 - DEBUG - Interactive map saved to './output/heatmap_today.html'.
 2025-08-22 23:55:31,105 - INFO - All plots completed.
+2025-08-23 00:09:51,252 - DEBUG - 
+Visualizing gas prices data...
+2025-08-23 00:09:51,923 - DEBUG - 1 zero values found in 'Regular Price', converting to NaN.
+2025-08-23 00:09:51,923 - DEBUG - 214 zero values found in 'Premium Price', converting to NaN.
+2025-08-23 00:09:52,307 - DEBUG - File ./output/interactive_graph.html already exists. Deleting it.
+2025-08-23 00:09:52,356 - DEBUG - Interactive graph saved to './output/interactive_graph.html'.
+2025-08-23 00:09:52,357 - INFO - All plots completed.

@@ -224,6 +224,8 @@ def plotInteractive(df):
     df_it["Query Time"] = pd.to_datetime(df_it["Query Time"], errors="coerce")
     df_it = df_it.dropna(subset=["Query Time"])  # only drop invalid times
     df_it["Date"] = df_it["Query Time"].dt.date
+    df_it["rTime"] = df_it["Regular Last Update Time"]
+    df_it["pTime"] = df_it["Premium Last Update Time"]
     df_it["rTime Tag"] = df_it["rTime Tag"].str.lower().str.strip()
     df_it["pTime Tag"] = df_it["pTime Tag"].str.lower().str.strip()
     # df_it["mTime Tag"] = df_it["Time Tag"].str.lower().str.strip()
@@ -246,7 +248,7 @@ def plotInteractive(df):
         sub_df_regular = sub_df[sub_df["Regular Price"].notna()]
         fig.add_trace(
             go.Scatter(
-                x=sub_df_regular["Query Time"],
+                x=sub_df_regular["rTime"],
                 y=sub_df_regular["Regular Price"],
                 mode="markers",
                 name=f"Regular - {tag}",
@@ -267,7 +269,7 @@ def plotInteractive(df):
         sub_df_premium = sub_df[sub_df["Premium Price"].notna()]
         fig.add_trace(
             go.Scatter(
-                x=sub_df_premium["Query Time"],
+                x=sub_df_premium["pTime"],
                 y=sub_df_premium["Premium Price"],
                 mode="markers",
                 name=f"Premium - {tag}",
@@ -341,7 +343,7 @@ def plotBarChart(df):
     x = range(len(avg_prices))
 
     # Determine y-axis max for shading
-    y_max = max(avg_prices[["Regular Price", "Premium Price"]].max()) + 10
+    y_max = max(avg_prices[["Regular Price", "Premium Price"]].max()) + 20
 
     # Add alternating horizontal bands
     band_height = tickHeight  # match your yticks increment
