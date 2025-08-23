@@ -43,18 +43,20 @@ def plotTimeGraph(df):
     df_ts = df.copy()
     df_ts["Query Time"] = pd.to_datetime(df_ts["Query Time"], errors="coerce")
     df_ts = df_ts.dropna(subset=["Query Time"])  # only drop rows with invalid times
-    df_ts["Date"] = df_ts["Query Time"].dt.date
-    df_ts["Time Tag"] = df_ts["Time Tag"].str.lower().str.strip()
+    df_ts["RegularDate"] = df_ts["Regular Last Update Time"].dt.date
+    df_ts["PremiumDate"] = df_ts["Premium Last Update Time"].dt.date
+    df_ts["rTime Tag"] = df_ts["rTime Tag"].str.lower().str.strip()
+    df_ts["pTime Tag"] = df_ts["pTime Tag"].str.lower().str.strip()
 
     pivot_regular = df_ts.pivot_table(
-        index="Date", columns="Time Tag", values="Regular Price", aggfunc="mean"
+        index="RegularDate", columns="rTime Tag", values="Regular Price", aggfunc="mean"
     )
     pivot_premium = df_ts.pivot_table(
-        index="Date", columns="Time Tag", values="Premium Price", aggfunc="mean"
+        index="PremiumDate", columns="pTime Tag", values="Premium Price", aggfunc="mean"
     )
 
     plt.figure(figsize=(12, 6))
-    for tag in df_ts["Time Tag"].unique():
+    for tag in df_ts["rTime Tag"].unique():
         if tag in pivot_regular.columns:
             plt.plot(
                 pivot_regular.index,
@@ -62,6 +64,7 @@ def plotTimeGraph(df):
                 label=f"Regular {tag}",
                 marker="o",
             )
+    for tag in df_ts["pTime Tag"].unique():
         if tag in pivot_premium.columns:
             plt.plot(
                 pivot_premium.index,
@@ -186,6 +189,27 @@ def generate_heatmap_data(df):
 
     # Filter by today's dat
     df_hm = df_hm[df_hm["Query Date"] == today]
+    # For each row, take the max of the two timestamps
+    df_hm["Latest Update Time"] = df_hm[
+        ["Regular Last Update Time", "Premium Last Update Time"]
+    ].max(axis=1)
+
+    # Get index of the row with the most recent update per Station ID
+    idx = df_hm.groupby("Station ID")["Latest Update Time"].idxmax()
+    idx = idx.dropna().astype(int)
+
+    # Keep only those rows
+    df_hm = df_hm.loc[idx].reset_index(drop=True)
+
+    # output_path = "./data/today.xlsx"
+    # print(f"Today's Heatmap: {df_hm}")
+    # try:
+    #     if os.path.exists(output_path):
+    #         logging.debug(f"File {output_path} already exists. Deleting it.")
+    #         os.remove(output_path)
+    #     df_hm.to_excel(output_path, index=False)
+    # except Exception as e:
+    #     logging.debug(f"An error occurred: {e}")
 
     today_prices = df_hm.groupby(
         ["Station ID", "Station Name", "Latitude", "Longitude"], as_index=False
@@ -200,7 +224,10 @@ def plotInteractive(df):
     df_it["Query Time"] = pd.to_datetime(df_it["Query Time"], errors="coerce")
     df_it = df_it.dropna(subset=["Query Time"])  # only drop invalid times
     df_it["Date"] = df_it["Query Time"].dt.date
-    df_it["Time Tag"] = df_it["Time Tag"].str.lower().str.strip()
+    df_it["rTime Tag"] = df_it["rTime Tag"].str.lower().str.strip()
+    df_it["pTime Tag"] = df_it["pTime Tag"].str.lower().str.strip()
+    # df_it["mTime Tag"] = df_it["Time Tag"].str.lower().str.strip()
+    # df_it["dTime Tag"] = df_it["Time Tag"].str.lower().str.strip()
 
     time_colors = {
         "morning": "orange",
@@ -212,8 +239,8 @@ def plotInteractive(df):
         rows=2, cols=1, subplot_titles=("Regular Gas Prices", "Premium Gas Prices")
     )
 
-    for tag in df_it["Time Tag"].unique():
-        sub_df = df_it[df_it["Time Tag"] == tag]
+    for tag in df_it["rTime Tag"].unique():
+        sub_df = df_it[df_it["rTime Tag"] == tag]
 
         # Regular prices
         sub_df_regular = sub_df[sub_df["Regular Price"].notna()]
@@ -234,6 +261,8 @@ def plotInteractive(df):
             col=1,
         )
 
+    for tag in df_it["pTime Tag"].unique():
+        sub_df = df_it[df_it["pTime Tag"] == tag]
         # Premium prices
         sub_df_premium = sub_df[sub_df["Premium Price"].notna()]
         fig.add_trace(
@@ -275,6 +304,7 @@ def plotInteractive(df):
     except Exception as e:
         logging.debug(f"An error occurred: {e}")
 
+
 def plotBarChart(df):
     tickHeight = 10
     # Ensure Query Date is datetime
@@ -284,14 +314,23 @@ def plotBarChart(df):
     df["Weekday"] = df["Query Date"].dt.day_name()
 
     # Group by weekday and take average prices
-    avg_prices = df.groupby("Weekday", as_index=False).agg({
-        "Regular Price": "mean",
-        "Premium Price": "mean"
-    })
+    avg_prices = df.groupby("Weekday", as_index=False).agg(
+        {"Regular Price": "mean", "Premium Price": "mean"}
+    )
 
     # Order weekdays Monday → Sunday
-    weekday_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    avg_prices["Weekday"] = pd.Categorical(avg_prices["Weekday"], categories=weekday_order, ordered=True)
+    weekday_order = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+    ]
+    avg_prices["Weekday"] = pd.Categorical(
+        avg_prices["Weekday"], categories=weekday_order, ordered=True
+    )
     avg_prices = avg_prices.sort_values("Weekday")
 
     # Plot grouped bar chart
@@ -300,16 +339,28 @@ def plotBarChart(df):
     plt.grid(True, zorder=1)
     bar_width = 0.1
     x = range(len(avg_prices))
-    
+
     # Determine y-axis max for shading
     y_max = max(avg_prices[["Regular Price", "Premium Price"]].max()) + 10
 
     # Add alternating horizontal bands
     band_height = tickHeight  # match your yticks increment
-    for y in range(0, int(y_max), band_height*2):
-        ax.axhspan(y, y + band_height, facecolor='gray', alpha=0.2, zorder=0)
-    plt.bar([i - bar_width/2 for i in x], avg_prices["Regular Price"], width=bar_width, label="Regular", alpha=0.8)
-    plt.bar([i + bar_width/2 for i in x], avg_prices["Premium Price"], width=bar_width, label="Premium", alpha=0.8)
+    for y in range(0, int(y_max), band_height * 2):
+        ax.axhspan(y, y + band_height, facecolor="gray", alpha=0.2, zorder=0)
+    plt.bar(
+        [i - bar_width / 2 for i in x],
+        avg_prices["Regular Price"],
+        width=bar_width,
+        label="Regular",
+        alpha=0.8,
+    )
+    plt.bar(
+        [i + bar_width / 2 for i in x],
+        avg_prices["Premium Price"],
+        width=bar_width,
+        label="Premium",
+        alpha=0.8,
+    )
 
     plt.xticks(x, avg_prices["Weekday"], rotation=30)
     plt.xlabel("Day of Week")
@@ -318,9 +369,9 @@ def plotBarChart(df):
     plt.yticks(range(0, int(y_max), tickHeight))  # ticks every 10¢
     plt.yticks(fontsize=9)
     plt.legend()
-    
+
     plt.tight_layout()
-    
+
     try:
         if os.path.exists(bar_output_path):
             logging.debug(f"File {bar_output_path} already exists. Deleting it.")
@@ -334,8 +385,8 @@ def plotBarChart(df):
 
 # ---------------- Run All Plots ----------------
 plotTimeGraph(df)
-generate_heatmap_data(df)
 plotInteractive(df)
 plotBarChart(df)
+generate_heatmap_data(df)
 
 logging.info("All plots completed.")

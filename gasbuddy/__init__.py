@@ -11,15 +11,18 @@ from .exceptions import APIError, LibraryError, MissingSearchData
 _LOGGER = logging.getLogger(__name__)
 MAX_RETRIES = 5
 
+
 class GasBuddy:
     """Represents GasBuddy GraphQL calls using saved cookies + gbcsrf token."""
 
-    def __init__(self, station_id: int | None = None, cookie_file: str | None = None) -> None:
+    def __init__(
+        self, station_id: int | None = None, cookie_file: str | None = None
+    ) -> None:
         self._url = BASE_URL
         self._id = station_id
         self._tag = None  # gbcsrf token
         self.cookie_jar = {}
-        
+
         if cookie_file:
             self._load_cookies(cookie_file)
 
@@ -27,7 +30,7 @@ class GasBuddy:
         """Load cookies and gbcsrf token from JSON."""
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        
+
         self.cookie_jar = {c["name"]: c["value"] for c in data.get("cookies", [])}
         self._tag = data.get("gbcsrf")
         if self._tag:
@@ -54,16 +57,22 @@ class GasBuddy:
             "sec-ch-ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
             "sec-ch-ua-mobile": "?0",
             "sec-ch-ua-platform": '"macOS"',
-            **({"gbcsrf": self._tag} if self._tag else {})
+            **({"gbcsrf": self._tag} if self._tag else {}),
         }
 
-    @backoff.on_exception(backoff.expo, aiohttp.ClientError, max_time=60, max_tries=MAX_RETRIES)
-    async def process_request(self, query: dict[str, Collection[str]]) -> dict[str, Any]:
+    @backoff.on_exception(
+        backoff.expo, aiohttp.ClientError, max_time=60, max_tries=MAX_RETRIES
+    )
+    async def process_request(
+        self, query: dict[str, Collection[str]]
+    ) -> dict[str, Any]:
         """Send GraphQL query with saved cookies and gbcsrf token."""
         headers = self._build_headers()
         json_query = json.dumps(query)
 
-        async with aiohttp.ClientSession(headers=headers, cookies=self.cookie_jar) as session:
+        async with aiohttp.ClientSession(
+            headers=headers, cookies=self.cookie_jar
+        ) as session:
             async with session.post(self._url, data=json_query) as response:
                 text = await response.text()
                 try:
@@ -77,7 +86,12 @@ class GasBuddy:
                     _LOGGER.error("HTTP %s: %s", response.status, message)
                 return message
 
-    async def location_search(self, lat: float | None = None, lon: float | None = None, zipcode: int | None = None) -> dict[str, Any]:
+    async def location_search(
+        self,
+        lat: float | None = None,
+        lon: float | None = None,
+        zipcode: int | None = None,
+    ) -> dict[str, Any]:
         """Search locations using coordinates or zipcode."""
         variables: dict[str, Any] = {}
         if lat is not None and lon is not None:
@@ -91,6 +105,38 @@ class GasBuddy:
         query = {
             "operationName": "LocationBySearchTerm",
             "query": LOCATION_QUERY,
+            "variables": variables,
+        }
+        return await self.process_request(query)
+
+    async def location_search_prices(
+        self,
+        lat: float | None = None,
+        lon: float | None = None,
+        zipcode: int | None = None,
+    ) -> dict[str, Any]:
+        """Search locations using coordinates or zipcode."""
+        variables: dict[str, Any] = {}
+        if lat is not None and lon is not None:
+            variables = {
+                "brandId": None,
+                "cursor": None,
+                "fuel": None,
+                "lat": lat,
+                "lng": lon,
+                "maxAge": 0,
+                "search": None,
+            }
+
+        elif zipcode is not None:
+            variables = {"maxAge": 0, "search": str(zipcode)}
+        else:
+            _LOGGER.error("Missing search data.")
+            raise MissingSearchData
+
+        query = {
+            "operationName": "LocationBySearchTerm",
+            "query": LOCATION_QUERY_PRICES,
             "variables": variables,
         }
         return await self.process_request(query)
@@ -133,7 +179,9 @@ class GasBuddy:
             formatted[index] = {
                 "credit": price["credit"]["nickname"],
                 "price": price["credit"].get("price"),
-                "cash_price": price.get("cash", {}).get("price") if price.get("cash") else None,
+                "cash_price": (
+                    price.get("cash", {}).get("price") if price.get("cash") else None
+                ),
                 "last_updated": price["credit"]["postedTime"],
             }
         logging.info(f"Saved {formatted} for station {self._id}")

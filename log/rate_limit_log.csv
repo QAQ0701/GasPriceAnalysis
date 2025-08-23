@@ -1,22 +1,26 @@
 timestamp,request_index,delay_sec,status,http_code,message_snippet,success_count_before_block
-2025-08-22T04:55:58.452304,2,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",0
-2025-08-22T04:56:03.644104,3,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",1
-2025-08-22T04:56:08.821382,4,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",2
-2025-08-22T04:56:13.992786,5,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",3
-2025-08-22T04:56:19.207355,6,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",4
-2025-08-22T04:56:24.396081,7,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",5
-2025-08-22T04:56:29.621816,8,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",6
-2025-08-22T04:56:34.812473,9,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",7
-2025-08-22T04:56:40.094153,10,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",8
-2025-08-22T04:56:42.796276,11,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",9
-2025-08-22T04:56:45.488339,12,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",10
-2025-08-22T04:56:48.160556,13,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",11
-2025-08-22T04:56:50.994725,14,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",12
-2025-08-22T04:56:53.935134,15,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",13
-2025-08-22T04:56:56.634509,16,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",14
-2025-08-22T04:56:59.470089,17,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",15
-2025-08-22T04:57:02.137140,18,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",16
-2025-08-22T04:57:04.895658,19,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",17
-2025-08-22T04:57:07.437582,20,2.50,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",18
-2025-08-22T04:57:37.723976,retry-20,30.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",18
-2025-08-22T04:57:37.724149,20,30.00,UNBLOCKED,200,Block duration 30.3s,18
+2025-08-23T04:46:08.846267,2,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",0
+2025-08-23T04:46:14.057473,3,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",1
+2025-08-23T04:46:19.274610,4,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",2
+2025-08-23T04:46:24.477129,5,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",3
+2025-08-23T04:46:29.693196,6,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",4
+2025-08-23T04:46:34.920169,7,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",5
+2025-08-23T04:46:40.148979,8,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",6
+2025-08-23T04:46:45.362515,9,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",7
+2025-08-23T04:46:50.588685,10,5.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",8
+2025-08-23T04:46:53.395021,11,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",9
+2025-08-23T04:46:56.119950,12,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",10
+2025-08-23T04:46:58.831918,13,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",11
+2025-08-23T04:47:01.682889,14,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",12
+2025-08-23T04:47:04.400961,15,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",13
+2025-08-23T04:47:07.215114,16,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",14
+2025-08-23T04:47:10.177579,17,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",15
+2025-08-23T04:47:12.948630,18,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",16
+2025-08-23T04:47:15.680561,19,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",17
+2025-08-23T04:47:18.389193,20,2.50,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",18
+2025-08-23T04:47:19.676348,21,1.25,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",19
+2025-08-23T04:47:49.772485,retry-21,30.00,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",19
+2025-08-23T04:48:19.872897,retry-21,30.00,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",19
+2025-08-23T04:48:49.972807,retry-21,30.00,BLOCKED,429,"<!DOCTYPE html> <!--[if lt IE 7]> <html class=""no-js ie6 oldie"" lang=""en-US""> <![endif]--> <!--[if I",19
+2025-08-23T04:49:20.141574,retry-21,30.00,OK,200,"{""data"":{""locationBySearchTerm"":{""stations"":{""results"":[{""address"":{""line1"":""3250 MacDonald St""},""pr",19
+2025-08-23T04:49:20.141962,21,30.00,UNBLOCKED,200,Block duration 120.5s,19

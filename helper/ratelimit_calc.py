@@ -191,5 +191,5 @@ def plot_delay_over_time():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
-    plot_delay_over_time
+    # asyncio.run(main())
+    plot_delay_over_time()
