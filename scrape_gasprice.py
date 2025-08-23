@@ -172,8 +172,8 @@ def parse_response(response_json):
 
     for station in stations:
         location = {
-            "latitude": station.get("latitude"),
-            "longitude": station.get("longitude"),
+            "Latitude": station.get("latitude"),
+            "Longitude": station.get("longitude"),
         }
         station_dict = {
             "address": station.get("address", {}).get("line1"),
