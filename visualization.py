@@ -76,7 +76,7 @@ def plotTimeGraph(df):
 
     plt.xlabel("Date")
     plt.ylabel("Price (cents/liter)")
-    plt.title("Gas Price Trends by Time of Day")
+    plt.title("Gas Price Trends by Time of Day (AVG)")
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
