@@ -6,6 +6,7 @@ import pandas as pd
 from datetime import datetime
 import pytz
 import os
+import re
 
 # ------------------- CONFIG -------------------
 LOCATIONS = [
@@ -159,7 +160,7 @@ def parse_response(response_json):
     Returns:
         list of dict: Each dict contains station info and prices.
     """
-    print(f"Response JSON: {response_json}")
+    # print(f"Response JSON: {response_json}")
     parsed_stations = []
 
     stations = (
@@ -205,19 +206,31 @@ def parse_response(response_json):
 
 
 # ------------------- HELPERS -------------------------
-def iso_to_pdt(utc_time):
-    """Convert UTC time to PST (Pacific Standard Time)."""
-    try:
-        utc_dt = datetime.strptime(utc_time, "%Y-%m-%dT%H:%M:%S.%fZ")
-        pdt_dt = utc_dt.astimezone(pytz.timezone("America/Los_Angeles"))
-        pdt_dt = pdt_dt.replace(tzinfo=None)
-        print("UTC:", utc_dt, "PST:", pdt_dt)
-        logging.info(f"UTC: {utc_dt}, PST: {pdt_dt}")
+def iso_to_pdt(iso_time):
+    ISO_UTC_REGEX = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$")
+    if not isinstance(iso_time, str):
+        dt_naive = None
+    else:
+        """Convert UTC time to PST (Pacific Standard Time)."""
+        try:
+            # Convert ISO string to UTC datetime
+            dt_utc = pd.to_datetime(iso_time, utc=True)
 
-    except Exception as e:
-        pdt_dt = None
-        logging.error(f"Error converting time: {e}")
-    return pdt_dt
+            # Convert to America/Los_Angeles timezone (PDT/PST automatically handled)
+            dt_pdt = dt_utc.tz_convert("America/Los_Angeles")
+
+            # Remove timezone info (naive datetime suitable for Excel)
+            dt_naive = dt_pdt.tz_localize(None)
+
+            print("UTC:", dt_utc, "PST:", dt_naive)
+            logging.info(f"UTC: {dt_utc}, PST: {dt_naive}")
+            return dt_naive
+
+        except Exception as e:
+            logging.error(f"Error converting ISO time '{iso_time}': {e}")
+            return None
+
+    return dt_naive
 
 
 def group_prices(data):
@@ -307,8 +320,8 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
             dt = None
             die_price = None
 
-        print("\nST:", st)
-        print("\nStation ID:", st.get("Station ID"))
+        # print("\nST:", st)
+        # print("\nStation ID:", st.get("Station ID"))
         new_row = {
             "Station ID": st.get("id"),
             "Station Name": st.get("name"),
@@ -353,7 +366,7 @@ def save_prices_to_excel(data: list[dict], filename: str = EXCEL_FILE):
             new_rows.append(new_row)
 
     if new_rows:
-        print("\n\nnew_rows", new_rows)
+        # print("\n\nnew_rows", new_rows)
         full_path = os.path.abspath(filename)
         logging.info(f"Writing Excel file to: {full_path}")
         updated = pd.concat([existing, pd.DataFrame(new_rows)], ignore_index=True)
@@ -373,7 +386,7 @@ async def fetch_all_locations_and_zips():
         logging.info(response)
         # data = await parse_gas_stations(response)
         data = parse_response(response)
-        print(data)
+        # print(data)
         save_prices_to_excel(data)
         # await asyncio.sleep(5)
 
