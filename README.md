@@ -29,6 +29,7 @@ The pipeline is executed in three sequential steps:
    - 2 interactive geographic heatmap of historial average and today's average gas prices
    - scatter plot of all the data points
    - Bar graph of all time average of gas price per day of the week
+   
    These outputs are saved as image files and an HTML file for map interaction.
 
 ---
