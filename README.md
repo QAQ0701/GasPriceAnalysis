@@ -24,7 +24,12 @@ The pipeline is executed in three sequential steps:
 
 1. **`scrape_gasprice.py`**: Collects raw gas price data for specified geographic locations using the GasBuddy API and saves it to an Excel file.
 2. **`clean_data.py`**: Reads the raw data, performs cleaning operations such as timestamp conversion, deduplication, and tagging, and outputs a cleaned dataset.
-3. **`visualization.py`**: Loads the cleaned data and generates two visual outputs—a time-series plot of average gas prices by time of day, an interactive geographic heatmap of station prices, and a scatter plot of all the data points. These outputs are saved as image files and an HTML file for map interaction.
+3. **`visualization.py`**: Loads the cleaned data and generates 5 visual outputs:
+   - time-series plot of average gas prices by time of day
+   - 2 interactive geographic heatmap of historial average and today's average gas prices
+   - scatter plot of all the data points
+   - Bar graph of all time average of gas price per day of the week
+   These outputs are saved as image files and an HTML file for map interaction.
 
 ---
 
